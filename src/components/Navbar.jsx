@@ -123,7 +123,7 @@ function Navbar() {
             WebkitBackdropFilter: 'blur(25px) saturate(200%)'
           }}
         >
-          <div className="flex items-center justify-between h-12 sm:h-12 lg:h-12">
+          <div className="flex items-center justify-between h-14 sm:h-12 lg:h-14">
             {/* Logo */}
             <div className="flex items-center gap-2 pl-2 sm:pl-3 flex-shrink-0">
               <img src="/logo.png" alt="Logo" className="h-50 w-50 sm:h-30 sm:w-30 lg:h-40 lg:w-40 object-contain"/>
