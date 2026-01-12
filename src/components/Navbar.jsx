@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -125,8 +126,8 @@ function Navbar() {
         >
           <div className="flex items-center justify-between h-14 sm:h-12 lg:h-14">
             {/* Logo */}
-            <div className="flex items-center gap-2 pl-2 sm:pl-3 flex-shrink-0">
-              <img src="/logo.png" alt="Logo" className="h-50 w-50 sm:h-30 sm:w-30 lg:h-40 lg:w-40 object-contain"/>
+            <div className="flex items-center gap-2 pl-2 sm:pl-3 flex-shrink-0 bg-[#090040] rounded-full p-2 h-30 w-20 sm:h-30 sm:w-30 lg:h-15 lg:w-40">
+              <img src="/logo1.png" alt="Logo" className="h-50 w-50 sm:h-30 sm:w-30 lg:h-40 lg:w-40 object-contain"/>
             </div>
 
             {/* Desktop Navigation Items - Shifted right with more spacing */}
@@ -136,8 +137,8 @@ function Navbar() {
                   key={index}
                   ref={(el) => (navItemsRef.current[index] = el)}
                 >
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     onClick={(e) => {
                       e.preventDefault();
                       handleClick(index);
@@ -150,7 +151,7 @@ function Navbar() {
                     }}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

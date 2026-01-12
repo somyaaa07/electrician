@@ -3,7 +3,7 @@ import { Star, Quote } from 'lucide-react';
 
 export default function TestimonialsSection() {
   const canvasRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -79,14 +79,14 @@ export default function TestimonialsSection() {
     {
       name: "Sarah Mitchell",
       role: "Homeowner, Los Angeles",
-      text: "Exceptional work from start to finish. They upgraded our entire electrical panel and installed new outlets throughout the house. Professional, clean, and incredibly knowledgeable. I felt completely safe having them work in my home.",
+      text: "Exceptional work from start to finish. They upgraded our entire electrical panel and installed new outlets throughout the house. Professional, clean, and incredibly knowledgeable.",
       rating: 5,
       image: "SM"
     },
     {
       name: "David Chen",
       role: "Restaurant Owner",
-      text: "When our kitchen lost power during dinner service, they arrived within 30 minutes and had us back online in under two hours. Their emergency response saved us thousands in lost revenue. Can't thank them enough.",
+      text: "When our kitchen lost power during dinner service, they arrived within 30 minutes and had us back online in under two hours. Their emergency response saved us thousands in lost revenue.",
       rating: 5,
       image: "DC"
     },
@@ -96,22 +96,71 @@ export default function TestimonialsSection() {
       text: "I manage 15 commercial properties and this team handles all our electrical needs. Reliable, honest pricing, and they always show up when they say they will. That's rare to find these days.",
       rating: 5,
       image: "JR"
+    },
+    {
+      name: "Michael Thompson",
+      role: "Retail Store Owner",
+      text: "They completely rewired our vintage building while preserving its character. The attention to detail and respect for our business operations was outstanding. Highly recommend!",
+      rating: 5,
+      image: "MT"
+    },
+    {
+      name: "Emily Watson",
+      role: "Homeowner, San Diego",
+      text: "From the initial consultation to the final inspection, everything was seamless. They installed smart home lighting throughout and explained everything clearly. Worth every penny!",
+      rating: 5,
+      image: "EW"
+    },
+    {
+      name: "Robert Johnson",
+      role: "Gym Owner",
+      text: "Needed urgent electrical work for our new equipment installation. They accommodated our tight schedule and completed the job ahead of time. True professionals who care about their clients.",
+      rating: 5,
+      image: "RJ"
+    },
+    {
+      name: "Lisa Anderson",
+      role: "Office Manager",
+      text: "Our office building had outdated wiring that was becoming a safety concern. They handled the entire upgrade efficiently with minimal disruption to our daily operations. Fantastic service!",
+      rating: 5,
+      image: "LA"
+    },
+    {
+      name: "James Parker",
+      role: "Homeowner, Orange County",
+      text: "Best electricians we've ever worked with! They installed EV charging stations and solar panel wiring. Professional, punctual, and transparent pricing. Can't ask for more!",
+      rating: 5,
+      image: "JP"
+    },
+    {
+      name: "Maria Garcia",
+      role: "Cafe Owner",
+      text: "They redesigned our entire cafe's electrical layout to support our new equipment. Creative solutions, excellent communication, and they stayed within budget. Absolutely recommend!",
+      rating: 5,
+      image: "MG"
     }
   ];
 
+  const totalSlides = Math.ceil(testimonials.length / 3);
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    }, 6000);
     return () => clearInterval(interval);
-  }, []);
+  }, [totalSlides]);
 
-  const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
   };
 
-  const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const getCurrentTestimonials = () => {
+    const startIndex = currentSlide * 3;
+    return testimonials.slice(startIndex, startIndex + 3);
   };
 
   return (
@@ -128,67 +177,74 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="relative bg-white/5 backdrop-blur-md rounded-2xl p-12 md:p-16  shadow-2xl ">
-            <Quote className="absolute top-8 left-8 w-16 h-16 text-white/20" />
-            
-            <div className="relative">
-              <div className="flex gap-2 mb-8 justify-center">
-                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-white text-white" />
-                ))}
-              </div>
+        <div className="relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto transition-all duration-700 ease-in-out">
+            {getCurrentTestimonials().map((testimonial, index) => (
+              <div 
+                key={currentSlide * 3 + index}
+                className="relative bg-white/5 backdrop-blur-md rounded-2xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300 hover:scale-105 flex flex-col animate-fadeIn"
+              >
+                <Quote className="absolute top-6 left-6 w-12 h-12 text-white/20" />
+                
+                <div className="relative flex-1 flex flex-col">
+                  <div className="flex gap-1 mb-6 justify-center">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-white text-white" />
+                    ))}
+                  </div>
 
-              <p className="text-2xl md:text-3xl text-white leading-relaxed text-center mb-12" style={{ fontFamily: 'Lora, serif', fontStyle: 'italic' }}>
-                "{testimonials[currentIndex].text}"
-              </p>
-
-              <div className="flex items-center justify-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center border-2 border-white/20">
-                  <span className="text-white font-semibold text-xl">{testimonials[currentIndex].image}</span>
-                </div>
-                <div className="text-left">
-                  <h4 className="text-white text-xl font-semibold" style={{ fontFamily: 'Playfair Display, serif' }}>
-                    {testimonials[currentIndex].name}
-                  </h4>
-                  <p className="text-gray-400" style={{ fontFamily: 'Lora, serif' }}>
-                    {testimonials[currentIndex].role}
+                  <p className="text-lg text-white leading-relaxed text-center mb-8 flex-1" style={{ fontFamily: 'Lora, serif', fontStyle: 'italic' }}>
+                    "{testimonial.text}"
                   </p>
+
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center border-2 border-white/20">
+                      <span className="text-white font-semibold text-lg">{testimonial.image}</span>
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-white text-lg font-semibold" style={{ fontFamily: 'Playfair Display, serif' }}>
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-gray-400 text-sm" style={{ fontFamily: 'Lora, serif' }}>
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center gap-6 mt-12">
+          <button 
+            onClick={prevSlide}
+            className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300"
+            aria-label="Previous slide"
+          >
+            ←
+          </button>
+          
+          <div className="flex gap-3">
+            {[...Array(totalSlides)].map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentSlide ? 'bg-white w-12' : 'bg-white/30 w-2 hover:bg-white/50'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
 
-          <div className="flex items-center justify-center gap-6 mt-12">
-            <button 
-              onClick={prevTestimonial}
-              className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300"
-              aria-label="Previous testimonial"
-            >
-              ←
-            </button>
-            
-            <div className="flex gap-3">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? 'bg-white w-12' : 'bg-white/30 w-2 hover:bg-white/50'
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
-
-            <button 
-              onClick={nextTestimonial}
-              className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300"
-              aria-label="Next testimonial"
-            >
-              →
-            </button>
-          </div>
+          <button 
+            onClick={nextSlide}
+            className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300"
+            aria-label="Next slide"
+          >
+            →
+          </button>
         </div>
 
         <div className="text-center mt-20">
@@ -199,6 +255,23 @@ export default function TestimonialsSection() {
       </div>
 
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+      
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fadeIn {
+          animation: fadeIn 0.7s ease-out;
+        }
+      `}</style>
     </section>
   );
 }

@@ -98,7 +98,7 @@ const AboutSection = () => {
             <div className="relative overflow-hidden ">
               {/* Placeholder Image - Replace with your actual image */}
               <img 
-                src="/welcome.png" 
+                src="https://i.pinimg.com/1200x/90/9a/78/909a786b0e5491d20a423f93ac00c6f7.jpg" 
                 alt="About Us" 
                 className="w-full h-[500px] lg:h-[600px] object-cover"
               />
@@ -125,7 +125,8 @@ const AboutSection = () => {
               className="text-white/90 text-xl md:text-2xl leading-relaxed"
               style={{ fontFamily: "'Lora', serif" }}
             >
-              Crafting innovative solutions with passion and precision
+             
+Intell Power and Automation Pvt. Ltd. is not just a manufacturer—
             </p>
             
             {/* Decorative Line */}
@@ -137,17 +138,14 @@ const AboutSection = () => {
                 className="text-white/80 text-lg leading-relaxed"
                 style={{ fontFamily: "'Lora', serif" }}
               >
-                We are a team of dedicated professionals committed to pushing the boundaries 
-                of technology and design. Our mission is to create exceptional digital experiences 
-                that inspire and transform businesses.
+              At Intell Power and Automation Pvt. Ltd., we offer comprehensive electro-mechanical solutions that go far beyond power distribution. Our integrated systems are engineered to enhance equipment safety, operational efficiency, and process automation for a wide range of industries
               </p>
               
               <p 
                 className="text-white/80 text-lg leading-relaxed"
                 style={{ fontFamily: "'Lora', serif" }}
               >
-                With years of expertise in web development, design, and innovation, we bring 
-                your vision to life through cutting-edge solutions tailored to your unique needs.
+                As a next-generation panel manufacture brand, we specialize in crafting high-efficiency electrical panels that power industrial operations across sectors. Every control system we design is built for performance, precision, and purpose.
               </p>
             </div>
             

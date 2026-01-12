@@ -119,8 +119,8 @@ export default function Footer() {
           {/* Brand Section - Centered on mobile */}
           <div className="lg:col-span-1 text-center sm:text-left">
             <div className="flex items-center justify-center sm:justify-start gap-3  group -mt-15">
-              <div className="relative">
-              <img src="/logo.png" alt="logo"className='h-12 w-12 sm:h-10 sm:w-10 lg:h-44 lg:w-44 object-contain'/>
+              <div className="relative ">
+              <img src="/logo1.png" alt="logo"className='h-12 w-12 sm:h-10 sm:w-10 lg:h-44 lg:w-44 object-contain  '/>
                 {/* <div className="absolute inset-0 bg-white rounded-lg blur-xl opacity-40 group-hover:opacity-60 transition-opacity animate-pulse" /> */}
               </div>
              

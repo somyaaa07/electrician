@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Zap, Shield, Wrench, Clock, Phone, DollarSign } from 'lucide-react';
 
 const WhyChooseUs = () => {
-  const [flippedCards, setFlippedCards] = useState({});
+  const [hoveredCard, setHoveredCard] = useState(null);
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -87,13 +87,6 @@ const WhyChooseUs = () => {
     };
   }, []);
 
-  const toggleFlip = (id) => {
-    setFlippedCards(prev => ({
-      ...prev,
-      [id]: !prev[id]
-    }));
-  };
-
   const features = [
     {
       id: 1,
@@ -167,15 +160,14 @@ const WhyChooseUs = () => {
               <div
                 key={feature.id}
                 className="relative h-80 cursor-pointer perspective-1000"
-                onClick={() => toggleFlip(feature.id)}
+                onMouseEnter={() => setHoveredCard(feature.id)}
+                onMouseLeave={() => setHoveredCard(null)}
               >
                 <div
-                  className={`relative w-full h-full transition-transform duration-700 preserve-3d ${
-                    flippedCards[feature.id] ? 'rotate-x-180' : ''
-                  }`}
+                  className={`relative w-full h-full transition-transform duration-700 preserve-3d`}
                   style={{
                     transformStyle: 'preserve-3d',
-                    transform: flippedCards[feature.id] ? 'rotateX(180deg)' : 'rotateX(0deg)'
+                    transform: hoveredCard === feature.id ? 'rotateX(180deg)' : 'rotateX(0deg)'
                   }}
                 >
                   {/* Front of Card */}
@@ -192,7 +184,7 @@ const WhyChooseUs = () => {
                     <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-gray-400 mb-6" style={{ fontFamily: "'Lora', serif" }}>Click to learn more</p>
+                    <p className="text-sm text-gray-400 mb-6" style={{ fontFamily: "'Lora', serif" }}>Hover to learn more</p>
                     <div className="w-12 h-1 bg-blue-500 rounded-full"></div>
                   </div>
 
