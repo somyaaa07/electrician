@@ -124,10 +124,14 @@ function Navbar() {
             WebkitBackdropFilter: 'blur(25px) saturate(200%)'
           }}
         >
-          <div className="flex items-center justify-between h-14 sm:h-12 lg:h-14">
-            {/* Logo */}
-            <div className="flex items-center gap-2 pl-2 sm:pl-3 flex-shrink-0 bg-[#090040] rounded-full p-2 h-30 w-20 sm:h-30 sm:w-30 lg:h-15 lg:w-40">
-              <img src="/logo1.png" alt="Logo" className="h-50 w-50 sm:h-30 sm:w-30 lg:h-40 lg:w-40 object-contain"/>
+          <div className="flex items-center justify-between h-18 sm:h-18 lg:h-18">
+            {/* Logo - Fully Responsive */}
+            <div className="flex items-center gap-2 pl-2 sm:pl-3 flex-shrink-0 bg-[#090040] rounded-full p-1.5 sm:p-2 h-12 w-20 xs:h-14 xs:w-24 sm:h-14 sm:w-28 md:h-16 md:w-32 lg:h-12 lg:w-32 xl:h-14 xl:w-36">
+              <img 
+                src="/logo1.png" 
+                alt="Logo" 
+                className="h-[50px] w-full object-contain"
+              />
             </div>
 
             {/* Desktop Navigation Items - Shifted right with more spacing */}
