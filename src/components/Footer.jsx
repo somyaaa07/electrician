@@ -49,8 +49,8 @@ export default function Footer() {
           
           if (distance < 120) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 * (1 - distance / 120)})`;
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.5 * (1 - distance / 120)})`;
+            ctx.lineWidth = 1.5;
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(otherNode.x, otherNode.y);
             ctx.stroke();
@@ -58,8 +58,8 @@ export default function Footer() {
         });
         
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+        ctx.arc(node.x, node.y, 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
         ctx.fill();
       });
       
@@ -100,12 +100,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#080325] overflow-hidden">
+    <footer className="relative bg-[#20B2AA] overflow-hidden">
       {/* Animated Electric Background */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
-        style={{ opacity: 0.3 }}
+        style={{ opacity: 0.4 }}
       />
 
       {/* Top Border with Electric Effect */}
@@ -127,7 +127,7 @@ export default function Footer() {
                 />
               </div>
             </div>
-            <p className="text-gray-400 text-xs -mt-10 sm:text-sm leading-relaxed mb-4 sm:mb-6 font-light max-w-xs mx-auto sm:mx-0">
+            <p className="text-gray-100 text-xs -mt-10 sm:text-sm leading-relaxed mb-4 sm:mb-6 font-light max-w-xs mx-auto sm:mx-0">
               Your trusted local electrician. Licensed, insured, and ready to solve all your electrical needs with professional service.
             </p>
 
@@ -136,7 +136,7 @@ export default function Footer() {
                 <a
                   key={idx}
                   href="#"
-                  className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-white/10 border border-white/30 flex items-center justify-center text-white hover:text-gray-900 hover:bg-white hover:border-white transition-all duration-300 hover:scale-110"
+                  className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-white/20 border border-white/40 flex items-center justify-center text-white hover:text-[#20B2AA] hover:bg-white hover:border-white transition-all duration-300 hover:scale-110"
                   aria-label={`Social media ${social}`}
                 >
                   <span className="text-xs sm:text-sm font-bold">{social}</span>
@@ -156,7 +156,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white text-xs sm:text-sm transition-all duration-300 hover:translate-x-1 inline-block group"
+                    className="text-gray-100 hover:text-white text-xs sm:text-sm transition-all duration-300 hover:translate-x-1 inline-block group"
                   >
                     <span className="relative">
                       <span className="hidden sm:inline absolute -left-3 md:-left-4 top-1/2 -translate-y-1/2 text-white opacity-0 group-hover:opacity-100 transition-opacity text-xs">⚡</span>
@@ -179,7 +179,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white text-xs sm:text-sm transition-all duration-300 hover:translate-x-1 inline-block group"
+                    className="text-gray-100 hover:text-white text-xs sm:text-sm transition-all duration-300 hover:translate-x-1 inline-block group"
                   >
                     <span className="relative">
                       <span className="hidden sm:inline absolute -left-3 md:-left-4 top-1/2 -translate-y-1/2 text-white opacity-0 group-hover:opacity-100 transition-opacity text-xs">›</span>
@@ -202,7 +202,7 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={item.href}
-                    className="flex items-start gap-2 sm:gap-3 text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-300 group justify-center sm:justify-start"
+                    className="flex items-start gap-2 sm:gap-3 text-gray-100 hover:text-white text-xs sm:text-sm transition-colors duration-300 group justify-center sm:justify-start"
                   >
                     <span className="text-base sm:text-lg flex-shrink-0 group-hover:scale-110 transition-transform">
                       {item.icon}
@@ -216,24 +216,24 @@ export default function Footer() {
         </div>
 
         {/* Emergency Call-to-Action */}
-        <div className="border-t border-white/20 pt-8 sm:pt-10 lg:pt-12 mb-8 sm:mb-10 lg:mb-12">
+        <div className="border-t border-white/30 pt-8 sm:pt-10 lg:pt-12 mb-8 sm:mb-10 lg:mb-12">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-white/10 via-white/20 to-white/10 border border-white/30 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-white/10 via-white/20 to-white/10 border border-white/40 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 relative overflow-hidden">
               <div className="absolute inset-0 bg-white/5 animate-pulse" />
               <div className="relative text-center">
                 <h3 className="text-white font-bold text-lg sm:text-xl md:text-2xl mb-2">Need Emergency Electrical Service?</h3>
-                <p className="text-gray-300 text-xs sm:text-sm md:text-base mb-5 sm:mb-6 px-2">We're available 24/7 for urgent electrical repairs and emergencies</p>
+                <p className="text-gray-100 text-xs sm:text-sm md:text-base mb-5 sm:mb-6 px-2">We're available 24/7 for urgent electrical repairs and emergencies</p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
                   <a
                     href="tel:5551234567"
-                    className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-white to-gray-100 text-gray-900 font-bold text-sm sm:text-base rounded-lg sm:rounded-xl hover:shadow-2xl hover:shadow-white/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                    className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-white to-gray-100 text-[#20B2AA] font-bold text-sm sm:text-base rounded-lg sm:rounded-xl hover:shadow-2xl hover:shadow-white/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                   >
                     <span className="text-lg sm:text-xl">📞</span>
                     <span className="whitespace-nowrap">Call Now: (555) 123-4567</span>
                   </a>
                   <a
                     href="#quote"
-                    className="px-6 sm:px-8 py-3 sm:py-4 bg-white/5 border-2 border-white/50 text-white font-bold text-sm sm:text-base rounded-lg sm:rounded-xl hover:bg-white/10 hover:border-white transition-all duration-300"
+                    className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 border-2 border-white/60 text-white font-bold text-sm sm:text-base rounded-lg sm:rounded-xl hover:bg-white/20 hover:border-white transition-all duration-300"
                   >
                     Get Free Quote
                   </a>
@@ -244,17 +244,17 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/20 pt-6 sm:pt-8">
+        <div className="border-t border-white/30 pt-6 sm:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
-            <p className="text-gray-500 text-[10px] xs:text-xs sm:text-sm text-center md:text-left order-2 md:order-1">
+            <p className="text-gray-100 text-[10px] xs:text-xs sm:text-sm text-center md:text-left order-2 md:order-1">
               © 2024 Spark Electric. All rights reserved. Licensed & Insured Electrician.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 order-1 md:order-2 text-[10px] xs:text-xs sm:text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors whitespace-nowrap">Privacy Policy</a>
-              <span className="text-gray-600 hidden xs:inline">•</span>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors whitespace-nowrap">Terms of Service</a>
-              <span className="text-gray-600 hidden xs:inline">•</span>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors whitespace-nowrap">Sitemap</a>
+              <a href="#" className="text-gray-100 hover:text-white transition-colors whitespace-nowrap">Privacy Policy</a>
+              <span className="text-gray-200 hidden xs:inline">•</span>
+              <a href="#" className="text-gray-100 hover:text-white transition-colors whitespace-nowrap">Terms of Service</a>
+              <span className="text-gray-200 hidden xs:inline">•</span>
+              <a href="#" className="text-gray-100 hover:text-white transition-colors whitespace-nowrap">Sitemap</a>
             </div>
           </div>
           
@@ -263,7 +263,7 @@ export default function Footer() {
             {['Master Electrician', 'BBB A+ Rated', '10+ Years Experience', 'Same Day Service'].map((badge) => (
               <span
                 key={badge}
-                className="px-2 sm:px-3 py-1 sm:py-1.5 bg-gray-800/50 border border-gray-700 rounded-md sm:rounded-lg text-[10px] sm:text-xs text-gray-400 font-medium whitespace-nowrap"
+                className="px-2 sm:px-3 py-1 sm:py-1.5 bg-white/20 border border-white/40 rounded-md sm:rounded-lg text-[10px] sm:text-xs text-white font-medium whitespace-nowrap"
               >
                 ⭐ {badge}
               </span>

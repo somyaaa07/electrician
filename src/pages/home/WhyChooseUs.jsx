@@ -62,17 +62,19 @@ const WhyChooseUs = () => {
           
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - distance / 150)})`;
-            ctx.lineWidth = 0.5;
+            // Sea green color with increased opacity
+            ctx.strokeStyle = `rgba(32, 178, 170, ${0.6 * (1 - distance / 150)})`;
+            ctx.lineWidth = 1.5;
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(otherNode.x, otherNode.y);
             ctx.stroke();
           }
         });
         
+        // Draw node with sea green color
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.arc(node.x, node.y, 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(32, 178, 170, 0.8)';
         ctx.fill();
       });
       
@@ -133,12 +135,12 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#080325] overflow-hidden">
+    <div className="relative min-h-screen bg-white overflow-hidden">
       {/* Animated Background Canvas */}
       <canvas 
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
-        style={{ background: '#080325' }}
+        style={{ opacity: 0.4 }}
       />
 
       {/* Content */}
@@ -146,10 +148,10 @@ const WhyChooseUs = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Why Choose <span className="text-blue-400">Us</span>
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+              Why Choose Us
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto" style={{ fontFamily: "'Lora', serif" }}>
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto" style={{ fontFamily: "'Lora', serif" }}>
               Industry-leading electrical panel solutions engineered for reliability and performance
             </p>
           </div>
@@ -172,37 +174,37 @@ const WhyChooseUs = () => {
                 >
                   {/* Front of Card */}
                   <div
-                    className="absolute w-full h-full backface-hidden rounded-2xl bg-white/5 backdrop-blur-lg shadow shadow-gray shadow-xl p-8 flex flex-col items-center justify-center text-center transition-all duration-300"
+                    className="absolute w-full h-full backface-hidden rounded-2xl bg-gray-50/90 backdrop-blur-lg shadow-2xl border border-gray-200 p-8 flex flex-col items-center justify-center text-center transition-all duration-300"
                     style={{ backfaceVisibility: 'hidden' }}
                   >
-                    <div className="text-blue-400/50 text-7xl font-bold absolute top-4 right-6">
+                    <div className="text-[#20B2AA]/30 text-7xl font-bold absolute top-4 right-6">
                       {feature.number}
                     </div>
-                    <div className="text-blue-400 mb-4">
+                    <div className="text-[#20B2AA] mb-4">
                       {feature.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-gray-400 mb-6" style={{ fontFamily: "'Lora', serif" }}>Hover to learn more</p>
-                    <div className="w-12 h-1 bg-blue-500 rounded-full"></div>
+                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: "'Lora', serif" }}>Hover to learn more</p>
+                    <div className="w-12 h-1 bg-[#20B2AA] rounded-full"></div>
                   </div>
 
                   {/* Back of Card */}
                   <div
-                    className="absolute w-full h-full backface-hidden rounded-2xl bg-white/5 backdrop-blur-lg shadow shadow-gray shadow-xl p-8 flex flex-col justify-center"
+                    className="absolute w-full h-full backface-hidden rounded-2xl bg-gray-50/90 backdrop-blur-lg shadow-xl border border-gray-200 p-8 flex flex-col justify-center"
                     style={{
                       backfaceVisibility: 'hidden',
                       transform: 'rotateX(180deg)'
                     }}
                   >
-                    <div className="text-blue-400 mb-4">
+                    <div className="text-[#20B2AA] mb-4">
                       {feature.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
                       {feature.title}
                     </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
+                    <p className="text-gray-700 text-sm leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>
                       {feature.description}
                     </p>
                   </div>

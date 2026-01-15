@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 function Navbar() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -9,17 +9,28 @@ function Navbar() {
   const navItemsRef = useRef([]);
   const ballRef = useRef(null);
   const dragStartPos = useRef({ x: 0, ballLeft: 0 });
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Product', href: '#product' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '#' },
+    { name: 'Product', href: '#' },
+    { name: 'Portfolio', href: '#' },
+    { name: 'Gallery', href: '#' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' }
   ];
+
+  // Update active index based on current route
+  useEffect(() => {
+    const currentPath = location.pathname;
+    const index = navItems.findIndex(item => item.href === currentPath);
+    if (index !== -1) {
+      setActiveIndex(index);
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     updateBallPosition(activeIndex);
@@ -48,10 +59,11 @@ function Navbar() {
     }
   };
 
-  const handleClick = (index) => {
+  const handleClick = (index, href) => {
     if (!isDragging) {
       setActiveIndex(index);
       setIsMobileMenuOpen(false);
+      navigate(href);
     }
   };
 
@@ -118,21 +130,21 @@ function Navbar() {
       <div className="max-w-7xl mx-auto py-2 px-2 sm:px-4">
         <div className="relative rounded-full shadow-2xl p-2 sm:p-2"
           style={{
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(230, 245, 255, 0.9) 50%, rgba(200, 235, 255, 0.95) 100%)',
-            border: '2px solid rgba(255, 255, 255, 0.8)',
+            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 252, 251, 0.9) 50%, rgba(224, 249, 247, 0.95) 100%)',
+            border: '2px solid rgba(32, 178, 170, 0.3)',
             backdropFilter: 'blur(25px) saturate(200%)',
             WebkitBackdropFilter: 'blur(25px) saturate(200%)'
           }}
         >
           <div className="flex items-center justify-between h-18 sm:h-18 lg:h-18">
             {/* Logo - Fully Responsive */}
-            <div className="flex items-center gap-2 pl-2 sm:pl-3 flex-shrink-0 bg-[#090040] rounded-full p-1.5 sm:p-2 h-12 w-20 xs:h-14 xs:w-24 sm:h-14 sm:w-28 md:h-16 md:w-32 lg:h-12 lg:w-32 xl:h-14 xl:w-36">
+            <Link to="/" className="flex items-center gap-2 pl-2 sm:pl-3 flex-shrink-0 bg-[#20B2AA] rounded-full p-1.5 sm:p-2 h-12 w-20 xs:h-14 xs:w-24 sm:h-14 sm:w-28 md:h-16 md:w-32 lg:h-12 lg:w-32 xl:h-14 xl:w-36">
               <img 
                 src="/logo1.png" 
                 alt="Logo" 
-                className="h-[50px] w-full object-contain"
+                className="h-[140px] w-full object-contain"
               />
-            </div>
+            </Link>
 
             {/* Desktop Navigation Items - Shifted right with more spacing */}
             <ul className="hidden lg:flex items-center justify-center gap-6 xl:gap-12 flex-1 ml-12 xl:ml-16">
@@ -143,12 +155,9 @@ function Navbar() {
                 >
                   <Link
                     to={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleClick(index);
-                    }}
-                    className={`text-gray-800 font-medium text-base xl:text-lg tracking-wide transition-all duration-300 hover:text-[#090040] relative inline-block pb-2 whitespace-nowrap
-                      ${activeIndex === index ? 'opacity-100 text-[#090040] font-semibold' : 'opacity-70'}
+                    onClick={() => handleClick(index, item.href)}
+                    className={`text-gray-800 font-medium text-base xl:text-lg tracking-wide transition-all duration-300 hover:text-[#20B2AA] relative inline-block pb-2 whitespace-nowrap
+                      ${activeIndex === index ? 'opacity-100 text-[#20B2AA] font-semibold' : 'opacity-70'}
                     `}
                     style={{
                       fontFamily: '"Outfit", sans-serif'
@@ -171,17 +180,17 @@ function Navbar() {
             >
               <div className="w-6 h-5 flex flex-col justify-between">
                 <span
-                  className={`block h-0.5 bg-[#090040] transition-all duration-300 ${
+                  className={`block h-0.5 bg-[#20B2AA] transition-all duration-300 ${
                     isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
                   }`}
                 ></span>
                 <span
-                  className={`block h-0.5 bg-[#090040] transition-all duration-300 ${
+                  className={`block h-0.5 bg-[#20B2AA] transition-all duration-300 ${
                     isMobileMenuOpen ? 'opacity-0' : ''
                   }`}
                 ></span>
                 <span
-                  className={`block h-0.5 bg-[#090040] transition-all duration-300 ${
+                  className={`block h-0.5 bg-[#20B2AA] transition-all duration-300 ${
                     isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
                   }`}
                 ></span>
@@ -196,9 +205,9 @@ function Navbar() {
             className="hidden lg:block absolute bottom-4 h-3 w-3 rounded-full cursor-grab active:cursor-grabbing"
             style={{
               left: `${ballPosition.left}px`,
-              backgroundColor: '#090040',
+              backgroundColor: '#20B2AA',
               transform: isDragging ? 'translateY(2px) scale(1.2)' : 'translateY(2px)',
-              boxShadow: '0 0 20px rgba(9, 0, 64, 0.6), 0 0 40px rgba(9, 0, 64, 0.3), 0 2px 8px rgba(9, 0, 64, 0.4)',
+              boxShadow: '0 0 20px rgba(32, 178, 170, 0.6), 0 0 40px rgba(32, 178, 170, 0.3), 0 2px 8px rgba(32, 178, 170, 0.4)',
               transition: isDragging ? 'none' : 'left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s ease',
               zIndex: 10
             }}
@@ -214,8 +223,8 @@ function Navbar() {
           <div
             className="rounded-3xl shadow-2xl p-4"
             style={{
-              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(230, 245, 255, 0.9) 50%, rgba(200, 235, 255, 0.95) 100%)',
-              border: '2px solid rgba(255, 255, 255, 0.8)',
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 252, 251, 0.9) 50%, rgba(224, 249, 247, 0.95) 100%)',
+              border: '2px solid rgba(32, 178, 170, 0.3)',
               backdropFilter: 'blur(25px) saturate(200%)',
               WebkitBackdropFilter: 'blur(25px) saturate(200%)'
             }}
@@ -223,21 +232,18 @@ function Navbar() {
             <ul className="flex flex-col gap-1">
               {navItems.map((item, index) => (
                 <li key={index}>
-                  <a
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleClick(index);
-                    }}
+                  <Link
+                    to={item.href}
+                    onClick={() => handleClick(index, item.href)}
                     className={`block px-4 py-3 rounded-2xl text-gray-800 font-medium text-base tracking-wide transition-all duration-300 hover:bg-white/60
-                      ${activeIndex === index ? 'bg-white/80 text-[#090040] font-semibold shadow-md' : 'opacity-70'}
+                      ${activeIndex === index ? 'bg-white/80 text-[#20B2AA] font-semibold shadow-md' : 'opacity-70'}
                     `}
                     style={{
                       fontFamily: '"Outfit", sans-serif'
                     }}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -253,9 +259,4 @@ function Navbar() {
   );
 }
 
-export default function App() {
-  return (
-      <Navbar />
-  
-  );
-}
+export default Navbar;

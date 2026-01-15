@@ -50,17 +50,19 @@ export default function TestimonialsSection() {
           
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - distance / 150)})`;
-            ctx.lineWidth = 0.5;
+            // Sea green color with increased opacity
+            ctx.strokeStyle = `rgba(32, 178, 170, ${0.6 * (1 - distance / 150)})`;
+            ctx.lineWidth = 1.5;
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(otherNode.x, otherNode.y);
             ctx.stroke();
           }
         });
         
+        // Draw node with sea green color
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.arc(node.x, node.y, 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(32, 178, 170, 0.8)';
         ctx.fill();
       });
       
@@ -164,15 +166,15 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#080325' }}>
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ opacity: 0.3 }} />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" style={{ opacity: 0.4 }} />
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
         <div className="text-center mb-20">
-          <h2 className="text-6xl md:text-7xl font-bold text-white mb-6" style={{ fontFamily: 'Playfair Display, serif', letterSpacing: '-0.02em' }}>
+          <h2 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'Playfair Display, serif', letterSpacing: '-0.02em' }}>
             Client Testimonials
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Lora, serif' }}>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Lora, serif' }}>
             Trusted by homeowners and businesses across the region for reliable, expert electrical services
           </p>
         </div>
@@ -182,30 +184,30 @@ export default function TestimonialsSection() {
             {getCurrentTestimonials().map((testimonial, index) => (
               <div 
                 key={currentSlide * 3 + index}
-                className="relative bg-white/5 backdrop-blur-md rounded-2xl p-8 shadow-2xl hover:bg-white/10 transition-all duration-300 hover:scale-105 flex flex-col animate-fadeIn"
+                className="relative bg-gray-50/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-gray-200 hover:bg-gray-100/90 hover:border-[#20B2AA] transition-all duration-300 hover:scale-105 flex flex-col animate-fadeIn"
               >
-                <Quote className="absolute top-6 left-6 w-12 h-12 text-white/20" />
+                <Quote className="absolute top-6 left-6 w-12 h-12 text-[#20B2AA]/20" />
                 
                 <div className="relative flex-1 flex flex-col">
                   <div className="flex gap-1 mb-6 justify-center">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-white text-white" />
+                      <Star key={i} className="w-5 h-5 fill-[#20B2AA] text-[#20B2AA]" />
                     ))}
                   </div>
 
-                  <p className="text-lg text-white leading-relaxed text-center mb-8 flex-1" style={{ fontFamily: 'Lora, serif', fontStyle: 'italic' }}>
+                  <p className="text-lg text-gray-800 leading-relaxed text-center mb-8 flex-1" style={{ fontFamily: 'Lora, serif', fontStyle: 'italic' }}>
                     "{testimonial.text}"
                   </p>
 
                   <div className="flex items-center justify-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center border-2 border-white/20">
-                      <span className="text-white font-semibold text-lg">{testimonial.image}</span>
+                    <div className="w-14 h-14 rounded-full bg-[#20B2AA]/20 flex items-center justify-center border-2 border-[#20B2AA]">
+                      <span className="text-[#20B2AA] font-semibold text-lg">{testimonial.image}</span>
                     </div>
                     <div className="text-left">
-                      <h4 className="text-white text-lg font-semibold" style={{ fontFamily: 'Playfair Display, serif' }}>
+                      <h4 className="text-gray-900 text-lg font-semibold" style={{ fontFamily: 'Playfair Display, serif' }}>
                         {testimonial.name}
                       </h4>
-                      <p className="text-gray-400 text-sm" style={{ fontFamily: 'Lora, serif' }}>
+                      <p className="text-gray-600 text-sm" style={{ fontFamily: 'Lora, serif' }}>
                         {testimonial.role}
                       </p>
                     </div>
@@ -219,7 +221,7 @@ export default function TestimonialsSection() {
         <div className="flex items-center justify-center gap-6 mt-12">
           <button 
             onClick={prevSlide}
-            className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300"
+            className="w-12 h-12 rounded-full border-2 border-[#20B2AA] flex items-center justify-center text-[#20B2AA] hover:bg-[#20B2AA]/10 transition-all duration-300"
             aria-label="Previous slide"
           >
             ←
@@ -231,7 +233,7 @@ export default function TestimonialsSection() {
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? 'bg-white w-12' : 'bg-white/30 w-2 hover:bg-white/50'
+                  index === currentSlide ? 'bg-[#20B2AA] w-12' : 'bg-gray-400 w-2 hover:bg-gray-500'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -240,7 +242,7 @@ export default function TestimonialsSection() {
 
           <button 
             onClick={nextSlide}
-            className="w-12 h-12 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300"
+            className="w-12 h-12 rounded-full border-2 border-[#20B2AA] flex items-center justify-center text-[#20B2AA] hover:bg-[#20B2AA]/10 transition-all duration-300"
             aria-label="Next slide"
           >
             →
@@ -248,7 +250,7 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="text-center mt-20">
-          <button className="bg-white text-gray-900 px-10 py-5 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-xl transform hover:scale-105 text-lg" style={{ fontFamily: 'Lora, serif' }}>
+          <button className="bg-[#20B2AA] text-white px-10 py-5 rounded-lg font-semibold hover:bg-[#1a9b94] transition-all duration-300 shadow-xl transform hover:scale-105 text-lg" style={{ fontFamily: 'Lora, serif' }}>
             Schedule Your Consultation
           </button>
         </div>

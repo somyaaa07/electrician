@@ -44,7 +44,7 @@ const AboutSection = () => {
         if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
         if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
         
-        // Draw connections
+        // Draw connections with sea green color
         nodes.forEach((otherNode, j) => {
           if (i === j) return;
           
@@ -54,18 +54,19 @@ const AboutSection = () => {
           
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - distance / 150)})`;
-            ctx.lineWidth = 0.5;
+            // Sea green color: rgb(32, 178, 170) or #20B2AA
+            ctx.strokeStyle = `rgba(32, 178, 170, ${0.6 * (1 - distance / 150)})`;
+            ctx.lineWidth = 1.5;
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(otherNode.x, otherNode.y);
             ctx.stroke();
           }
         });
         
-        // Draw node
+        // Draw node with sea green color
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.arc(node.x, node.y, 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(32, 178, 170, 0.8)';
         ctx.fill();
       });
       
@@ -81,7 +82,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className="relative bg-[#080325] min-h-screen flex items-center justify-center py-20 px-6 overflow-hidden">
+    <section className="relative bg-white min-h-screen flex items-center justify-center py-20 px-6 overflow-hidden">
       {/* Animated Technical Background */}
       <canvas
         ref={canvasRef}
@@ -103,18 +104,18 @@ const AboutSection = () => {
                 className="w-full h-[500px] lg:h-[600px] object-cover"
               />
               {/* Image Overlay */}
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-[#080325] via-transparent to-transparent opacity-60"></div> */}
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-60"></div> */}
             </div>
             
             {/* Decorative Border */}
-            {/* <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-white/20 rounded-2xl -z-10"></div> */}
+            {/* <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-gray-200 rounded-2xl -z-10"></div> */}
           </div>
           
           {/* Right Side - Text Content */}
           <div className="space-y-8">
             {/* Heading */}
             <h2 
-              className="text-white text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+              className="text-gray-900 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               About Us
@@ -122,7 +123,7 @@ const AboutSection = () => {
             
             {/* Subheading */}
             <p 
-              className="text-white/90 text-xl md:text-2xl leading-relaxed"
+              className="text-gray-800 text-xl md:text-2xl leading-relaxed"
               style={{ fontFamily: "'Lora', serif" }}
             >
              
@@ -130,19 +131,19 @@ Intell Power and Automation Pvt. Ltd. is not just a manufacturer—
             </p>
             
             {/* Decorative Line */}
-            <div className="w-24 h-1 bg-white/30 rounded-full"></div>
+            <div className="w-24 h-1 bg-[#20B2AA] rounded-full"></div>
             
             {/* Description */}
             <div className="space-y-6">
               <p 
-                className="text-white/80 text-lg leading-relaxed"
+                className="text-gray-700 text-lg leading-relaxed"
                 style={{ fontFamily: "'Lora', serif" }}
               >
               At Intell Power and Automation Pvt. Ltd., we offer comprehensive electro-mechanical solutions that go far beyond power distribution. Our integrated systems are engineered to enhance equipment safety, operational efficiency, and process automation for a wide range of industries
               </p>
               
               <p 
-                className="text-white/80 text-lg leading-relaxed"
+                className="text-gray-700 text-lg leading-relaxed"
                 style={{ fontFamily: "'Lora', serif" }}
               >
                 As a next-generation panel manufacture brand, we specialize in crafting high-efficiency electrical panels that power industrial operations across sectors. Every control system we design is built for performance, precision, and purpose.
@@ -152,7 +153,7 @@ Intell Power and Automation Pvt. Ltd. is not just a manufacturer—
             {/* Optional CTA Button */}
             <div className="pt-4">
               <button 
-                className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/30 rounded-lg transition-all duration-300 backdrop-blur-sm"
+                className="px-8 py-3 bg-[#20B2AA] hover:bg-[#1a9b94] text-white border border-[#20B2AA] rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
                 style={{ fontFamily: "'Lora', serif" }}
               >
                 Learn More
@@ -164,8 +165,8 @@ Intell Power and Automation Pvt. Ltd. is not just a manufacturer—
       </div>
       
       {/* Corner Accents */}
-      {/* <div className="absolute top-0 left-0 w-40 h-40 border-t-2 border-l-2 border-white/10"></div> */}
-      {/* <div className="absolute bottom-0 right-0 w-40 h-40 border-b-2 border-r-2 border-white/10"></div> */}
+      {/* <div className="absolute top-0 left-0 w-40 h-40 border-t-2 border-l-2 border-gray-200"></div> */}
+      {/* <div className="absolute bottom-0 right-0 w-40 h-40 border-b-2 border-r-2 border-gray-200"></div> */}
     </section>
   );
 };

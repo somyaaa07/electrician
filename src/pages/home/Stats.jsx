@@ -44,7 +44,7 @@ export default function ElectricianStats() {
         if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
         if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
         
-        // Draw connections
+        // Draw connections with sea green color
         nodes.forEach((otherNode, j) => {
           if (i === j) return;
           
@@ -54,18 +54,19 @@ export default function ElectricianStats() {
           
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - distance / 150)})`;
-            ctx.lineWidth = 0.5;
+            // Sea green color with increased opacity
+            ctx.strokeStyle = `rgba(32, 178, 170, ${0.6 * (1 - distance / 150)})`;
+            ctx.lineWidth = 1.5;
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(otherNode.x, otherNode.y);
             ctx.stroke();
           }
         });
         
-        // Draw node
+        // Draw node with sea green color
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.arc(node.x, node.y, 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(32, 178, 170, 0.8)';
         ctx.fill();
       });
       
@@ -88,18 +89,19 @@ export default function ElectricianStats() {
   ];
 
   return (
-    <div className="relative bg-[#080325] py-20 px-6 overflow-hidden">
+    <div className="relative bg-white py-20 px-6 overflow-hidden">
       <canvas 
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
+        style={{ opacity: 0.4 }}
       />
       
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
             Trusted Excellence
           </h2>
-          <p className="text-xl text-white/80" style={{ fontFamily: 'Lora, serif' }}>
+          <p className="text-xl text-gray-700" style={{ fontFamily: 'Lora, serif' }}>
             Delivering reliable electrical solutions with unmatched expertise
           </p>
         </div>
@@ -108,12 +110,12 @@ export default function ElectricianStats() {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="text-center p-8 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+              className="text-center p-8 rounded-lg bg-gray-50/90 backdrop-blur-sm border border-gray-200 hover:bg-gray-100/90 hover:border-[#20B2AA] transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              <div className="text-5xl md:text-6xl font-bold text-white mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
+              <div className="text-5xl md:text-6xl font-bold text-[#20B2AA] mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
                 {stat.number}
               </div>
-              <div className="text-lg text-white/90" style={{ fontFamily: 'Lora, serif' }}>
+              <div className="text-lg text-gray-800" style={{ fontFamily: 'Lora, serif' }}>
                 {stat.label}
               </div>
             </div>

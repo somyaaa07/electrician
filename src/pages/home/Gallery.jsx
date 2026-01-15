@@ -59,7 +59,7 @@ export default function VisualDiaryGallery() {
         if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
         if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
         
-        // Draw connections
+        // Draw connections with sea green color
         nodes.forEach((otherNode, j) => {
           if (i === j) return;
           
@@ -69,18 +69,19 @@ export default function VisualDiaryGallery() {
           
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - distance / 150)})`;
-            ctx.lineWidth = 0.5;
+            // Sea green color with increased opacity
+            ctx.strokeStyle = `rgba(32, 178, 170, ${0.6 * (1 - distance / 150)})`;
+            ctx.lineWidth = 1.5;
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(otherNode.x, otherNode.y);
             ctx.stroke();
           }
         });
         
-        // Draw node
+        // Draw node with sea green color
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.arc(node.x, node.y, 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(32, 178, 170, 0.8)';
         ctx.fill();
       });
       
@@ -130,12 +131,12 @@ export default function VisualDiaryGallery() {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-[#080325] py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
+    <div className="relative w-full min-h-screen bg-white py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
       {/* Animated Background Canvas */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
-        style={{ zIndex: 0 }}
+        style={{ zIndex: 0, opacity: 0.4 }}
       />
 
       {/* Google Fonts Import */}
@@ -146,13 +147,13 @@ export default function VisualDiaryGallery() {
       {/* Header */}
       <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-5 px-4 relative z-10">
         <p
-          className="text-white text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] uppercase mb-2 sm:mb-3 md:mb-4"
+          className="text-gray-800 text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] uppercase mb-2 sm:mb-3 md:mb-4"
           style={{ fontFamily: 'Lora, serif' }}
         >
           GALLERY
         </p>
         <h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-6"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
          Our Electrical Work Gallery
@@ -160,7 +161,7 @@ export default function VisualDiaryGallery() {
 
         {/* Fully responsive tagline */}
         <p
-          className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed px-2"
+          className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-lg max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed px-2"
           style={{ fontFamily: 'Lora, serif' }}
         >
          Electrician That Enhance your Home Decor —
@@ -208,7 +209,7 @@ export default function VisualDiaryGallery() {
       <div className="flex justify-center items-center gap-4 sm:gap-6 md:gap-8 mt-5 sm:mt-10 md:mt-10 lg:mt-10 relative z-10">
         <button
           onClick={handlePrev}
-          className="group bg-white hover:bg-gray-100 text-[#080325] p-3 sm:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 border-2 border-white"
+          className="group bg-[#20B2AA] hover:bg-[#1a9b94] text-white p-3 sm:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 border-2 border-[#20B2AA]"
           aria-label="Previous image"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
@@ -221,8 +222,8 @@ export default function VisualDiaryGallery() {
               onClick={() => setCurrentIndex(idx)}
               className={`transition-all duration-300 rounded-full ${
                 idx === currentIndex
-                  ? 'w-8 sm:w-10 md:w-12 h-2 sm:h-2.5 md:h-3 bg-white'
-                  : 'w-2 sm:w-2.5 md:w-3 h-2 sm:h-2.5 md:h-3 bg-white/30 hover:bg-white/50'
+                  ? 'w-8 sm:w-10 md:w-12 h-2 sm:h-2.5 md:h-3 bg-[#20B2AA]'
+                  : 'w-2 sm:w-2.5 md:w-3 h-2 sm:h-2.5 md:h-3 bg-gray-400 hover:bg-gray-500'
               }`}
               aria-label={`Go to image ${idx + 1}`}
             />
@@ -231,7 +232,7 @@ export default function VisualDiaryGallery() {
 
         <button
           onClick={handleNext}
-          className="group bg-white hover:bg-gray-100 text-[#080325] p-3 sm:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 border-2 border-white"
+          className="group bg-[#20B2AA] hover:bg-[#1a9b94] text-white p-3 sm:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 border-2 border-[#20B2AA]"
           aria-label="Next image"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />

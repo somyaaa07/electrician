@@ -15,7 +15,7 @@ const ServiceCard = ({ title, subtitle, description, image }) => {
 
         .service-card .card-face {
           background-size: cover;
-          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
           background-position: center;
           transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
           backface-visibility: hidden;
@@ -33,7 +33,7 @@ const ServiceCard = ({ title, subtitle, description, image }) => {
         }
 
         .service-card .card-back {
-          background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+          background: linear-gradient(135deg, #20B2AA 0%, #1a9b94 100%);
           position: absolute;
           top: 0;
           left: 0;
@@ -53,7 +53,7 @@ const ServiceCard = ({ title, subtitle, description, image }) => {
           content: '';
           display: block;
           opacity: 0.5;
-          background: linear-gradient(to bottom, rgba(8, 3, 37, 0.3), rgba(8, 3, 37, 0.8));
+          background: linear-gradient(to bottom, rgba(32, 178, 170, 0.3), rgba(32, 178, 170, 0.8));
           backface-visibility: hidden;
           border-radius: 12px;
         }
@@ -94,7 +94,7 @@ const ServiceCard = ({ title, subtitle, description, image }) => {
         .service-card .card-title::after {
           content: '';
           position: absolute;
-          background: #3b82f6;
+          background: #FFFFFF;
           display: block;
           left: 0;
           right: 0;
@@ -255,17 +255,19 @@ const ElectricianServices = () => {
           
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - distance / 150)})`;
-            ctx.lineWidth = 0.5;
+            // Sea green color with increased opacity
+            ctx.strokeStyle = `rgba(32, 178, 170, ${0.6 * (1 - distance / 150)})`;
+            ctx.lineWidth = 1.5;
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(otherNode.x, otherNode.y);
             ctx.stroke();
           }
         });
         
+        // Draw node with sea green color
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.arc(node.x, node.y, 3, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(32, 178, 170, 0.8)';
         ctx.fill();
       });
       
@@ -311,7 +313,7 @@ const ElectricianServices = () => {
   }, [isPaused]);
 
   return (
-    <div className="min-h-screen bg-[#080325] relative overflow-hidden">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@300;400;500&display=swap');
       `}</style>
@@ -320,17 +322,17 @@ const ElectricianServices = () => {
       <canvas 
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
-        style={{ zIndex: 0 }}
+        style={{ zIndex: 0, opacity: 0.3 }}
       />
 
       {/* Content */}
       <div className="relative z-10">
         {/* Header */}
         <div className="text-center py-16 px-4">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
             Electrical Services
           </h1>
-          <p className="text-xl md:text-xl text-gray-400 max-w-3xl mx-auto" style={{ fontFamily: "'Lora', serif" }}>
+          <p className="text-xl md:text-xl text-gray-700 max-w-3xl mx-auto" style={{ fontFamily: "'Lora', serif" }}>
             Professional electrical solutions for homes and businesses with certified expertise and quality workmanship
           </p>
         </div>
@@ -357,7 +359,7 @@ const ElectricianServices = () => {
 
         {/* Footer Info */}
         <div className="text-center py-12 px-4">
-          <p className="text-blue-200 text-lg" style={{ fontFamily: "'Lora', serif" }}>
+          <p className="text-[#20B2AA] text-lg font-medium" style={{ fontFamily: "'Lora', serif" }}>
             Hover over any card to pause and explore our services
           </p>
         </div>
