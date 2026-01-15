@@ -120,9 +120,9 @@ export default function ContactPage() {
                   <h3 className="text-slate-900 text-base sm:text-lg font-semibold mb-3 sm:mb-4">Contact</h3>
                   <div className="space-y-2 text-slate-600 text-sm sm:text-base leading-relaxed">
                     <p>Office Hours: Mon - Sat (9:00 AM to 6:30 PM)</p>
-                    <p className='text-slate-800'><b>Phone:</b> <span className='text-slate-600'><b>+91 9315689528</b></span></p>
-                    <p>Shop-no.24, 25th Feet Road</p>
-                    <p>Budh Vihar, Sec-63, Noida<br/><span className="text-slate-500 mt-3 block">electricservices@gmail.com</span></p>
+                    <p className='text-slate-800'><b>Phone:</b> <span className='text-slate-600'><b>+91 99895626578</b></span></p>
+                    <p>Shop-no.acd, XYZ Road</p>
+                    <p>Sec-ABC, Noida<br/><span className="text-slate-500 mt-3 block">electricservices@gmail.com</span></p>
                   </div>
                 </div>
 

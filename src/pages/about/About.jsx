@@ -40,12 +40,12 @@ export default function AboutSection() {
   ];
 
   const values = [
-    "Safety-first approach in all electrical work",
-    "Transparent pricing with no hidden costs",
-    "Timely completion of projects",
-    "Ongoing support and maintenance",
-    "Latest tools and technology",
-    "Eco-friendly electrical solutions"
+    "✅ Results Through Leadership and Teamwork",
+    "✅ Can-Do Attitude and Going the Extra Mile",
+    "✅ Recognition and Empowerment of Our People",
+    "✅ Relentless Innovation and Continuous Improvement",
+    "✅ Integrity at the Core of All We Do",
+
   ];
 
     useEffect(() => {
@@ -111,11 +111,9 @@ export default function AboutSection() {
 
               </h2>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4">
-At Intelldigix, we're not just manufacturers — we're system thinkers, precision builders, and engineering partners. With a strong foundation in automation, electrical distribution, and process control, we create panel solutions that fuel the industries of tomorrow.              </p>
+Intell Digix Automation Pvt. Ltd., founded in 2012 by Mr. Sandeep Bishnoi, is a trusted name in the field of electrical panel manufacturing and industrial automation solutions. With a vision rooted in innovation and a commitment to engineering excellence, the company has grown into a globally recognized, ISO-certified organization serving over 1,500 clients worldwide.</p>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                From simple repairs to complex installations, we handle every project with the utmost 
-                professionalism and attention to detail. Our commitment to quality workmanship and customer 
-                satisfaction has made us the preferred choice for electrical services in the area.
+               What began as a specialized effort to manufacture electrical panel components for multi-industry applications has evolved into a dynamic enterprise offering cutting-edge control systems, automation, and electrical distribution solutions across various industrial sectors.
               </p>
             </div>
 

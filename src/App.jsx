@@ -17,6 +17,9 @@ import BlogList from "./pages/blog/Blog";
 import BlogDetail from "./pages/blog/BlogDetails";
 import About1 from './pages/about/About.jsx' 
 import Steps from './pages/about/Steps.jsx'
+import FounderSection from './pages/about/Founder.jsx'
+import WhatWeDo from './pages/about/WhatWeDo.jsx'
+import Mission from './pages/about/Mission.jsx'
 function App() {
  
 
@@ -49,6 +52,10 @@ function App() {
           <div>
             <About1/>
             <Steps/>
+              <Mission/>
+            <FounderSection/>
+          
+            <WhatWeDo/>
           </div>}/>
       </Routes>
       <FooterShowcase/>
