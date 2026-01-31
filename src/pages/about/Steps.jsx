@@ -43,7 +43,7 @@ export default function ProcessSteps() {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-4 font-serif">
-            Our <span className="text-[#20B2AA]">Process</span>
+            Our <span className="text-[#5dc1d7]">Process</span>
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Follow our simple 4-step process for professional electrical services
@@ -58,7 +58,7 @@ export default function ProcessSteps() {
             
             {/* Progress Bar Fill */}
             <div 
-              className="absolute top-8 left-0 h-2 bg-[#20B2AA] rounded-full mx-8 sm:mx-12 transition-all duration-500 ease-in-out"
+              className="absolute top-8 left-0 h-2 bg-[#5dc1d7] rounded-full mx-8 sm:mx-12 transition-all duration-500 ease-in-out"
               style={{ width: `calc(${progressPercentage}% - 4rem)` }}
             ></div>
 
@@ -70,8 +70,8 @@ export default function ProcessSteps() {
                     onClick={() => handleStepClick(index)}
                     className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 bg-white flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110 ${
                       index <= currentStep
-                        ? 'border-[#20B2AA] bg-[#20B2AA] text-white'
-                        : 'border-gray-300 text-gray-400 hover:border-[#20B2AA]/50'
+                        ? 'border-[#5dc1d7] bg-[#5dc1d7] text-white'
+                        : 'border-gray-300 text-gray-400 hover:border-[#5dc1d7]/50'
                     } ${
                       index === currentStep ? 'w-20 h-20 sm:w-24 sm:h-24 shadow-2xl' : ''
                     }`}
@@ -85,7 +85,7 @@ export default function ProcessSteps() {
                   
                   <div className="mt-4 text-center">
                     <p className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
-                      index <= currentStep ? 'text-[#20B2AA]' : 'text-gray-500'
+                      index <= currentStep ? 'text-[#5dc1d7]' : 'text-gray-500'
                     }`}>
                       {step.title}
                     </p>
@@ -101,8 +101,8 @@ export default function ProcessSteps() {
           <div className="p-6 sm:p-8 md:p-10">
             {/* Step Icon and Title */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-[#20B2AA]/10 rounded-lg flex items-center justify-center">
-                <div className="text-[#20B2AA]">
+              <div className="w-16 h-16 bg-[#5dc1d7]/10 rounded-lg flex items-center justify-center">
+                <div className="text-[#5dc1d7]">
                   {steps[currentStep].icon}
                 </div>
               </div>
@@ -129,7 +129,7 @@ export default function ProcessSteps() {
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${
                   currentStep === 0
                     ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-white border-2 border-[#20B2AA] text-[#20B2AA] hover:bg-[#20B2AA] hover:text-white shadow-md hover:shadow-lg'
+                    : 'bg-white border-2 border-[#5dc1d7] text-[#5dc1d7] hover:bg-[#5dc1d7] hover:text-white shadow-md hover:shadow-lg'
                 }`}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,7 +144,7 @@ export default function ProcessSteps() {
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 ${
                   currentStep === steps.length - 1
                     ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-[#20B2AA] text-white hover:bg-[#1a9994] shadow-md hover:shadow-lg'
+                    : 'bg-[#5dc1d7] text-white hover:bg-[#1a9994] shadow-md hover:shadow-lg'
                 }`}
               >
                 Next
@@ -164,20 +164,20 @@ export default function ProcessSteps() {
               onClick={() => handleStepClick(index)}
               className={`p-4 rounded-xl border-2 transition-all duration-300 cursor-pointer ${
                 index === currentStep
-                  ? 'border-[#20B2AA] bg-[#20B2AA]/5 shadow-lg'
-                  : 'border-gray-200 hover:border-[#20B2AA]/50 hover:shadow-md'
+                  ? 'border-[#5dc1d7] bg-[#5dc1d7]/5 shadow-lg'
+                  : 'border-gray-200 hover:border-[#5dc1d7]/50 hover:shadow-md'
               }`}
             >
               <div className="flex items-center gap-3">
                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                  index === currentStep ? 'bg-[#20B2AA] text-white' : 'bg-gray-100 text-gray-600'
+                  index === currentStep ? 'bg-[#5dc1d7] text-white' : 'bg-gray-100 text-gray-600'
                 }`}>
                   {step.icon}
                 </div>
                 <div>
                   <p className="text-xs text-gray-500">Step {index + 1}</p>
                   <p className={`text-sm font-semibold ${
-                    index === currentStep ? 'text-[#20B2AA]' : 'text-gray-700'
+                    index === currentStep ? 'text-[#5dc1d7]' : 'text-gray-700'
                   }`}>
                     {step.title}
                   </p>

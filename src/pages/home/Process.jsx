@@ -33,7 +33,7 @@ const ServiceCard = ({ title, subtitle, description, image }) => {
         }
 
         .service-card .card-back {
-          background: linear-gradient(135deg, #20B2AA 0%, #1a9b94 100%);
+          background: linear-gradient(135deg, #5dc1d7 0%, #1a9b94 100%);
           position: absolute;
           top: 0;
           left: 0;
@@ -359,7 +359,7 @@ const ElectricianServices = () => {
 
         {/* Footer Info */}
         <div className="text-center py-12 px-4">
-          <p className="text-[#20B2AA] text-lg font-medium" style={{ fontFamily: "'Lora', serif" }}>
+          <p className="text-[#5dc1d7] text-lg font-medium" style={{ fontFamily: "'Lora', serif" }}>
             Hover over any card to pause and explore our services
           </p>
         </div>

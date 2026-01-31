@@ -54,7 +54,7 @@ const AboutSection = () => {
           
           if (distance < 150) {
             ctx.beginPath();
-            // Sea green color: rgb(32, 178, 170) or #20B2AA
+            // Sea green color: rgb(32, 178, 170) or #5dc1d7
             ctx.strokeStyle = `rgba(32, 178, 170, ${0.6 * (1 - distance / 150)})`;
             ctx.lineWidth = 1.5;
             ctx.moveTo(node.x, node.y);
@@ -131,7 +131,7 @@ Intell Power and Automation Pvt. Ltd. is not just a manufacturer—
             </p>
             
             {/* Decorative Line */}
-            <div className="w-24 h-1 bg-[#20B2AA] rounded-full"></div>
+            <div className="w-24 h-1 bg-[#5dc1d7] rounded-full"></div>
             
             {/* Description */}
             <div className="space-y-6">
@@ -153,7 +153,7 @@ Intell Power and Automation Pvt. Ltd. is not just a manufacturer—
             {/* Optional CTA Button */}
             <div className="pt-4">
               <button 
-                className="px-8 py-3 bg-[#20B2AA] hover:bg-[#1a9b94] text-white border border-[#20B2AA] rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                className="px-8 py-3 bg-[#5dc1d7] hover:bg-[#1a9b94] text-white border border-[#5dc1d7] rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
                 style={{ fontFamily: "'Lora', serif" }}
               >
                 Learn More

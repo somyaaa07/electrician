@@ -177,17 +177,17 @@ const WhyChooseUs = () => {
                     className="absolute w-full h-full backface-hidden rounded-2xl bg-gray-50/90 backdrop-blur-lg shadow-2xl border border-gray-200 p-8 flex flex-col items-center justify-center text-center transition-all duration-300"
                     style={{ backfaceVisibility: 'hidden' }}
                   >
-                    <div className="text-[#20B2AA]/30 text-7xl font-bold absolute top-4 right-6">
+                    <div className="text-[#5dc1d7]/30 text-7xl font-bold absolute top-4 right-6">
                       {feature.number}
                     </div>
-                    <div className="text-[#20B2AA] mb-4">
+                    <div className="text-[#5dc1d7] mb-4">
                       {feature.icon}
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
                       {feature.title}
                     </h3>
                     <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: "'Lora', serif" }}>Hover to learn more</p>
-                    <div className="w-12 h-1 bg-[#20B2AA] rounded-full"></div>
+                    <div className="w-12 h-1 bg-[#5dc1d7] rounded-full"></div>
                   </div>
 
                   {/* Back of Card */}
@@ -198,7 +198,7 @@ const WhyChooseUs = () => {
                       transform: 'rotateX(180deg)'
                     }}
                   >
-                    <div className="text-[#20B2AA] mb-4">
+                    <div className="text-[#5dc1d7] mb-4">
                       {feature.icon}
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>

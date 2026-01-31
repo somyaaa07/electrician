@@ -100,7 +100,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#20B2AA] overflow-hidden">
+    <footer className="relative bg-[#5dc1d7] overflow-hidden">
       {/* Animated Electric Background */}
       <canvas
         ref={canvasRef}
@@ -136,7 +136,7 @@ export default function Footer() {
                 <a
                   key={idx}
                   href="#"
-                  className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-white/20 border border-white/40 flex items-center justify-center text-white hover:text-[#20B2AA] hover:bg-white hover:border-white transition-all duration-300 hover:scale-110"
+                  className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-white/20 border border-white/40 flex items-center justify-center text-white hover:text-[#5dc1d7] hover:bg-white hover:border-white transition-all duration-300 hover:scale-110"
                   aria-label={`Social media ${social}`}
                 >
                   <span className="text-xs sm:text-sm font-bold">{social}</span>
@@ -226,7 +226,7 @@ export default function Footer() {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
                   <a
                     href="tel:5551234567"
-                    className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-white to-gray-100 text-[#20B2AA] font-bold text-sm sm:text-base rounded-lg sm:rounded-xl hover:shadow-2xl hover:shadow-white/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                    className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-white to-gray-100 text-[#5dc1d7] font-bold text-sm sm:text-base rounded-lg sm:rounded-xl hover:shadow-2xl hover:shadow-white/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                   >
                     <span className="text-lg sm:text-xl">📞</span>
                     <span className="whitespace-nowrap">Call Now: (555) 123-4567</span>

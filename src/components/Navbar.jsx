@@ -6,19 +6,45 @@ function Navbar() {
   const [ballPosition, setBallPosition] = useState({ left: 0, width: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const navItemsRef = useRef([]);
   const ballRef = useRef(null);
   const dragStartPos = useRef({ x: 0, ballLeft: 0 });
+  const dropdownTimerRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
 
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Services', href: '#' },
-    { name: 'Product', href: '#' },
-    { name: 'Portfolio', href: '#' },
-    { name: 'Gallery', href: '#' },
+    { 
+      name: 'Services', 
+      href: '/services',
+  dropdown: [
+  { name: 'Engineering, Design & Development', href: '/services/engineering-design-development' },
+  { name: 'Cable Laying & Conduiting', href: '/services/cable-laying-conduiting' },
+  { name: 'Engineering, Procurement & Construction (EPC)', href: '/services/epc' },
+  { name: 'Installation, Programming & Commissioning', href: '/services/installation-programming-commissioning' },
+  { name: 'Warranty & Post Warranty Services', href: '/services/warranty-post-warranty' },
+  { name: 'Safety & Energy Audit with Consulting', href: '/services/safety-energy-audit' }
+]
+    },
+    { 
+      name: 'Product', 
+      href: '/products',
+      dropdown: [
+       { name: 'ABB MV Drive Panel', href: '/products/abb-mv-drive-panel' },
+  { name: 'ABB VCB Panel', href: '/products/abb-vcb-panel' },
+  { name: 'ABB VFD Panel', href: '/products/abb-vfd-panel' },
+  { name: 'APFC - AHF Panel', href: '/products/apfc-ahf-panel' },
+  { name: 'Draw-Out MCC Panel', href: '/products/draw-out-mcc-panel' },
+  { name: 'Integrated EHouse Solutions', href: '/products/integrated-ehouse-solutions' },
+  { name: 'MCC - PCC Panel', href: '/products/mcc-pcc-panel' },
+  { name: 'PLC Panel - Servo Drive Solution', href: '/products/plc-servo-drive-panel' },
+  { name: 'UPS Panel', href: '/products/ups-panel' }
+]
+    },
+
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' }
   ];
@@ -26,7 +52,13 @@ function Navbar() {
   // Update active index based on current route
   useEffect(() => {
     const currentPath = location.pathname;
-    const index = navItems.findIndex(item => item.href === currentPath);
+    const index = navItems.findIndex(item => {
+      if (item.href === currentPath) return true;
+      if (item.dropdown) {
+        return item.dropdown.some(sub => sub.href === currentPath);
+      }
+      return false;
+    });
     if (index !== -1) {
       setActiveIndex(index);
     }
@@ -42,6 +74,7 @@ function Navbar() {
       // Close mobile menu on resize to desktop
       if (window.innerWidth >= 1024) {
         setIsMobileMenuOpen(false);
+        setOpenDropdown(null);
       }
     };
     window.addEventListener('resize', handleResize);
@@ -63,8 +96,32 @@ function Navbar() {
     if (!isDragging) {
       setActiveIndex(index);
       setIsMobileMenuOpen(false);
+      setOpenDropdown(null);
       navigate(href);
     }
+  };
+
+  const handleMouseEnter = (index) => {
+    if (window.innerWidth >= 1024) {
+      clearTimeout(dropdownTimerRef.current);
+      if (navItems[index].dropdown) {
+        setOpenDropdown(index);
+      } else {
+        setOpenDropdown(null);
+      }
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 1024) {
+      dropdownTimerRef.current = setTimeout(() => {
+        setOpenDropdown(null);
+      }, 300);
+    }
+  };
+
+  const handleDropdownEnter = () => {
+    clearTimeout(dropdownTimerRef.current);
   };
 
   const handleMouseDown = (e) => {
@@ -114,6 +171,18 @@ function Navbar() {
     }
   };
 
+  const toggleMobileDropdown = (index) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
+
+  const handleDropdownClick = (index, href, e) => {
+    e.stopPropagation();
+    setActiveIndex(index);
+    setIsMobileMenuOpen(false);
+    setOpenDropdown(null);
+    navigate(href);
+  };
+
   useEffect(() => {
     if (isDragging) {
       window.addEventListener('mousemove', handleMouseMove);
@@ -138,38 +207,109 @@ function Navbar() {
         >
           <div className="flex items-center justify-between h-18 sm:h-18 lg:h-18">
             {/* Logo - Fully Responsive */}
-            <Link to="/" className="flex items-center gap-2 pl-2 sm:pl-3 flex-shrink-0 bg-[#20B2AA] rounded-full p-1.5 sm:p-2 h-12 w-20 xs:h-14 xs:w-24 sm:h-14 sm:w-28 md:h-16 md:w-32 lg:h-12 lg:w-32 xl:h-14 xl:w-36">
+            <Link to="/" className="flex items-center gap-2 pl-2 sm:pl-3 flex-shrink-0 bg-[#5dc1d7] rounded-lg p-1.5 sm:p-2 h-12 w-20 xs:h-14 xs:w-24 sm:h-14 sm:w-28 md:h-16 md:w-32 lg:h-12 lg:w-32 xl:h-13 xl:w-36 ml-5">
               <img 
-                src="/logo1.png" 
+                src="/logo-2.png" 
                 alt="Logo" 
-                className="h-[140px] w-full object-contain"
+                className="h-[190px] w-full object-contain"
               />
             </Link>
 
-            {/* Desktop Navigation Items - Shifted right with more spacing */}
+            {/* Desktop Navigation Items */}
             <ul className="hidden lg:flex items-center justify-center gap-6 xl:gap-12 flex-1 ml-12 xl:ml-16">
               {navItems.map((item, index) => (
                 <li
                   key={index}
                   ref={(el) => (navItemsRef.current[index] = el)}
+                  className="relative group"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <Link
                     to={item.href}
-                    onClick={() => handleClick(index, item.href)}
-                    className={`text-gray-800 font-medium text-base xl:text-lg tracking-wide transition-all duration-300 hover:text-[#20B2AA] relative inline-block pb-2 whitespace-nowrap
-                      ${activeIndex === index ? 'opacity-100 text-[#20B2AA] font-semibold' : 'opacity-70'}
+                    onClick={(e) => {
+                      if (item.dropdown) {
+                        e.preventDefault();
+                      } else {
+                        handleClick(index, item.href);
+                      }
+                    }}
+                    className={`text-gray-800 font-medium text-base xl:text-lg tracking-wide transition-all duration-300 hover:text-[#5dc1d7] relative inline-block pb-2 whitespace-nowrap
+                      ${activeIndex === index ? 'opacity-100 text-[#5dc1d7] font-semibold' : 'opacity-70'}
                     `}
                     style={{
                       fontFamily: '"Outfit", sans-serif'
                     }}
                   >
                     {item.name}
+                    {item.dropdown && (
+                      <svg 
+                        className="inline-block ml-1 w-4 h-4 transition-transform duration-300"
+                        style={{
+                          transform: openDropdown === index ? 'rotate(180deg)' : 'rotate(0deg)'
+                        }}
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    )}
                   </Link>
+
+                  {/* Desktop Dropdown Menu - FIXED POSITION & SMOOTH */}
+                  {item.dropdown && (
+                    <div
+                      className={`absolute left-1/2 -translate-x-1/2 transition-all duration-300 ease-out ${
+                        openDropdown === index 
+                          ? 'top-full opacity-100 visible translate-y-2' 
+                          : 'top-[calc(100%-10px)] opacity-0 invisible translate-y-0'
+                      }`}
+                      style={{
+                        zIndex: 100
+                      }}
+                      onMouseEnter={handleDropdownEnter}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <div
+                        className="w-72 rounded-2xl shadow-2xl overflow-hidden mt-2"
+                        style={{
+                          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 252, 251, 0.95) 50%, rgba(224, 249, 247, 0.98) 100%)',
+                          border: '2px solid rgba(32, 178, 170, 0.3)',
+                          backdropFilter: 'blur(25px) saturate(200%)',
+                          WebkitBackdropFilter: 'blur(25px) saturate(200%)'
+                        }}
+                      >
+                        <ul className="py-2">
+                          {item.dropdown.map((subItem, subIndex) => (
+                            <li 
+                              key={subIndex}
+                              style={{
+                                animation: openDropdown === index ? `slideIn 0.3s ease-out ${subIndex * 0.05}s both` : 'none'
+                              }}
+                            >
+                              <Link
+                                to={subItem.href}
+                                onClick={(e) => handleDropdownClick(index, subItem.href, e)}
+                                className="block px-5 py-3 text-gray-800 font-medium text-sm tracking-wide transition-all duration-200 hover:bg-white/60 hover:text-[#5dc1d7] hover:pl-7 relative overflow-hidden group"
+                                style={{
+                                  fontFamily: '"Outfit", sans-serif'
+                                }}
+                              >
+                                <span className="relative z-10">{subItem.name}</span>
+                                <span className="absolute left-0 top-0 h-full w-1 bg-[#5dc1d7] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-200"></span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
 
-            {/* Desktop Balance Div - Reduced to balance the shift */}
+            {/* Desktop Balance Div */}
             <div className="hidden lg:block w-8 xl:w-12"></div>
 
             {/* Mobile Menu Button */}
@@ -180,17 +320,17 @@ function Navbar() {
             >
               <div className="w-6 h-5 flex flex-col justify-between">
                 <span
-                  className={`block h-0.5 bg-[#20B2AA] transition-all duration-300 ${
+                  className={`block h-0.5 bg-[#5dc1d7] transition-all duration-300 ${
                     isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
                   }`}
                 ></span>
                 <span
-                  className={`block h-0.5 bg-[#20B2AA] transition-all duration-300 ${
+                  className={`block h-0.5 bg-[#5dc1d7] transition-all duration-300 ${
                     isMobileMenuOpen ? 'opacity-0' : ''
                   }`}
                 ></span>
                 <span
-                  className={`block h-0.5 bg-[#20B2AA] transition-all duration-300 ${
+                  className={`block h-0.5 bg-[#5dc1d7] transition-all duration-300 ${
                     isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
                   }`}
                 ></span>
@@ -205,7 +345,7 @@ function Navbar() {
             className="hidden lg:block absolute bottom-4 h-3 w-3 rounded-full cursor-grab active:cursor-grabbing"
             style={{
               left: `${ballPosition.left}px`,
-              backgroundColor: '#20B2AA',
+              backgroundColor: '#5dc1d7',
               transform: isDragging ? 'translateY(2px) scale(1.2)' : 'translateY(2px)',
               boxShadow: '0 0 20px rgba(32, 178, 170, 0.6), 0 0 40px rgba(32, 178, 170, 0.3), 0 2px 8px rgba(32, 178, 170, 0.4)',
               transition: isDragging ? 'none' : 'left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s ease',
@@ -214,10 +354,10 @@ function Navbar() {
           />
         </div>
 
-        {/* Mobile Menu Dropdown */}
+        {/* Mobile Menu Dropdown - SMOOTH */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isMobileMenuOpen ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0'
+          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            isMobileMenuOpen ? 'max-h-[800px] opacity-100 mt-2' : 'max-h-0 opacity-0'
           }`}
         >
           <div
@@ -232,18 +372,81 @@ function Navbar() {
             <ul className="flex flex-col gap-1">
               {navItems.map((item, index) => (
                 <li key={index}>
-                  <Link
-                    to={item.href}
-                    onClick={() => handleClick(index, item.href)}
-                    className={`block px-4 py-3 rounded-2xl text-gray-800 font-medium text-base tracking-wide transition-all duration-300 hover:bg-white/60
-                      ${activeIndex === index ? 'bg-white/80 text-[#20B2AA] font-semibold shadow-md' : 'opacity-70'}
-                    `}
-                    style={{
-                      fontFamily: '"Outfit", sans-serif'
-                    }}
-                  >
-                    {item.name}
-                  </Link>
+                  <div>
+                    {/* Main Nav Item */}
+                    <div className="flex items-center justify-between">
+                      <Link
+                        to={item.href}
+                        onClick={(e) => {
+                          if (item.dropdown) {
+                            e.preventDefault();
+                            toggleMobileDropdown(index);
+                          } else {
+                            handleClick(index, item.href);
+                          }
+                        }}
+                        className={`flex-1 block px-4 py-3 rounded-2xl text-gray-800 font-medium text-base tracking-wide transition-all duration-300 hover:bg-white/60
+                          ${activeIndex === index ? 'bg-white/80 text-[#5dc1d7] font-semibold shadow-md' : 'opacity-70'}
+                        `}
+                        style={{
+                          fontFamily: '"Outfit", sans-serif'
+                        }}
+                      >
+                        {item.name}
+                      </Link>
+                      {item.dropdown && (
+                        <button
+                          onClick={() => toggleMobileDropdown(index)}
+                          className="px-3 py-3 text-gray-800 hover:text-[#5dc1d7] transition-colors"
+                          aria-label={`Toggle ${item.name} dropdown`}
+                        >
+                          <svg 
+                            className="w-5 h-5 transition-transform duration-300"
+                            style={{
+                              transform: openDropdown === index ? 'rotate(180deg)' : 'rotate(0deg)'
+                            }}
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Mobile Dropdown Submenu - SMOOTH */}
+                    {item.dropdown && (
+                      <div
+                        className={`overflow-hidden transition-all duration-400 ease-in-out ${
+                          openDropdown === index ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0 mt-0'
+                        }`}
+                      >
+                        <ul className="ml-4 space-y-1">
+                          {item.dropdown.map((subItem, subIndex) => (
+                            <li 
+                              key={subIndex}
+                              style={{
+                                animation: openDropdown === index ? `slideInMobile 0.3s ease-out ${subIndex * 0.05}s both` : 'none'
+                              }}
+                            >
+                              <Link
+                                to={subItem.href}
+                                onClick={(e) => handleDropdownClick(index, subItem.href, e)}
+                                className="block px-4 py-2.5 rounded-xl text-gray-700 font-medium text-sm tracking-wide transition-all duration-200 hover:bg-white/60 hover:text-[#5dc1d7] hover:pl-6 relative overflow-hidden group"
+                                style={{
+                                  fontFamily: '"Outfit", sans-serif'
+                                }}
+                              >
+                                <span className="relative z-10">{subItem.name}</span>
+                                <span className="absolute left-0 top-0 h-full w-1 bg-[#5dc1d7] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-200 rounded-l-xl"></span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 </li>
               ))}
             </ul>
@@ -255,6 +458,30 @@ function Navbar() {
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap"
         rel="stylesheet"
       />
+
+      <style jsx>{`
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateX(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideInMobile {
+          from {
+            opacity: 0;
+            transform: translateY(-5px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </nav>
   );
 }

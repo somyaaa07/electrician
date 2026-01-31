@@ -8,13 +8,13 @@ export default function FounderSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Zap className="w-8 h-8" style={{ color: '#20B2AA' }} />
-            <h2 className="text-4xl font-bold" style={{ color: '#20B2AA' }}>
+            <Zap className="w-8 h-8" style={{ color: '#5dc1d7' }} />
+            <h2 className="text-4xl font-bold" style={{ color: '#5dc1d7' }}>
               Meet Our Founder
             </h2>
-            <Zap className="w-8 h-8" style={{ color: '#20B2AA' }} />
+            <Zap className="w-8 h-8" style={{ color: '#5dc1d7' }} />
           </div>
-          <div className="w-24 h-1 mx-auto" style={{ backgroundColor: '#20B2AA' }}></div>
+          <div className="w-24 h-1 mx-auto" style={{ backgroundColor: '#5dc1d7' }}></div>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
             Leading innovation in electrical engineering and industrial automation
           </p>
@@ -33,13 +33,13 @@ export default function FounderSection() {
             </div>
             <div 
               className="absolute -bottom-6 -right-6 w-48 h-48 rounded-2xl -z-10"
-              style={{ backgroundColor: '#20B2AA', opacity: 0.2 }}
+              style={{ backgroundColor: '#5dc1d7', opacity: 0.2 }}
             ></div>
             
             {/* Floating Badge */}
             <div 
               className="absolute top-6 -left-6 rounded-xl shadow-lg p-4 text-white"
-              style={{ backgroundColor: '#20B2AA' }}
+              style={{ backgroundColor: '#5dc1d7' }}
             >
               <div className="text-3xl font-bold">20+</div>
               <div className="text-sm">Years Experience</div>
@@ -52,7 +52,7 @@ export default function FounderSection() {
               <h3 className="text-3xl font-bold text-gray-900 mb-2">
                 Mr. Sandeep Bishnoi
               </h3>
-              <p className="text-xl font-medium" style={{ color: '#20B2AA' }}>
+              <p className="text-xl font-medium" style={{ color: '#5dc1d7' }}>
                 Founder & Chief Engineer
               </p>
             </div>
@@ -67,16 +67,16 @@ export default function FounderSection() {
 
             {/* Core Values */}
             <div className="grid grid-cols-3 gap-4 pt-6">
-              <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#20B2AA10' }}>
-                <Award className="w-8 h-8 mx-auto mb-2" style={{ color: '#20B2AA' }} />
+              <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#5dc1d710' }}>
+                <Award className="w-8 h-8 mx-auto mb-2" style={{ color: '#5dc1d7' }} />
                 <div className="text-sm font-semibold text-gray-700">Safety First</div>
               </div>
-              <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#20B2AA10' }}>
-                <TrendingUp className="w-8 h-8 mx-auto mb-2" style={{ color: '#20B2AA' }} />
+              <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#5dc1d710' }}>
+                <TrendingUp className="w-8 h-8 mx-auto mb-2" style={{ color: '#5dc1d7' }} />
                 <div className="text-sm font-semibold text-gray-700">Performance</div>
               </div>
-              <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#20B2AA10' }}>
-                <Zap className="w-8 h-8 mx-auto mb-2" style={{ color: '#20B2AA' }} />
+              <div className="text-center p-4 rounded-lg" style={{ backgroundColor: '#5dc1d710' }}>
+                <Zap className="w-8 h-8 mx-auto mb-2" style={{ color: '#5dc1d7' }} />
                 <div className="text-sm font-semibold text-gray-700">Automation</div>
               </div>
             </div>
@@ -84,19 +84,19 @@ export default function FounderSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-6">
               <div className="text-center">
-                <div className="text-3xl font-bold" style={{ color: '#20B2AA' }}>
+                <div className="text-3xl font-bold" style={{ color: '#5dc1d7' }}>
                   500+
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold" style={{ color: '#20B2AA' }}>
+                <div className="text-3xl font-bold" style={{ color: '#5dc1d7' }}>
                   100+
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Industrial Clients</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold" style={{ color: '#20B2AA' }}>
+                <div className="text-3xl font-bold" style={{ color: '#5dc1d7' }}>
                   98%
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Client Satisfaction</div>
@@ -104,7 +104,7 @@ export default function FounderSection() {
             </div>
 
             {/* Quote */}
-            <div className="border-l-4 pl-6 py-4 mt-8 rounded-r-lg" style={{ borderColor: '#20B2AA', backgroundColor: '#20B2AA05' }}>
+            <div className="border-l-4 pl-6 py-4 mt-8 rounded-r-lg" style={{ borderColor: '#5dc1d7', backgroundColor: '#5dc1d705' }}>
               <p className="text-gray-700 italic text-lg">
                 "Excellence in electrical engineering comes from combining technical expertise with an unwavering commitment to safety and innovation."
               </p>
@@ -114,13 +114,13 @@ export default function FounderSection() {
             <div className="flex items-center gap-3 pt-4">
               <div 
                 className="px-4 py-2 rounded-full text-white text-sm font-medium"
-                style={{ backgroundColor: '#20B2AA' }}
+                style={{ backgroundColor: '#5dc1d7' }}
               >
                 ⚡ Certified Electrical Engineer
               </div>
               <div 
                 className="px-4 py-2 rounded-full text-white text-sm font-medium"
-                style={{ backgroundColor: '#20B2AA' }}
+                style={{ backgroundColor: '#5dc1d7' }}
               >
                 🏆 Industry Leader
               </div>
@@ -129,9 +129,9 @@ export default function FounderSection() {
         </div>
 
         {/* Vision Statement */}
-        <div className="mt-16 p-8 rounded-2xl" style={{ backgroundColor: '#20B2AA10' }}>
+        <div className="mt-16 p-8 rounded-2xl" style={{ backgroundColor: '#5dc1d710' }}>
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-4" style={{ color: '#20B2AA' }}>
+            <h3 className="text-2xl font-bold mb-4" style={{ color: '#5dc1d7' }}>
               Our Vision
             </h3>
             <p className="text-gray-700 text-lg leading-relaxed">

@@ -110,9 +110,9 @@ export default function ElectricianStats() {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="text-center p-8 rounded-lg bg-gray-50/90 backdrop-blur-sm border border-gray-200 hover:bg-gray-100/90 hover:border-[#20B2AA] transition-all duration-300 shadow-md hover:shadow-lg"
+              className="text-center p-8 rounded-lg bg-gray-50/90 backdrop-blur-sm border border-gray-200 hover:bg-gray-100/90 hover:border-[#5dc1d7] transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              <div className="text-5xl md:text-6xl font-bold text-[#20B2AA] mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
+              <div className="text-5xl md:text-6xl font-bold text-[#5dc1d7] mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
                 {stat.number}
               </div>
               <div className="text-lg text-gray-800" style={{ fontFamily: 'Lora, serif' }}>

@@ -133,7 +133,7 @@ export default function ElectricianBanner() {
 
             {/* CTA Button - Larger text for mobile/tablet */}
             <div className="flex justify-center lg:justify-start">
-              <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-[#20B2AA] rounded-full text-white font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#090040]">
+              <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-[#5dc1d7] rounded-full text-white font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#090040]">
                 <div className="absolute inset-0 shimmer"></div>
                 <span style={{ fontFamily: 'Lora, serif' }} className="relative z-10 flex items-center gap-2 sm:gap-3 text-base sm:text-lg md:text-lg">
                   Get A Free Quote
