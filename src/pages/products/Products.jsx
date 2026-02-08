@@ -72,6 +72,10 @@ export default function ProductPage({ data }) {
 
   const HeroIcon = data.hero.badge.icon;
   const SidebarIcon = data.sidebarStat.icon;
+    useEffect(() => {
+      setIsVisible(true);
+      window.scrollTo(0, 0);
+    }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -195,7 +199,7 @@ export default function ProductPage({ data }) {
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent backdrop-blur-sm"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col justify-center items-center text-center py-20">
           <div className="mb-6 sm:mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>

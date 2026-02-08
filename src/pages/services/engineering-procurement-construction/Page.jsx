@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 
 // Add Google Fonts
 const fontLink = document.createElement('link');
@@ -117,68 +117,128 @@ if (!document.querySelector('style[data-animations]')) {
   document.head.appendChild(styleSheet);
 }
 
-export default function ElectricianServices() {
+export default function EPCServices() {
   const [activeTab, setActiveTab] = useState('all');
 
   const services = [
     {
       id: 1,
-      icon: '🏠',
-      title: 'Residential Electrical',
-      category: 'residential',
-      description: 'Complete home electrical services including wiring, panel upgrades, lighting installation, and electrical repairs.',
-      features: ['Home Rewiring', 'Panel Upgrades', 'Outlet Installation', 'Safety Inspections'],
-      price: 'From $150',
+      icon: '📐',
+      title: 'Front-End Engineering Design (FEED)',
+      category: 'engineering',
+      description: 'Comprehensive FEED studies providing detailed project scope, cost estimates, and technical specifications.',
+      features: ['Feasibility Studies', 'Conceptual Design', 'Cost Estimation', 'Risk Assessment'],
+      price: 'Custom Quote',
       color: '#5dc1d7'
     },
     {
       id: 2,
-      icon: '🏢',
-      title: 'Commercial Solutions',
-      category: 'commercial',
-      description: 'Professional electrical services for businesses, offices, and commercial properties.',
-      features: ['Office Systems', 'Commercial Lighting', 'Power Distribution', 'Compliance'],
+      icon: '🏗️',
+      title: 'Detailed Engineering',
+      category: 'engineering',
+      description: 'Complete detailed engineering services including process, mechanical, electrical, and civil design.',
+      features: ['Process Engineering', 'P&ID Development', 'Equipment Specs', '3D Modeling'],
       price: 'Custom Quote',
       color: '#4a9fb5'
     },
     {
       id: 3,
-      icon: '⚡',
-      title: 'Emergency Repairs',
-      category: 'emergency',
-      description: '24/7 emergency electrical services to keep your property safe and powered.',
-      features: ['Power Outages', 'Emergency Fixes', 'Safety Repairs', 'Same-Day Service'],
-      price: 'Call Now',
+      icon: '📦',
+      title: 'Equipment Procurement',
+      category: 'procurement',
+      description: 'Strategic procurement of major equipment, machinery, and critical components for industrial projects.',
+      features: ['Vendor Selection', 'Quality Assurance', 'Logistics Planning', 'Cost Optimization'],
+      price: 'Custom Quote',
       color: '#5dc1d7'
     },
     {
       id: 4,
-      icon: '💡',
-      title: 'Lighting Design',
-      category: 'residential',
-      description: 'Custom lighting solutions and installations to enhance your space.',
-      features: ['LED Installation', 'Outdoor Lighting', 'Smart Systems', 'Energy Efficient'],
-      price: 'From $200',
+      icon: '🔧',
+      title: 'Material Procurement',
+      category: 'procurement',
+      description: 'End-to-end material procurement services including bulk materials, piping, and structural components.',
+      features: ['Material Sourcing', 'Inspection Services', 'Inventory Control', 'Delivery Management'],
+      price: 'Custom Quote',
       color: '#4a9fb5'
     },
     {
       id: 5,
-      icon: '🔌',
-      title: 'Panel Upgrades',
-      category: 'residential',
-      description: 'Electrical panel upgrades and replacements to meet modern power demands.',
-      features: ['Main Panel', 'Sub-Panels', 'Circuit Expansion', 'Code Compliance'],
-      price: 'From $800',
+      icon: '🏭',
+      title: 'Civil & Structural Construction',
+      category: 'construction',
+      description: 'Complete civil and structural construction services for industrial facilities and infrastructure.',
+      features: ['Foundation Work', 'Structural Steel', 'Concrete Works', 'Site Preparation'],
+      price: 'Custom Quote',
       color: '#5dc1d7'
     },
     {
       id: 6,
+      icon: '⚙️',
+      title: 'Mechanical Construction',
+      category: 'construction',
+      description: 'Professional mechanical construction including equipment installation and piping systems.',
+      features: ['Equipment Erection', 'Piping Installation', 'HVAC Systems', 'Alignment Works'],
+      price: 'Custom Quote',
+      color: '#4a9fb5'
+    },
+    {
+      id: 7,
+      icon: '⚡',
+      title: 'Electrical & Instrumentation',
+      category: 'construction',
+      description: 'Complete E&I construction services including power distribution, control systems, and instrumentation.',
+      features: ['Power Systems', 'Control Panels', 'Cable Installation', 'Instrument Calibration'],
+      price: 'Custom Quote',
+      color: '#5dc1d7'
+    },
+    {
+      id: 8,
+      icon: '📋',
+      title: 'Project Management',
+      category: 'engineering',
+      description: 'Comprehensive project management services ensuring on-time, on-budget project delivery.',
+      features: ['Schedule Control', 'Cost Management', 'Quality Control', 'HSE Management'],
+      price: 'Custom Quote',
+      color: '#4a9fb5'
+    },
+    {
+      id: 9,
       icon: '🔍',
-      title: 'Inspections',
-      category: 'commercial',
-      description: 'Thorough electrical inspections and safety testing.',
-      features: ['Safety Checks', 'Pre-Purchase', 'Code Compliance', 'Detailed Reports'],
-      price: 'From $250',
+      title: 'Quality Assurance & Control',
+      category: 'procurement',
+      description: 'Rigorous QA/QC services ensuring compliance with project specifications and industry standards.',
+      features: ['Inspection Plans', 'Testing Protocols', 'Documentation', 'Non-Conformance'],
+      price: 'Custom Quote',
+      color: '#5dc1d7'
+    },
+    {
+      id: 10,
+      icon: '🚀',
+      title: 'Pre-Commissioning & Commissioning',
+      category: 'construction',
+      description: 'Systematic pre-commissioning and commissioning services to ensure safe plant startup.',
+      features: ['System Testing', 'Performance Testing', 'Documentation', 'Handover Support'],
+      price: 'Custom Quote',
+      color: '#4a9fb5'
+    },
+    {
+      id: 11,
+      icon: '🛡️',
+      title: 'Health, Safety & Environment',
+      category: 'engineering',
+      description: 'Comprehensive HSE management ensuring zero-harm operations throughout project lifecycle.',
+      features: ['Safety Planning', 'Risk Mitigation', 'Training Programs', 'Compliance Audits'],
+      price: 'Custom Quote',
+      color: '#5dc1d7'
+    },
+    {
+      id: 12,
+      icon: '🔄',
+      title: 'Turnkey EPC Solutions',
+      category: 'construction',
+      description: 'Complete turnkey EPC services from concept to commissioning for industrial facilities.',
+      features: ['Single Point Contact', 'Integrated Execution', 'Fast-Track Delivery', 'Guaranteed Performance'],
+      price: 'Custom Quote',
       color: '#4a9fb5'
     },
   ];
@@ -187,6 +247,10 @@ export default function ElectricianServices() {
     ? services 
     : services.filter(s => s.category === activeTab);
 
+      useEffect(() => {
+     
+        window.scrollTo(0, 0);
+      }, []);
   return (
     <div style={styles.container}>
       {/* Hero Section */}
@@ -194,18 +258,18 @@ export default function ElectricianServices() {
         <div style={styles.heroContent}>
           <div className="hero-grid" style={styles.heroGrid}>
             <div style={styles.heroText}>
-              <span style={styles.badge}>⚡ Professional Services</span>
+              <span style={styles.badge}>🏗️ Complete EPC Solutions</span>
               <h1 className="hero-title" style={styles.heroTitle}>
-                Expert Electrical
+                Engineering, Procurement &
                 <br />
-                <span style={styles.heroHighlight}>Solutions</span>
+                <span style={styles.heroHighlight}>Construction Services</span>
               </h1>
               <p style={styles.heroSubtitle}>
-                Trusted by 5000+ customers for residential and commercial electrical needs
+                Trusted by 200+ industrial clients for turnkey EPC projects across oil & gas, power, and infrastructure sectors
               </p>
               <div className="hero-buttons" style={styles.heroButtons}>
-                <button style={styles.primaryBtn}>Get Free Quote</button>
-                <button style={styles.secondaryBtn}>📞 (555) 123-4567</button>
+                <button style={styles.primaryBtn}>Get Project Quote</button>
+                <button style={styles.secondaryBtn}>📞 (555) 234-5678</button>
               </div>
             </div>
             <div style={styles.heroImageSection}>
@@ -213,16 +277,16 @@ export default function ElectricianServices() {
               <div style={styles.heroImageWrapper}>
                 <img 
                   className="hero-image"
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80" 
-                  alt="Electrician at work"
+                  src="/service3.jpg" 
+                  alt="EPC construction site"
                   style={styles.heroImage}
                 />
                 {/* Floating badge */}
                 <div style={styles.floatingBadge}>
                   <div style={styles.badgeIcon}>✓</div>
                   <div>
-                    <div style={styles.badgeTitle}>Licensed & Insured</div>
-                    <div style={styles.badgeSubtitle}>Certified Professionals</div>
+                    <div style={styles.badgeTitle}>ISO 9001 Certified</div>
+                    <div style={styles.badgeSubtitle}>Global EPC Expertise</div>
                   </div>
                 </div>
               </div>
@@ -232,16 +296,16 @@ export default function ElectricianServices() {
           {/* Stats Bar */}
           <div className="stats-grid" style={styles.statsBar}>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>15+</div>
+              <div style={styles.statNumber}>30+</div>
               <div style={styles.statLabel}>Years Experience</div>
             </div>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>5000+</div>
-              <div style={styles.statLabel}>Projects Done</div>
+              <div style={styles.statNumber}>200+</div>
+              <div style={styles.statLabel}>EPC Projects</div>
             </div>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>24/7</div>
-              <div style={styles.statLabel}>Available</div>
+              <div style={styles.statNumber}>$5B+</div>
+              <div style={styles.statLabel}>Project Value</div>
             </div>
           </div>
         </div>
@@ -259,24 +323,24 @@ export default function ElectricianServices() {
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'residential' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('residential')}
+            style={{...styles.tab, ...(activeTab === 'engineering' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('engineering')}
           >
-            Residential
+            Engineering
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'commercial' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('commercial')}
+            style={{...styles.tab, ...(activeTab === 'procurement' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('procurement')}
           >
-            Commercial
+            Procurement
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'emergency' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('emergency')}
+            style={{...styles.tab, ...(activeTab === 'construction' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('construction')}
           >
-            Emergency
+            Construction
           </button>
         </div>
 
@@ -404,16 +468,6 @@ const styles = {
     marginBottom: '20px',
     lineHeight: '1.1',
     fontFamily: "'Playfair Display', serif",
-  },
-  '@media (max-width: 968px)': {
-    heroTitle: {
-      fontSize: '3rem',
-    },
-  },
-  '@media (max-width: 640px)': {
-    heroTitle: {
-      fontSize: '2.5rem',
-    },
   },
   heroHighlight: {
     color: '#ffffff',
@@ -641,40 +695,5 @@ const styles = {
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     fontFamily: "'Playfair Display', serif",
-  },
-  ctaSection: {
-    background: 'linear-gradient(135deg, #0a4d5c 0%, #5dc1d7 100%)',
-    padding: '80px 20px',
-    textAlign: 'center',
-  },
-  ctaContent: {
-    maxWidth: '700px',
-    margin: '0 auto',
-    color: 'white',
-  },
-  ctaTitle: {
-    fontSize: '2.5rem',
-    fontWeight: '800',
-    marginBottom: '15px',
-    fontFamily: "'Playfair Display', serif",
-  },
-  ctaText: {
-    fontSize: '1.2rem',
-    marginBottom: '30px',
-    opacity: 0.9,
-    fontFamily: "'Lora', serif",
-  },
-  ctaButton: {
-    padding: '18px 45px',
-    background: 'white',
-    color: '#0a4d5c',
-    border: 'none',
-    borderRadius: '30px',
-    fontSize: '1.1rem',
-    fontWeight: '600',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    fontFamily: "'Playfair Display', serif",
-    boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
   },
 };

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 function Navbar() {
@@ -14,40 +14,52 @@ function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const navItems = [
+  // Memoize navItems to prevent re-creation on every render
+  const navItems = useMemo(() => [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { 
       name: 'Services', 
       href: '/services',
-  dropdown: [
-  { name: 'Engineering, Design & Development', href: '/services/engineering-design-development' },
-  { name: 'Cable Laying & Conduiting', href: '/services/cable-laying-conduiting' },
-  { name: 'Engineering, Procurement & Construction (EPC)', href: '/services/epc' },
-  { name: 'Installation, Programming & Commissioning', href: '/services/installation-programming-commissioning' },
-  { name: 'Warranty & Post Warranty Services', href: '/services/warranty-post-warranty' },
-  { name: 'Safety & Energy Audit with Consulting', href: '/services/safety-energy-audit' }
-]
+      dropdown: [
+        { name: 'Engineering, Design & Development', href: '/services/engineering-design-development' },
+        { name: 'Cable Laying & Conduiting', href: '/services/cable-laying-conduiting' },
+        { name: 'Engineering, Procurement & Construction (EPC)', href: '/services/epc' },
+        { name: 'Installation, Programming & Commissioning', href: '/services/installation-programming-commissioning' },
+        { name: 'Warranty & Post Warranty Services', href: '/services/warranty-post-warranty' },
+        { name: 'Safety & Energy Audit with Consulting', href: '/services/safety-energy-audit' }
+      ]
     },
     { 
       name: 'Product', 
       href: '/products',
       dropdown: [
-       { name: 'ABB MV Drive Panel', href: '/products/abb-mv-drive-panel' },
-  { name: 'ABB VCB Panel', href: '/products/abb-vcb-panel' },
-  { name: 'ABB VFD Panel', href: '/products/abb-vfd-panel' },
-  { name: 'APFC - AHF Panel', href: '/products/apfc-ahf-panel' },
-  { name: 'Draw-Out MCC Panel', href: '/products/draw-out-mcc-panel' },
-  { name: 'Integrated EHouse Solutions', href: '/products/integrated-ehouse-solutions' },
-  { name: 'MCC - PCC Panel', href: '/products/mcc-pcc-panel' },
-  { name: 'PLC Panel - Servo Drive Solution', href: '/products/plc-servo-drive-panel' },
-  { name: 'UPS Panel', href: '/products/ups-panel' }
-]
+        { name: 'ABB MV Drive Panel', href: '/products/abb-mv-drive-panel' },
+        { name: 'ABB VCB Panel', href: '/products/abb-vcb-panel' },
+        { name: 'ABB VFD Panel', href: '/products/abb-vfd-panel' },
+        { name: 'APFC - AHF Panel', href: '/products/apfc-ahf-panel' },
+        { name: 'Draw-Out MCC Panel', href: '/products/draw-out-mcc-panel' },
+        { name: 'Integrated EHouse Solutions', href: '/products/integrated-ehouse-solutions' },
+        { name: 'MCC - PCC Panel', href: '/products/mcc-pcc-panel' },
+        { name: 'PLC Panel - Servo Drive Solution', href: '/products/plc-servo-drive-panel' },
+        { name: 'UPS Panel', href: '/products/ups-panel' }
+      ]
     },
-
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' }
-  ];
+  ], []);
+
+  // Optimize ball position update with useCallback
+  const updateBallPosition = useCallback((index) => {
+    const item = navItemsRef.current[index];
+    if (item) {
+      const { offsetLeft, offsetWidth } = item;
+      setBallPosition({
+        left: offsetLeft + offsetWidth / 2 - 6,
+        width: offsetWidth
+      });
+    }
+  }, []);
 
   // Update active index based on current route
   useEffect(() => {
@@ -62,46 +74,44 @@ function Navbar() {
     if (index !== -1) {
       setActiveIndex(index);
     }
-  }, [location.pathname]);
+  }, [location.pathname, navItems]);
 
+  // Update ball position when active index changes
   useEffect(() => {
     updateBallPosition(activeIndex);
-  }, [activeIndex]);
+  }, [activeIndex, updateBallPosition]);
 
+  // Debounced resize handler for better performance
   useEffect(() => {
+    let resizeTimeout;
     const handleResize = () => {
-      updateBallPosition(activeIndex);
-      // Close mobile menu on resize to desktop
-      if (window.innerWidth >= 1024) {
-        setIsMobileMenuOpen(false);
-        setOpenDropdown(null);
-      }
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        updateBallPosition(activeIndex);
+        if (window.innerWidth >= 1024) {
+          setIsMobileMenuOpen(false);
+          setOpenDropdown(null);
+        }
+      }, 150); // Debounce resize events
     };
+    
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [activeIndex]);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(resizeTimeout);
+    };
+  }, [activeIndex, updateBallPosition]);
 
-  const updateBallPosition = (index) => {
-    const item = navItemsRef.current[index];
-    if (item) {
-      const { offsetLeft, offsetWidth } = item;
-      setBallPosition({
-        left: offsetLeft + offsetWidth / 2 - 6,
-        width: offsetWidth
-      });
-    }
-  };
-
-  const handleClick = (index, href) => {
+  const handleClick = useCallback((index, href) => {
     if (!isDragging) {
       setActiveIndex(index);
       setIsMobileMenuOpen(false);
       setOpenDropdown(null);
       navigate(href);
     }
-  };
+  }, [isDragging, navigate]);
 
-  const handleMouseEnter = (index) => {
+  const handleMouseEnter = useCallback((index) => {
     if (window.innerWidth >= 1024) {
       clearTimeout(dropdownTimerRef.current);
       if (navItems[index].dropdown) {
@@ -110,21 +120,21 @@ function Navbar() {
         setOpenDropdown(null);
       }
     }
-  };
+  }, [navItems]);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     if (window.innerWidth >= 1024) {
       dropdownTimerRef.current = setTimeout(() => {
         setOpenDropdown(null);
       }, 300);
     }
-  };
+  }, []);
 
-  const handleDropdownEnter = () => {
+  const handleDropdownEnter = useCallback(() => {
     clearTimeout(dropdownTimerRef.current);
-  };
+  }, []);
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = useCallback((e) => {
     if (window.innerWidth >= 1024) {
       setIsDragging(true);
       dragStartPos.current = {
@@ -132,9 +142,9 @@ function Navbar() {
         ballLeft: ballPosition.left
       };
     }
-  };
+  }, [ballPosition.left]);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = useCallback((e) => {
     if (isDragging) {
       const deltaX = e.clientX - dragStartPos.current.x;
       const newLeft = dragStartPos.current.ballLeft + deltaX;
@@ -153,35 +163,35 @@ function Navbar() {
         }
       });
       
-      setBallPosition({
-        left: newLeft,
-        width: ballPosition.width
-      });
+      setBallPosition(prev => ({
+        ...prev,
+        left: newLeft
+      }));
       
       if (minDistance < 50) {
         setActiveIndex(closestIndex);
       }
     }
-  };
+  }, [isDragging]);
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     if (isDragging) {
       setIsDragging(false);
       updateBallPosition(activeIndex);
     }
-  };
+  }, [isDragging, activeIndex, updateBallPosition]);
 
-  const toggleMobileDropdown = (index) => {
-    setOpenDropdown(openDropdown === index ? null : index);
-  };
+  const toggleMobileDropdown = useCallback((index) => {
+    setOpenDropdown(prev => prev === index ? null : index);
+  }, []);
 
-  const handleDropdownClick = (index, href, e) => {
+  const handleDropdownClick = useCallback((index, href, e) => {
     e.stopPropagation();
     setActiveIndex(index);
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
     navigate(href);
-  };
+  }, [navigate]);
 
   useEffect(() => {
     if (isDragging) {
@@ -192,7 +202,7 @@ function Navbar() {
         window.removeEventListener('mouseup', handleMouseUp);
       };
     }
-  }, [isDragging, ballPosition, activeIndex]);
+  }, [isDragging, handleMouseMove, handleMouseUp]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
@@ -219,7 +229,7 @@ function Navbar() {
             <ul className="hidden lg:flex items-center justify-center gap-6 xl:gap-12 flex-1 ml-12 xl:ml-16">
               {navItems.map((item, index) => (
                 <li
-                  key={index}
+                  key={item.name}
                   ref={(el) => (navItemsRef.current[index] = el)}
                   className="relative group"
                   onMouseEnter={() => handleMouseEnter(index)}
@@ -234,7 +244,7 @@ function Navbar() {
                         handleClick(index, item.href);
                       }
                     }}
-                    className={`text-gray-800 font-medium text-base xl:text-lg tracking-wide transition-all duration-300 hover:text-[#5dc1d7] relative inline-block pb-2 whitespace-nowrap
+                    className={`text-gray-800 font-medium text-base xl:text-lg tracking-wide transition-all duration-200 hover:text-[#5dc1d7] relative inline-block pb-2 whitespace-nowrap
                       ${activeIndex === index ? 'opacity-100 text-[#5dc1d7] font-semibold' : 'opacity-70'}
                     `}
                     style={{
@@ -244,7 +254,7 @@ function Navbar() {
                     {item.name}
                     {item.dropdown && (
                       <svg 
-                        className="inline-block ml-1 w-4 h-4 transition-transform duration-300"
+                        className="inline-block ml-1 w-4 h-4 transition-transform duration-200"
                         style={{
                           transform: openDropdown === index ? 'rotate(180deg)' : 'rotate(0deg)'
                         }}
@@ -257,16 +267,17 @@ function Navbar() {
                     )}
                   </Link>
 
-                  {/* Desktop Dropdown Menu - FIXED POSITION & SMOOTH */}
+                  {/* Desktop Dropdown Menu */}
                   {item.dropdown && (
                     <div
-                      className={`absolute left-1/2 -translate-x-1/2 transition-all duration-300 ease-out ${
+                      className={`absolute left-1/2 -translate-x-1/2 transition-all duration-200 ease-out ${
                         openDropdown === index 
                           ? 'top-full opacity-100 visible translate-y-2' 
                           : 'top-[calc(100%-10px)] opacity-0 invisible translate-y-0'
                       }`}
                       style={{
-                        zIndex: 100
+                        zIndex: 100,
+                        willChange: openDropdown === index ? 'transform, opacity' : 'auto'
                       }}
                       onMouseEnter={handleDropdownEnter}
                       onMouseLeave={handleMouseLeave}
@@ -282,22 +293,17 @@ function Navbar() {
                       >
                         <ul className="py-2">
                           {item.dropdown.map((subItem, subIndex) => (
-                            <li 
-                              key={subIndex}
-                              style={{
-                                animation: openDropdown === index ? `slideIn 0.3s ease-out ${subIndex * 0.05}s both` : 'none'
-                              }}
-                            >
+                            <li key={subItem.href}>
                               <Link
                                 to={subItem.href}
                                 onClick={(e) => handleDropdownClick(index, subItem.href, e)}
-                                className="block px-5 py-3 text-gray-800 font-medium text-sm tracking-wide transition-all duration-200 hover:bg-white/60 hover:text-[#5dc1d7] hover:pl-7 relative overflow-hidden group"
+                                className="block px-5 py-3 text-gray-800 font-medium text-sm tracking-wide transition-all duration-150 hover:bg-white/60 hover:text-[#5dc1d7] hover:pl-7 relative overflow-hidden group"
                                 style={{
                                   fontFamily: '"Outfit", sans-serif'
                                 }}
                               >
                                 <span className="relative z-10">{subItem.name}</span>
-                                <span className="absolute left-0 top-0 h-full w-1 bg-[#5dc1d7] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-200"></span>
+                                <span className="absolute left-0 top-0 h-full w-1 bg-[#5dc1d7] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-150"></span>
                               </Link>
                             </li>
                           ))}
@@ -338,7 +344,7 @@ function Navbar() {
             </button>
           </div>
 
-          {/* Desktop Draggable Ball */}
+          {/* Desktop Draggable Ball - OPTIMIZED */}
           <div
             ref={ballRef}
             onMouseDown={handleMouseDown}
@@ -348,15 +354,16 @@ function Navbar() {
               backgroundColor: '#5dc1d7',
               transform: isDragging ? 'translateY(2px) scale(1.2)' : 'translateY(2px)',
               boxShadow: '0 0 20px rgba(32, 178, 170, 0.6), 0 0 40px rgba(32, 178, 170, 0.3), 0 2px 8px rgba(32, 178, 170, 0.4)',
-              transition: isDragging ? 'none' : 'left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s ease',
-              zIndex: 10
+              transition: isDragging ? 'none' : 'left 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.2s ease',
+              zIndex: 10,
+              willChange: 'left, transform'
             }}
           />
         </div>
 
-        {/* Mobile Menu Dropdown - SMOOTH */}
+        {/* Mobile Menu Dropdown */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+          className={`lg:hidden overflow-hidden transition-all duration-400 ease-in-out ${
             isMobileMenuOpen ? 'max-h-[800px] opacity-100 mt-2' : 'max-h-0 opacity-0'
           }`}
         >
@@ -371,7 +378,7 @@ function Navbar() {
           >
             <ul className="flex flex-col gap-1">
               {navItems.map((item, index) => (
-                <li key={index}>
+                <li key={item.name}>
                   <div>
                     {/* Main Nav Item */}
                     <div className="flex items-center justify-between">
@@ -385,7 +392,7 @@ function Navbar() {
                             handleClick(index, item.href);
                           }
                         }}
-                        className={`flex-1 block px-4 py-3 rounded-2xl text-gray-800 font-medium text-base tracking-wide transition-all duration-300 hover:bg-white/60
+                        className={`flex-1 block px-4 py-3 rounded-2xl text-gray-800 font-medium text-base tracking-wide transition-all duration-200 hover:bg-white/60
                           ${activeIndex === index ? 'bg-white/80 text-[#5dc1d7] font-semibold shadow-md' : 'opacity-70'}
                         `}
                         style={{
@@ -401,7 +408,7 @@ function Navbar() {
                           aria-label={`Toggle ${item.name} dropdown`}
                         >
                           <svg 
-                            className="w-5 h-5 transition-transform duration-300"
+                            className="w-5 h-5 transition-transform duration-200"
                             style={{
                               transform: openDropdown === index ? 'rotate(180deg)' : 'rotate(0deg)'
                             }}
@@ -415,31 +422,26 @@ function Navbar() {
                       )}
                     </div>
 
-                    {/* Mobile Dropdown Submenu - SMOOTH */}
+                    {/* Mobile Dropdown Submenu */}
                     {item.dropdown && (
                       <div
-                        className={`overflow-hidden transition-all duration-400 ease-in-out ${
+                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
                           openDropdown === index ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0 mt-0'
                         }`}
                       >
                         <ul className="ml-4 space-y-1">
-                          {item.dropdown.map((subItem, subIndex) => (
-                            <li 
-                              key={subIndex}
-                              style={{
-                                animation: openDropdown === index ? `slideInMobile 0.3s ease-out ${subIndex * 0.05}s both` : 'none'
-                              }}
-                            >
+                          {item.dropdown.map((subItem) => (
+                            <li key={subItem.href}>
                               <Link
                                 to={subItem.href}
                                 onClick={(e) => handleDropdownClick(index, subItem.href, e)}
-                                className="block px-4 py-2.5 rounded-xl text-gray-700 font-medium text-sm tracking-wide transition-all duration-200 hover:bg-white/60 hover:text-[#5dc1d7] hover:pl-6 relative overflow-hidden group"
+                                className="block px-4 py-2.5 rounded-xl text-gray-700 font-medium text-sm tracking-wide transition-all duration-150 hover:bg-white/60 hover:text-[#5dc1d7] hover:pl-6 relative overflow-hidden group"
                                 style={{
                                   fontFamily: '"Outfit", sans-serif'
                                 }}
                               >
                                 <span className="relative z-10">{subItem.name}</span>
-                                <span className="absolute left-0 top-0 h-full w-1 bg-[#5dc1d7] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-200 rounded-l-xl"></span>
+                                <span className="absolute left-0 top-0 h-full w-1 bg-[#5dc1d7] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-150 rounded-l-xl"></span>
                               </Link>
                             </li>
                           ))}
@@ -458,30 +460,6 @@ function Navbar() {
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap"
         rel="stylesheet"
       />
-
-      <style jsx>{`
-        @keyframes slideIn {
-          from {
-            opacity: 0;
-            transform: translateX(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes slideInMobile {
-          from {
-            opacity: 0;
-            transform: translateY(-5px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </nav>
   );
 }

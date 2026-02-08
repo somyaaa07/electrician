@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 
 // Add Google Fonts
 const fontLink = document.createElement('link');
@@ -117,68 +117,68 @@ if (!document.querySelector('style[data-animations]')) {
   document.head.appendChild(styleSheet);
 }
 
-export default function ElectricianServices() {
+export default function SafetyAuditServices() {
   const [activeTab, setActiveTab] = useState('all');
 
   const services = [
     {
       id: 1,
-      icon: '🏠',
-      title: 'Residential Electrical',
-      category: 'residential',
-      description: 'Complete home electrical services including wiring, panel upgrades, lighting installation, and electrical repairs.',
-      features: ['Home Rewiring', 'Panel Upgrades', 'Outlet Installation', 'Safety Inspections'],
-      price: 'From $150',
+      icon: '🏢',
+      title: 'Workplace Safety Audit',
+      category: 'workplace',
+      description: 'Comprehensive workplace safety assessments ensuring OSHA compliance and employee protection.',
+      features: ['OSHA Compliance', 'Hazard Identification', 'Safety Protocols', 'Training Assessment'],
+      price: 'From $500',
       color: '#5dc1d7'
     },
     {
       id: 2,
-      icon: '🏢',
-      title: 'Commercial Solutions',
-      category: 'commercial',
-      description: 'Professional electrical services for businesses, offices, and commercial properties.',
-      features: ['Office Systems', 'Commercial Lighting', 'Power Distribution', 'Compliance'],
-      price: 'Custom Quote',
+      icon: '🔥',
+      title: 'Fire Safety Inspection',
+      category: 'fire',
+      description: 'Complete fire safety evaluations including equipment checks, exit routes, and emergency procedures.',
+      features: ['Fire Extinguishers', 'Exit Routes', 'Alarm Systems', 'Emergency Plans'],
+      price: 'From $350',
       color: '#4a9fb5'
     },
     {
       id: 3,
-      icon: '⚡',
-      title: 'Emergency Repairs',
-      category: 'emergency',
-      description: '24/7 emergency electrical services to keep your property safe and powered.',
-      features: ['Power Outages', 'Emergency Fixes', 'Safety Repairs', 'Same-Day Service'],
-      price: 'Call Now',
+      icon: '🏗️',
+      title: 'Construction Site Audit',
+      category: 'construction',
+      description: 'Detailed safety audits for construction sites ensuring worker safety and regulatory compliance.',
+      features: ['Site Inspections', 'PPE Compliance', 'Equipment Safety', 'Fall Protection'],
+      price: 'From $600',
       color: '#5dc1d7'
     },
     {
       id: 4,
-      icon: '💡',
-      title: 'Lighting Design',
-      category: 'residential',
-      description: 'Custom lighting solutions and installations to enhance your space.',
-      features: ['LED Installation', 'Outdoor Lighting', 'Smart Systems', 'Energy Efficient'],
-      price: 'From $200',
+      icon: '⚠️',
+      title: 'Risk Assessment',
+      category: 'workplace',
+      description: 'Thorough risk analysis identifying potential hazards and providing mitigation strategies.',
+      features: ['Hazard Mapping', 'Risk Evaluation', 'Control Measures', 'Action Plans'],
+      price: 'From $450',
       color: '#4a9fb5'
     },
     {
       id: 5,
-      icon: '🔌',
-      title: 'Panel Upgrades',
-      category: 'residential',
-      description: 'Electrical panel upgrades and replacements to meet modern power demands.',
-      features: ['Main Panel', 'Sub-Panels', 'Circuit Expansion', 'Code Compliance'],
-      price: 'From $800',
+      icon: '🏥',
+      title: 'Health & Safety Audit',
+      category: 'health',
+      description: 'Complete health and safety compliance audits for healthcare and medical facilities.',
+      features: ['Medical Standards', 'Infection Control', 'Waste Management', 'Staff Training'],
+      price: 'From $700',
       color: '#5dc1d7'
     },
     {
       id: 6,
-      icon: '🔍',
-      title: 'Inspections',
-      category: 'commercial',
-      description: 'Thorough electrical inspections and safety testing.',
-      features: ['Safety Checks', 'Pre-Purchase', 'Code Compliance', 'Detailed Reports'],
-      price: 'From $250',
+      icon: '📋',
+      title: 'Compliance Review',
+      category: 'compliance',
+      description: 'Regulatory compliance audits ensuring adherence to local, state, and federal safety regulations.',
+      features: ['Regulatory Check', 'Documentation Review', 'Policy Assessment', 'Certification Support'],
+      price: 'From $400',
       color: '#4a9fb5'
     },
   ];
@@ -186,6 +186,10 @@ export default function ElectricianServices() {
   const filteredServices = activeTab === 'all' 
     ? services 
     : services.filter(s => s.category === activeTab);
+      useEffect(() => {
+ 
+        window.scrollTo(0, 0);
+      }, []);
 
   return (
     <div style={styles.container}>
@@ -194,18 +198,18 @@ export default function ElectricianServices() {
         <div style={styles.heroContent}>
           <div className="hero-grid" style={styles.heroGrid}>
             <div style={styles.heroText}>
-              <span style={styles.badge}>⚡ Professional Services</span>
+              <span style={styles.badge}>🛡️ Professional Safety Services</span>
               <h1 className="hero-title" style={styles.heroTitle}>
-                Expert Electrical
+                Expert Safety
                 <br />
-                <span style={styles.heroHighlight}>Solutions</span>
+                <span style={styles.heroHighlight}>Audit Solutions</span>
               </h1>
               <p style={styles.heroSubtitle}>
-                Trusted by 5000+ customers for residential and commercial electrical needs
+                Trusted by 2000+ businesses for comprehensive safety audits and compliance consulting
               </p>
               <div className="hero-buttons" style={styles.heroButtons}>
-                <button style={styles.primaryBtn}>Get Free Quote</button>
-                <button style={styles.secondaryBtn}>📞 (555) 123-4567</button>
+                <button style={styles.primaryBtn}>Schedule Audit</button>
+                <button style={styles.secondaryBtn}>📞 (555) 789-0123</button>
               </div>
             </div>
             <div style={styles.heroImageSection}>
@@ -213,16 +217,16 @@ export default function ElectricianServices() {
               <div style={styles.heroImageWrapper}>
                 <img 
                   className="hero-image"
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80" 
-                  alt="Electrician at work"
+                  src="/service5.jpg" 
+                  alt="Safety audit professional"
                   style={styles.heroImage}
                 />
                 {/* Floating badge */}
                 <div style={styles.floatingBadge}>
                   <div style={styles.badgeIcon}>✓</div>
                   <div>
-                    <div style={styles.badgeTitle}>Licensed & Insured</div>
-                    <div style={styles.badgeSubtitle}>Certified Professionals</div>
+                    <div style={styles.badgeTitle}>Certified Auditors</div>
+                    <div style={styles.badgeSubtitle}>ISO 45001 Compliant</div>
                   </div>
                 </div>
               </div>
@@ -232,16 +236,16 @@ export default function ElectricianServices() {
           {/* Stats Bar */}
           <div className="stats-grid" style={styles.statsBar}>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>15+</div>
+              <div style={styles.statNumber}>12+</div>
               <div style={styles.statLabel}>Years Experience</div>
             </div>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>5000+</div>
-              <div style={styles.statLabel}>Projects Done</div>
+              <div style={styles.statNumber}>2000+</div>
+              <div style={styles.statLabel}>Audits Completed</div>
             </div>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>24/7</div>
-              <div style={styles.statLabel}>Available</div>
+              <div style={styles.statNumber}>98%</div>
+              <div style={styles.statLabel}>Client Satisfaction</div>
             </div>
           </div>
         </div>
@@ -255,28 +259,42 @@ export default function ElectricianServices() {
             style={{...styles.tab, ...(activeTab === 'all' ? styles.activeTab : {})}}
             onClick={() => setActiveTab('all')}
           >
-            All Services
+            All Audits
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'residential' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('residential')}
+            style={{...styles.tab, ...(activeTab === 'workplace' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('workplace')}
           >
-            Residential
+            Workplace
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'commercial' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('commercial')}
+            style={{...styles.tab, ...(activeTab === 'fire' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('fire')}
           >
-            Commercial
+            Fire Safety
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'emergency' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('emergency')}
+            style={{...styles.tab, ...(activeTab === 'construction' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('construction')}
           >
-            Emergency
+            Construction
+          </button>
+          <button 
+            className="tab"
+            style={{...styles.tab, ...(activeTab === 'health' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('health')}
+          >
+            Health
+          </button>
+          <button 
+            className="tab"
+            style={{...styles.tab, ...(activeTab === 'compliance' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('compliance')}
+          >
+            Compliance
           </button>
         </div>
 
@@ -332,7 +350,7 @@ export default function ElectricianServices() {
                   e.target.style.boxShadow = 'none';
                 }}
               >
-                Request Service →
+                Request Audit →
               </button>
 
               {/* Decorative corner */}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 // Add Google Fonts
 const fontLink = document.createElement('link');
@@ -117,68 +117,68 @@ if (!document.querySelector('style[data-animations]')) {
   document.head.appendChild(styleSheet);
 }
 
-export default function ElectricianServices() {
+export default function WarrantyServices() {
   const [activeTab, setActiveTab] = useState('all');
 
   const services = [
     {
       id: 1,
-      icon: '🏠',
-      title: 'Residential Electrical',
-      category: 'residential',
-      description: 'Complete home electrical services including wiring, panel upgrades, lighting installation, and electrical repairs.',
-      features: ['Home Rewiring', 'Panel Upgrades', 'Outlet Installation', 'Safety Inspections'],
-      price: 'From $150',
+      icon: '🛡️',
+      title: 'Warranty Repairs',
+      category: 'warranty',
+      description: 'Complete coverage for products under manufacturer warranty with authorized service and genuine parts.',
+      features: ['Free Diagnostics', 'Genuine Parts', 'Authorized Service', 'Quick Turnaround'],
+      price: 'No Cost',
       color: '#5dc1d7'
     },
     {
       id: 2,
-      icon: '🏢',
-      title: 'Commercial Solutions',
-      category: 'commercial',
-      description: 'Professional electrical services for businesses, offices, and commercial properties.',
-      features: ['Office Systems', 'Commercial Lighting', 'Power Distribution', 'Compliance'],
-      price: 'Custom Quote',
+      icon: '🔧',
+      title: 'Post-Warranty Repair',
+      category: 'post-warranty',
+      description: 'Expert repair services for products after warranty expiration at competitive rates.',
+      features: ['Quality Parts', 'Expert Technicians', 'Fair Pricing', '90-Day Guarantee'],
+      price: 'From $99',
       color: '#4a9fb5'
     },
     {
       id: 3,
-      icon: '⚡',
-      title: 'Emergency Repairs',
-      category: 'emergency',
-      description: '24/7 emergency electrical services to keep your property safe and powered.',
-      features: ['Power Outages', 'Emergency Fixes', 'Safety Repairs', 'Same-Day Service'],
-      price: 'Call Now',
+      icon: '⏱️',
+      title: 'Extended Warranty',
+      category: 'extended',
+      description: 'Extend your product protection beyond standard warranty with comprehensive coverage plans.',
+      features: ['Long-Term Coverage', 'Flexible Plans', 'Parts & Labor', 'Transferable'],
+      price: 'Custom Plans',
       color: '#5dc1d7'
     },
     {
       id: 4,
-      icon: '💡',
-      title: 'Lighting Design',
-      category: 'residential',
-      description: 'Custom lighting solutions and installations to enhance your space.',
-      features: ['LED Installation', 'Outdoor Lighting', 'Smart Systems', 'Energy Efficient'],
-      price: 'From $200',
+      icon: '🔍',
+      title: 'Warranty Inspection',
+      category: 'warranty',
+      description: 'Thorough inspection services to verify warranty coverage and product condition.',
+      features: ['Full Assessment', 'Coverage Verification', 'Detailed Report', 'Claim Assistance'],
+      price: 'From $75',
       color: '#4a9fb5'
     },
     {
       id: 5,
-      icon: '🔌',
-      title: 'Panel Upgrades',
-      category: 'residential',
-      description: 'Electrical panel upgrades and replacements to meet modern power demands.',
-      features: ['Main Panel', 'Sub-Panels', 'Circuit Expansion', 'Code Compliance'],
-      price: 'From $800',
+      icon: '⚙️',
+      title: 'Preventive Maintenance',
+      category: 'post-warranty',
+      description: 'Regular maintenance services to extend product life and prevent costly repairs.',
+      features: ['Routine Service', 'Performance Check', 'Parts Replacement', 'Annual Plans'],
+      price: 'From $150/yr',
       color: '#5dc1d7'
     },
     {
       id: 6,
-      icon: '🔍',
-      title: 'Inspections',
-      category: 'commercial',
-      description: 'Thorough electrical inspections and safety testing.',
-      features: ['Safety Checks', 'Pre-Purchase', 'Code Compliance', 'Detailed Reports'],
-      price: 'From $250',
+      icon: '📋',
+      title: 'Service Contracts',
+      category: 'extended',
+      description: 'Comprehensive service agreements for ongoing support and peace of mind.',
+      features: ['Priority Service', 'Discounted Rates', 'Annual Coverage', 'Multiple Products'],
+      price: 'From $299/yr',
       color: '#4a9fb5'
     },
   ];
@@ -187,6 +187,11 @@ export default function ElectricianServices() {
     ? services 
     : services.filter(s => s.category === activeTab);
 
+      useEffect(() => {
+     
+        window.scrollTo(0, 0);
+      }, []);
+
   return (
     <div style={styles.container}>
       {/* Hero Section */}
@@ -194,14 +199,14 @@ export default function ElectricianServices() {
         <div style={styles.heroContent}>
           <div className="hero-grid" style={styles.heroGrid}>
             <div style={styles.heroText}>
-              <span style={styles.badge}>⚡ Professional Services</span>
+              <span style={styles.badge}>🛡️ Comprehensive Coverage</span>
               <h1 className="hero-title" style={styles.heroTitle}>
-                Expert Electrical
+                Expert Warranty &
                 <br />
-                <span style={styles.heroHighlight}>Solutions</span>
+                <span style={styles.heroHighlight}>Repair Services</span>
               </h1>
               <p style={styles.heroSubtitle}>
-                Trusted by 5000+ customers for residential and commercial electrical needs
+                Trusted by 5000+ customers for warranty claims, repairs, and extended protection plans
               </p>
               <div className="hero-buttons" style={styles.heroButtons}>
                 <button style={styles.primaryBtn}>Get Free Quote</button>
@@ -213,16 +218,16 @@ export default function ElectricianServices() {
               <div style={styles.heroImageWrapper}>
                 <img 
                   className="hero-image"
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80" 
-                  alt="Electrician at work"
+                  src="/service5.jpg" 
+                  alt="Technician repairing device"
                   style={styles.heroImage}
                 />
                 {/* Floating badge */}
                 <div style={styles.floatingBadge}>
                   <div style={styles.badgeIcon}>✓</div>
                   <div>
-                    <div style={styles.badgeTitle}>Licensed & Insured</div>
-                    <div style={styles.badgeSubtitle}>Certified Professionals</div>
+                    <div style={styles.badgeTitle}>Authorized Service Center</div>
+                    <div style={styles.badgeSubtitle}>Certified Technicians</div>
                   </div>
                 </div>
               </div>
@@ -237,11 +242,11 @@ export default function ElectricianServices() {
             </div>
             <div style={styles.statItem}>
               <div style={styles.statNumber}>5000+</div>
-              <div style={styles.statLabel}>Projects Done</div>
+              <div style={styles.statLabel}>Claims Processed</div>
             </div>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>24/7</div>
-              <div style={styles.statLabel}>Available</div>
+              <div style={styles.statNumber}>98%</div>
+              <div style={styles.statLabel}>Success Rate</div>
             </div>
           </div>
         </div>
@@ -259,24 +264,24 @@ export default function ElectricianServices() {
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'residential' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('residential')}
+            style={{...styles.tab, ...(activeTab === 'warranty' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('warranty')}
           >
-            Residential
+            Warranty
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'commercial' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('commercial')}
+            style={{...styles.tab, ...(activeTab === 'post-warranty' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('post-warranty')}
           >
-            Commercial
+            Post-Warranty
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'emergency' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('emergency')}
+            style={{...styles.tab, ...(activeTab === 'extended' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('extended')}
           >
-            Emergency
+            Extended Plans
           </button>
         </div>
 
@@ -661,7 +666,7 @@ const styles = {
   ctaText: {
     fontSize: '1.2rem',
     marginBottom: '30px',
-    opacity: 0.9,
+    opacity:' 0.9',
     fontFamily: "'Lora', serif",
   },
   ctaButton: {

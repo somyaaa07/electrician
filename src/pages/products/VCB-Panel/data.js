@@ -1,7 +1,7 @@
-import { 
-  Zap, Shield, Sparkles, TrendingUp, Users, Globe, 
-  Award, Cloud, RefreshCw, BarChart3, GitBranch, 
-  Database, Settings 
+import {
+  Zap, Shield, Sparkles, TrendingUp, Users, Globe,
+  Award, Cloud, RefreshCw, BarChart3, GitBranch,
+  Database, Settings
 } from 'lucide-react';
 
 export const productData = {
@@ -9,22 +9,24 @@ export const productData = {
   hero: {
     badge: {
       icon: Sparkles,
-      text: "Trusted by 10,000+ Enterprises",
-      shortText: "10,000+ Enterprises"
+      text: "Smart Power Control Solutions",
+      shortText: "VCB Panels"
     },
-    title: "CloudSync",
-    titleAccent: "Pro",
-    subtitle: "The most powerful cloud synchronization platform",
-    description: "Built for teams who demand excellence, security, and scale",
-    backgroundImage: "https://i.pinimg.com/1200x/1b/7e/0f/1b7e0f5b3e75a7a4b4f970705a9995cb.jpg",
+    title: "Intelldigix",
+    titleAccent: "VCB Panels",
+    subtitle: "Safe, Efficient & Reliable Medium Voltage Power Distribution",
+    description:
+      "Engineered Vacuum Circuit Breaker Panels delivering superior fault protection, smooth switching, and long operational life for critical power systems.",
+    backgroundImage:
+      "https://www.simartech.com/wp-content/uploads/2025/05/Untitled-design-30.png",
     stats: [
-      { value: '99.99%', label: 'Uptime' },
-      { value: '10M+', label: 'Files Synced' },
-      { value: '<1ms', label: 'Latency' }
+      { value: '11kV–33kV', label: 'Voltage Range' },
+      { value: '65kA', label: 'Short Circuit Rating' },
+      { value: 'IEC 61439', label: 'Compliance' }
     ],
     cta: {
-      primary: "Start Free Trial",
-      secondary: "Watch Demo"
+      primary: "Request Consultation",
+      secondary: "Download Brochure"
     }
   },
 
@@ -33,7 +35,7 @@ export const productData = {
     items: [
       { type: 'home', label: 'Home' },
       { type: 'link', label: 'Products' },
-      { type: 'current', label: 'CloudSync Pro', icon: Sparkles }
+      { type: 'current', label: 'VCB Panels', icon: Sparkles }
     ]
   },
 
@@ -49,16 +51,16 @@ export const productData = {
   // About Section
   about: {
     badge: { icon: Sparkles, text: "Introduction" },
-    title: "About CloudSync Pro",
+    title: "About Intelldigix VCB Panels",
     description: [
-      "CloudSync Pro is a <span class='text-[#5dc1d7] font-bold'>cutting-edge cloud synchronization platform</span> designed to streamline data management across distributed teams and multi-cloud environments. Built with enterprise security and scalability at its core, our solution ensures seamless data flow while maintaining the highest standards of compliance and governance.",
-      "Whether you're managing petabytes of data across global offices or coordinating real-time collaboration between remote teams, CloudSync Pro provides the reliability and performance your business demands."
+      "At Intelldigix, we specialize in <span class='text-[#5dc1d7] font-bold'>Vacuum Circuit Breaker (VCB) Panels</span> designed for safe, efficient, and reliable medium-voltage power distribution across modern electrical infrastructures.",
+      "From design and customization to installation and commissioning, our expert team ensures precision-engineered panels that reduce failures, improve safety, and support long-term operational stability."
     ],
     certifications: [
-      { name: 'SOC 2', icon: Shield },
-      { name: 'ISO 27001', icon: Award },
-      { name: 'GDPR', icon: Shield },
-      { name: 'HIPAA', icon: Award }
+      { name: 'IEC 61439-1 & 2', icon: Shield },
+      { name: 'CPRI Certified', icon: Award },
+      { name: 'IS Standards', icon: Shield },
+      { name: 'Utility Grade Safety', icon: Award }
     ]
   },
 
@@ -71,30 +73,32 @@ export const productData = {
         type: 'gradient',
         icon: Zap,
         title: "What It Does",
-        description: "CloudSync Pro automatically synchronizes files, databases, and applications across multiple cloud platforms including AWS, Azure, Google Cloud, and private data centers."
+        description:
+          "VCB Panels protect medium-voltage power circuits by interrupting fault currents using vacuum interrupters, ensuring fast arc extinction and system safety."
       },
       {
         type: 'bordered',
         icon: Users,
         title: "Who It's For",
-        description: "Designed for enterprises, technology companies, financial institutions, and healthcare organizations that require robust, compliant data synchronization."
+        description:
+          "Ideal for industrial plants, commercial complexes, substations, utilities, and energy facilities requiring reliable power control."
       }
     ],
     highlights: [
-      { 
-        icon: '⚡', 
-        title: 'Real-Time Sync', 
-        desc: 'Millisecond-level synchronization across global nodes with zero data loss' 
+      {
+        icon: '⚡',
+        title: 'Superior Fault Protection',
+        desc: 'Fast and reliable arc interruption for enhanced system safety'
       },
-      { 
-        icon: '🔒', 
-        title: 'Enterprise Security', 
-        desc: 'End-to-end encryption with zero-knowledge architecture and SOC 2 compliance' 
+      {
+        icon: '🧠',
+        title: 'Smart Integration',
+        desc: 'SCADA & PLC compatible for remote monitoring and control'
       },
-      { 
-        icon: '🚀', 
-        title: 'Smart Optimization', 
-        desc: 'AI-powered bandwidth and route optimization reduces costs by 40%' 
+      {
+        icon: '🛡️',
+        title: 'International Compliance',
+        desc: 'Designed to meet IS, IEC, and global safety standards'
       }
     ]
   },
@@ -102,89 +106,62 @@ export const productData = {
   // Features Section
   features: {
     badge: { icon: Sparkles, text: "Features" },
-    title: "Everything You Need",
+    title: "Service Feature Highlights",
     items: [
-      { 
-        id: 'integration',
-        category: 'Integration',
-        icon: Cloud,
-        title: 'Multi-Cloud Integration', 
-        desc: 'Seamlessly connect AWS, Azure, GCP, and private clouds in a unified synchronization network with intelligent routing.',
-        highlight: 'Connect 10+ platforms',
+      {
+        id: 'custom',
+        category: 'Design',
+        icon: Settings,
+        title: 'Custom-Built VCB Panels',
+        desc:
+          'Engineered for 11kV to 33kV applications with indoor and outdoor enclosure options.',
+        highlight: '11kV–33kV',
         color: 'from-blue-500 to-cyan-500',
-        platforms: ['AWS', 'Azure', 'Google Cloud', 'Private Cloud'],
-        layout: 'large' // Special layout identifier
+        layout: 'large'
       },
-      { 
-        id: 'conflict',
-        category: 'Intelligence',
-        icon: GitBranch,
-        title: 'Smart Conflict Resolution', 
-        desc: 'AI-powered algorithms automatically detect and resolve data conflicts with configurable policies and manual override options.',
-        highlight: '99.9% auto-resolved',
-        color: 'from-purple-500 to-pink-500',
-        layout: 'small'
-      },
-      { 
-        id: 'version',
-        category: 'Control',
-        icon: RefreshCw,
-        title: 'Advanced Version Control', 
-        desc: 'Complete audit trail with rollback capabilities to any previous state. Track every change with millisecond precision.',
-        highlight: 'Unlimited history',
-        color: 'from-green-500 to-emerald-500',
-        layout: 'small'
-      },
-      { 
-        id: 'bandwidth',
-        category: 'Performance',
-        icon: Zap,
-        title: 'Bandwidth Optimization', 
-        desc: 'Delta synchronization and compression reduce data transfer by up to 95%, saving bandwidth costs and improving speed.',
-        highlight: '95% reduction',
-        color: 'from-yellow-500 to-orange-500',
-        layout: 'medium',
-        stats: [
-          { value: '95%', label: 'Reduction' },
-          { value: '<1s', label: 'Transfer Time' }
-        ]
-      },
-      { 
-        id: 'compliance',
-        category: 'Security',
+      {
+        id: 'protection',
+        category: 'Safety',
         icon: Shield,
-        title: 'Compliance Ready', 
-        desc: 'Built-in support for GDPR, HIPAA, SOC 2, ISO 27001, and other regulatory frameworks with automated reporting.',
-        highlight: '8+ certifications',
+        title: 'Advanced Protection System',
+        desc:
+          'Equipped with CT/PT meters, protection relays, and reliable trip mechanisms.',
+        highlight: 'High Safety',
         color: 'from-red-500 to-rose-500',
-        layout: 'small',
-        badges: ['SOC 2', 'HIPAA', 'GDPR', 'ISO 27001']
+        layout: 'small'
       },
-      { 
-        id: 'monitoring',
-        category: 'Analytics',
-        icon: BarChart3,
-        title: 'Advanced Monitoring', 
-        desc: 'Real-time dashboards, custom alerts, and detailed analytics for complete visibility into sync operations.',
-        highlight: 'Real-time insights',
-        color: 'from-indigo-500 to-blue-500',
-        layout: 'medium',
-        stats: [
-          { label: 'Uptime', value: '99.99%' },
-          { label: 'Response', value: '<100ms' },
-          { label: 'Events/sec', value: '1M+' }
-        ]
-      },
-      { 
-        id: 'recovery',
+      {
+        id: 'testing',
         category: 'Reliability',
+        icon: Zap,
+        title: 'High Fault Withstand Capability',
+        desc:
+          'Tested for high-voltage arc interruption and fault clearance performance.',
+        highlight: '65kA / 1 sec',
+        color: 'from-yellow-500 to-orange-500',
+        layout: 'small'
+      },
+      {
+        id: 'automation',
+        category: 'Automation',
+        icon: BarChart3,
+        title: 'SCADA / PLC Ready',
+        desc:
+          'Supports smart monitoring, diagnostics, and automation integration.',
+        highlight: 'Remote Control',
+        color: 'from-indigo-500 to-blue-500',
+        layout: 'medium'
+      },
+      {
+        id: 'durability',
+        category: 'Longevity',
         icon: Database,
-        title: 'Disaster Recovery', 
-        desc: 'Automated failover and geo-replication ensure business continuity with RTO < 5 minutes and RPO < 1 minute.',
-        highlight: '<5min RTO',
+        title: 'Long Operational Life',
+        desc:
+          'High-grade vacuum interrupters ensure minimal maintenance and extended lifespan.',
+        highlight: 'Low Maintenance',
         color: 'from-teal-500 to-cyan-500',
-        layout: 'small',
-        metric: { value: '<5min', label: 'Recovery Time' }
+        layout: 'small'
       }
     ]
   },
@@ -192,62 +169,41 @@ export const productData = {
   // Benefits Section
   benefits: {
     badge: { icon: TrendingUp, text: "Benefits" },
-    title: "Transform Your Business",
-    subtitle: "Real-world results from organizations that switched to CloudSync Pro",
+    title: "Why Choose Intelldigix Panels",
+    subtitle:
+      "Built for performance, safety, and scalability in modern power systems",
     items: [
-      { 
-        icon: TrendingUp, 
-        title: 'Increased Productivity', 
-        desc: 'Teams spend less time managing data and more time on value-creating activities. Automatic synchronization eliminates manual file transfers and reduces sync-related errors.',
-        metric: '40%',
-        metricLabel: 'Efficiency Gain',
-        highlights: ['Automated workflows', 'Zero manual transfers', '99% fewer errors'],
-        color: 'from-green-500 to-emerald-500'
-      },
-      { 
-        icon: Sparkles, 
-        title: 'Cost Reduction', 
-        desc: 'Reduce infrastructure costs through intelligent data placement, deduplication, and bandwidth optimization. Pay only for what you use.',
-        metric: '40%',
-        metricLabel: 'Cost Savings',
-        highlights: ['Smart deduplication', 'Bandwidth optimization', 'Pay-per-use pricing'],
-        color: 'from-blue-500 to-cyan-500'
-      },
-      { 
-        icon: Shield, 
-        title: 'Enhanced Security', 
-        desc: 'Military-grade encryption, role-based access control, and comprehensive audit logs ensure your data remains secure and compliant with industry standards.',
-        metric: 'Zero',
-        metricLabel: 'Security Breaches',
-        highlights: ['End-to-end encryption', 'Role-based access', 'Complete audit trail'],
+      {
+        icon: Shield,
+        title: 'Enhanced Electrical Safety',
+        desc:
+          'Protects equipment and personnel with reliable fault isolation and arc containment.',
+        metric: 'High',
+        metricLabel: 'Safety Level',
+        highlights: ['Fast fault clearance', 'Arc suppression', 'Stable operation'],
         color: 'from-red-500 to-rose-500'
       },
-      { 
-        icon: Zap, 
-        title: 'Business Continuity', 
-        desc: 'Automated disaster recovery and geo-replication ensure your business keeps running even during outages. Our SLA guarantees peace of mind.',
-        metric: '99.99%',
-        metricLabel: 'Uptime SLA',
-        highlights: ['Auto failover', 'Geo-replication', '<5min recovery'],
-        color: 'from-yellow-500 to-orange-500'
+      {
+        icon: TrendingUp,
+        title: 'Operational Reliability',
+        desc:
+          'Reduces downtime and improves continuity of power supply.',
+        metric: '24×7',
+        metricLabel: 'Reliability',
+        highlights: ['Reduced failures', 'Stable distribution', 'Proven design'],
+        color: 'from-green-500 to-emerald-500'
       },
-      { 
-        icon: Globe, 
-        title: 'Unlimited Scalability', 
-        desc: 'Start small and scale to petabytes without infrastructure changes. CloudSync Pro grows with your business, handling increased load automatically.',
-        metric: '∞',
-        metricLabel: 'Scale Capacity',
-        highlights: ['Auto-scaling', 'No limits', 'Global edge network'],
-        color: 'from-purple-500 to-pink-500'
+      {
+        icon: Sparkles,
+        title: 'Scalable & Future Ready',
+        desc:
+          'Designed to adapt with future expansion and automation needs.',
+        metric: 'Flexible',
+        metricLabel: 'Design',
+        highlights: ['Expandable', 'Automation ready', 'Custom solutions'],
+        color: 'from-blue-500 to-cyan-500'
       }
-    ],
-    roiCta: {
-      badge: { text: "ROI Calculator" },
-      title: "Calculate Your Potential Savings",
-      description: "See how much time and money your organization could save with CloudSync Pro",
-      buttonText: "Launch Calculator",
-      buttonShortText: "Calculate"
-    }
+    ]
   },
 
   // Industry Applications
@@ -256,74 +212,50 @@ export const productData = {
     title: "Industry Applications",
     items: [
       {
-        title: 'Financial Services',
-        icon: '💰',
-        desc: 'Synchronize trading data, customer records, and transaction histories across global branches while maintaining regulatory compliance.',
-        cases: [
-          'Real-time market data distribution to trading desks worldwide',
-          'Cross-border customer data synchronization with data residency compliance',
-          'Disaster recovery for critical financial systems'
-        ]
-      },
-      {
-        title: 'Healthcare',
-        icon: '🏥',
-        desc: 'Enable secure sharing of patient records, medical imaging, and research data across hospital networks while ensuring HIPAA compliance.',
-        cases: [
-          'Electronic Health Record (EHR) synchronization across care facilities',
-          'Medical imaging distribution for radiology departments',
-          'Clinical trial data management and regulatory reporting'
-        ]
-      },
-      {
-        title: 'Manufacturing',
+        title: 'Industrial Plants',
         icon: '🏭',
-        desc: 'Coordinate production data, supply chain information, and IoT sensor data across manufacturing facilities worldwide.',
-        cases: [
-          'Real-time production line data synchronization for quality control',
-          'Global inventory management and supply chain coordination',
-          'CAD/CAM file distribution for distributed engineering teams'
-        ]
+        desc: 'Reliable power control for heavy machinery and production lines.',
+        cases: ['Manufacturing Units', 'Process Industries', 'Heavy Motors']
       },
       {
-        title: 'Technology & SaaS',
-        icon: '💻',
-        desc: 'Support multi-tenant SaaS applications with automatic data replication, backup, and geo-distribution.',
-        cases: [
-          'Multi-region database synchronization for global SaaS platforms',
-          'Development environment synchronization for distributed teams',
-          'Customer data backup and disaster recovery automation'
-        ]
+        title: 'Commercial Buildings',
+        icon: '🏢',
+        desc: 'Safe and efficient power distribution for large complexes.',
+        cases: ['IT Parks', 'Hospitals', 'Shopping Malls']
       },
       {
-        title: 'Retail & E-commerce',
-        icon: '🛒',
-        desc: 'Keep product catalogs, inventory levels, and customer data synchronized across all channels in real-time.',
-        cases: [
-          'Omnichannel inventory synchronization across stores and warehouses',
-          'Product catalog updates propagated to all sales channels instantly',
-          'Customer data unification for personalized shopping experiences'
-        ]
+        title: 'Utilities & Substations',
+        icon: '⚡',
+        desc: 'Medium voltage switching and protection for power networks.',
+        cases: ['Substations', 'Distribution Panels', 'Grid Interface']
+      },
+      {
+        title: 'Power & Energy Sector',
+        icon: '🔌',
+        desc: 'Critical electrical infrastructure for energy facilities.',
+        cases: ['Power Plants', 'Renewable Energy', 'Utility Systems']
       }
     ]
   },
 
   // Final CTA
   finalCta: {
-    badge: { text: "Join 10,000+ Companies" },
-    title: ["Ready to Transform Your", "Data Infrastructure?"],
-    description: "Join thousands of enterprises worldwide who trust CloudSync Pro for mission-critical synchronization.",
+    badge: { text: "Trusted Power Partner" },
+    title: ["Ready to Upgrade Your", "Power Control System?"],
+    description:
+      "Choose Intelldigix VCB, PCC & MCC Panels for safe, compliant, and future-ready electrical infrastructure.",
     buttons: {
-      primary: "Start Free Trial",
-      secondary: "Schedule Demo"
+      primary: "Talk to Experts",
+      secondary: "Request Quote"
     },
-    disclaimer: "No credit card required • 14-day free trial • Cancel anytime"
+    disclaimer:
+      "Type-tested panels • IEC compliant • CPRI certified"
   },
 
   // Sidebar Stats
   sidebarStat: {
     icon: Sparkles,
-    value: "99.99%",
-    label: "Uptime Guarantee"
+    value: "65kA",
+    label: "Short Circuit Rating"
   }
 };

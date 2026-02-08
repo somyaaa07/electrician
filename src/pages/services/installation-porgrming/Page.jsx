@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 
 // Add Google Fonts
 const fontLink = document.createElement('link');
@@ -117,68 +117,128 @@ if (!document.querySelector('style[data-animations]')) {
   document.head.appendChild(styleSheet);
 }
 
-export default function ElectricianServices() {
+export default function IPCServices() {
   const [activeTab, setActiveTab] = useState('all');
 
   const services = [
     {
       id: 1,
-      icon: '🏠',
-      title: 'Residential Electrical',
-      category: 'residential',
-      description: 'Complete home electrical services including wiring, panel upgrades, lighting installation, and electrical repairs.',
-      features: ['Home Rewiring', 'Panel Upgrades', 'Outlet Installation', 'Safety Inspections'],
-      price: 'From $150',
+      icon: '🔧',
+      title: 'Mechanical Installation',
+      category: 'installation',
+      description: 'Professional installation of mechanical equipment, machinery, and industrial systems.',
+      features: ['Equipment Erection', 'Alignment & Leveling', 'Piping Installation', 'HVAC Systems'],
+      price: 'Custom Quote',
       color: '#5dc1d7'
     },
     {
       id: 2,
-      icon: '🏢',
-      title: 'Commercial Solutions',
-      category: 'commercial',
-      description: 'Professional electrical services for businesses, offices, and commercial properties.',
-      features: ['Office Systems', 'Commercial Lighting', 'Power Distribution', 'Compliance'],
+      icon: '⚡',
+      title: 'Electrical Installation',
+      category: 'installation',
+      description: 'Complete electrical installation services for industrial and commercial facilities.',
+      features: ['Power Distribution', 'Cable Tray Systems', 'Lighting Systems', 'Grounding & Bonding'],
       price: 'Custom Quote',
       color: '#4a9fb5'
     },
     {
       id: 3,
-      icon: '⚡',
-      title: 'Emergency Repairs',
-      category: 'emergency',
-      description: '24/7 emergency electrical services to keep your property safe and powered.',
-      features: ['Power Outages', 'Emergency Fixes', 'Safety Repairs', 'Same-Day Service'],
-      price: 'Call Now',
+      icon: '🔌',
+      title: 'Instrumentation Installation',
+      category: 'installation',
+      description: 'Precision installation of instrumentation and control devices for process automation.',
+      features: ['Field Instruments', 'Control Valves', 'Transmitters', 'Analyzer Installation'],
+      price: 'Custom Quote',
       color: '#5dc1d7'
     },
     {
       id: 4,
-      icon: '💡',
-      title: 'Lighting Design',
-      category: 'residential',
-      description: 'Custom lighting solutions and installations to enhance your space.',
-      features: ['LED Installation', 'Outdoor Lighting', 'Smart Systems', 'Energy Efficient'],
-      price: 'From $200',
+      icon: '💻',
+      title: 'PLC & DCS Programming',
+      category: 'programming',
+      description: 'Expert programming services for PLC, DCS, and SCADA control systems.',
+      features: ['Ladder Logic', 'Function Blocks', 'HMI Development', 'System Integration'],
+      price: 'From $2,500',
       color: '#4a9fb5'
     },
     {
       id: 5,
-      icon: '🔌',
-      title: 'Panel Upgrades',
-      category: 'residential',
-      description: 'Electrical panel upgrades and replacements to meet modern power demands.',
-      features: ['Main Panel', 'Sub-Panels', 'Circuit Expansion', 'Code Compliance'],
-      price: 'From $800',
+      icon: '🤖',
+      title: 'Automation Programming',
+      category: 'programming',
+      description: 'Advanced automation programming for industrial processes and robotic systems.',
+      features: ['Robot Programming', 'Motion Control', 'Sequential Control', 'Safety Systems'],
+      price: 'From $3,000',
       color: '#5dc1d7'
     },
     {
       id: 6,
+      icon: '📊',
+      title: 'SCADA Development',
+      category: 'programming',
+      description: 'Custom SCADA system development for monitoring and controlling industrial processes.',
+      features: ['Graphics Design', 'Trending & Alarms', 'Data Logging', 'Remote Access'],
+      price: 'From $4,000',
+      color: '#4a9fb5'
+    },
+    {
+      id: 7,
       icon: '🔍',
-      title: 'Inspections',
-      category: 'commercial',
-      description: 'Thorough electrical inspections and safety testing.',
-      features: ['Safety Checks', 'Pre-Purchase', 'Code Compliance', 'Detailed Reports'],
-      price: 'From $250',
+      title: 'Pre-Commissioning Services',
+      category: 'commissioning',
+      description: 'Systematic pre-commissioning activities to prepare systems for safe startup.',
+      features: ['Visual Inspection', 'Continuity Testing', 'Pressure Testing', 'Flushing & Cleaning'],
+      price: 'Custom Quote',
+      color: '#5dc1d7'
+    },
+    {
+      id: 8,
+      icon: '⚙️',
+      title: 'Mechanical Commissioning',
+      category: 'commissioning',
+      description: 'Complete commissioning of mechanical equipment and rotating machinery.',
+      features: ['Alignment Checks', 'Vibration Analysis', 'Performance Testing', 'Load Testing'],
+      price: 'Custom Quote',
+      color: '#4a9fb5'
+    },
+    {
+      id: 9,
+      icon: '🔋',
+      title: 'Electrical Commissioning',
+      category: 'commissioning',
+      description: 'Comprehensive electrical system commissioning and energization services.',
+      features: ['Insulation Testing', 'Protection Testing', 'Load Testing', 'Power Quality Analysis'],
+      price: 'Custom Quote',
+      color: '#5dc1d7'
+    },
+    {
+      id: 10,
+      icon: '🎛️',
+      title: 'Control System Commissioning',
+      category: 'commissioning',
+      description: 'End-to-end commissioning of control and automation systems.',
+      features: ['Loop Testing', 'Functional Testing', 'Safety System Testing', 'Integration Testing'],
+      price: 'Custom Quote',
+      color: '#4a9fb5'
+    },
+    {
+      id: 11,
+      icon: '🚀',
+      title: 'Startup & Performance Testing',
+      category: 'commissioning',
+      description: 'Systematic startup procedures and performance verification testing.',
+      features: ['Cold Startup', 'Hot Startup', 'Performance Runs', 'Optimization'],
+      price: 'Custom Quote',
+      color: '#5dc1d7'
+    },
+    {
+      id: 12,
+      icon: '📋',
+      title: 'Documentation & Training',
+      category: 'commissioning',
+      description: 'Comprehensive documentation and operator training for commissioned systems.',
+      features: ['As-Built Drawings', 'O&M Manuals', 'Operator Training', 'System Handover'],
+      price: 'From $1,500',
       color: '#4a9fb5'
     },
   ];
@@ -187,6 +247,11 @@ export default function ElectricianServices() {
     ? services 
     : services.filter(s => s.category === activeTab);
 
+      useEffect(() => {
+       
+        window.scrollTo(0, 0);
+      }, []);
+
   return (
     <div style={styles.container}>
       {/* Hero Section */}
@@ -194,18 +259,18 @@ export default function ElectricianServices() {
         <div style={styles.heroContent}>
           <div className="hero-grid" style={styles.heroGrid}>
             <div style={styles.heroText}>
-              <span style={styles.badge}>⚡ Professional Services</span>
+              <span style={styles.badge}>🔧 Expert IPC Services</span>
               <h1 className="hero-title" style={styles.heroTitle}>
-                Expert Electrical
+                Installation, Programming &
                 <br />
-                <span style={styles.heroHighlight}>Solutions</span>
+                <span style={styles.heroHighlight}>Commissioning Solutions</span>
               </h1>
               <p style={styles.heroSubtitle}>
-                Trusted by 5000+ customers for residential and commercial electrical needs
+                Trusted by 400+ industrial clients for turnkey IPC services across manufacturing, oil & gas, and power sectors
               </p>
               <div className="hero-buttons" style={styles.heroButtons}>
-                <button style={styles.primaryBtn}>Get Free Quote</button>
-                <button style={styles.secondaryBtn}>📞 (555) 123-4567</button>
+                <button style={styles.primaryBtn}>Get Free Assessment</button>
+                <button style={styles.secondaryBtn}>📞 (555) 345-6789</button>
               </div>
             </div>
             <div style={styles.heroImageSection}>
@@ -213,16 +278,16 @@ export default function ElectricianServices() {
               <div style={styles.heroImageWrapper}>
                 <img 
                   className="hero-image"
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80" 
-                  alt="Electrician at work"
+                  src="/service2.jpg" 
+                  alt="Industrial commissioning work"
                   style={styles.heroImage}
                 />
                 {/* Floating badge */}
                 <div style={styles.floatingBadge}>
                   <div style={styles.badgeIcon}>✓</div>
                   <div>
-                    <div style={styles.badgeTitle}>Licensed & Insured</div>
-                    <div style={styles.badgeSubtitle}>Certified Professionals</div>
+                    <div style={styles.badgeTitle}>Certified Technicians</div>
+                    <div style={styles.badgeSubtitle}>IPC Specialists</div>
                   </div>
                 </div>
               </div>
@@ -232,16 +297,16 @@ export default function ElectricianServices() {
           {/* Stats Bar */}
           <div className="stats-grid" style={styles.statsBar}>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>15+</div>
+              <div style={styles.statNumber}>18+</div>
               <div style={styles.statLabel}>Years Experience</div>
             </div>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>5000+</div>
-              <div style={styles.statLabel}>Projects Done</div>
+              <div style={styles.statNumber}>400+</div>
+              <div style={styles.statLabel}>Systems Commissioned</div>
             </div>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>24/7</div>
-              <div style={styles.statLabel}>Available</div>
+              <div style={styles.statNumber}>99.5%</div>
+              <div style={styles.statLabel}>Success Rate</div>
             </div>
           </div>
         </div>
@@ -259,24 +324,24 @@ export default function ElectricianServices() {
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'residential' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('residential')}
+            style={{...styles.tab, ...(activeTab === 'installation' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('installation')}
           >
-            Residential
+            Installation
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'commercial' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('commercial')}
+            style={{...styles.tab, ...(activeTab === 'programming' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('programming')}
           >
-            Commercial
+            Programming
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'emergency' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('emergency')}
+            style={{...styles.tab, ...(activeTab === 'commissioning' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('commissioning')}
           >
-            Emergency
+            Commissioning
           </button>
         </div>
 
@@ -350,7 +415,6 @@ export default function ElectricianServices() {
         </div>
       </div>
 
-     
     </div>
   );
 }
@@ -405,16 +469,6 @@ const styles = {
     marginBottom: '20px',
     lineHeight: '1.1',
     fontFamily: "'Playfair Display', serif",
-  },
-  '@media (max-width: 968px)': {
-    heroTitle: {
-      fontSize: '3rem',
-    },
-  },
-  '@media (max-width: 640px)': {
-    heroTitle: {
-      fontSize: '2.5rem',
-    },
   },
   heroHighlight: {
     color: '#ffffff',
@@ -642,40 +696,5 @@ const styles = {
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     fontFamily: "'Playfair Display', serif",
-  },
-  ctaSection: {
-    background: 'linear-gradient(135deg, #0a4d5c 0%, #5dc1d7 100%)',
-    padding: '80px 20px',
-    textAlign: 'center',
-  },
-  ctaContent: {
-    maxWidth: '700px',
-    margin: '0 auto',
-    color: 'white',
-  },
-  ctaTitle: {
-    fontSize: '2.5rem',
-    fontWeight: '800',
-    marginBottom: '15px',
-    fontFamily: "'Playfair Display', serif",
-  },
-  ctaText: {
-    fontSize: '1.2rem',
-    marginBottom: '30px',
-    opacity: 0.9,
-    fontFamily: "'Lora', serif",
-  },
-  ctaButton: {
-    padding: '18px 45px',
-    background: 'white',
-    color: '#0a4d5c',
-    border: 'none',
-    borderRadius: '30px',
-    fontSize: '1.1rem',
-    fontWeight: '600',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    fontFamily: "'Playfair Display', serif",
-    boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
   },
 };

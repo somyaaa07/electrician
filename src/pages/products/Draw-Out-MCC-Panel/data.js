@@ -1,7 +1,6 @@
 import { 
   Zap, Shield, Sparkles, TrendingUp, Users, Globe, 
-  Award, Cloud, RefreshCw, BarChart3, GitBranch, 
-  Database, Settings 
+  Award, BarChart3, Settings, RefreshCw, Database 
 } from 'lucide-react';
 
 export const productData = {
@@ -9,22 +8,24 @@ export const productData = {
   hero: {
     badge: {
       icon: Sparkles,
-      text: "Trusted by 10,000+ Enterprises",
-      shortText: "10,000+ Enterprises"
+      text: "Certified for Hazardous Areas",
+      shortText: "Hazardous Area Certified"
     },
-    title: "CloudSync",
-    titleAccent: "Pro",
-    subtitle: "The most powerful cloud synchronization platform",
-    description: "Built for teams who demand excellence, security, and scale",
-    backgroundImage: "https://i.pinimg.com/1200x/1b/7e/0f/1b7e0f5b3e75a7a4b4f970705a9995cb.jpg",
+    title: "Draw-Out",
+    titleAccent: "MCC Panel",
+    subtitle: "Reliable Power Solutions for Hazardous Industrial Environments",
+    description:
+      "Engineered for Oil & Gas and Chemical industries, our Draw-Out MCC Panels ensure maximum safety, reliability, and uninterrupted operations in Zone 1 & Zone 2 areas.",
+    backgroundImage:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4iRNCJS9hgZ8eLynYUHmDp3Lrku95awOLsA&s",
     stats: [
-      { value: '99.99%', label: 'Uptime' },
-      { value: '10M+', label: 'Files Synced' },
-      { value: '<1ms', label: 'Latency' }
+      { value: 'Zone 1 & 2', label: 'Certified Use' },
+      { value: 'IEC 60079', label: 'Compliance' },
+      { value: 'Modular', label: 'Scalable Design' }
     ],
     cta: {
-      primary: "Start Free Trial",
-      secondary: "Watch Demo"
+      primary: "Request Technical Quote",
+      secondary: "Consult Our Experts"
     }
   },
 
@@ -33,32 +34,32 @@ export const productData = {
     items: [
       { type: 'home', label: 'Home' },
       { type: 'link', label: 'Products' },
-      { type: 'current', label: 'CloudSync Pro', icon: Sparkles }
+      { type: 'current', label: 'Draw-Out MCC Panel', icon: Sparkles }
     ]
   },
 
   // Navigation Sections
   sections: [
     { id: 'about', label: 'About' },
-    { id: 'overview', label: 'Product Overview' },
+    { id: 'overview', label: 'Overview' },
     { id: 'features', label: 'Key Features' },
-    { id: 'benefits', label: 'Benefits' },
+    { id: 'benefits', label: 'Advantages' },
     { id: 'applications', label: 'Industry Applications' }
   ],
 
   // About Section
   about: {
     badge: { icon: Sparkles, text: "Introduction" },
-    title: "About CloudSync Pro",
+    title: "About Draw-Out MCC Panels",
     description: [
-      "CloudSync Pro is a <span class='text-[#5dc1d7] font-bold'>cutting-edge cloud synchronization platform</span> designed to streamline data management across distributed teams and multi-cloud environments. Built with enterprise security and scalability at its core, our solution ensures seamless data flow while maintaining the highest standards of compliance and governance.",
-      "Whether you're managing petabytes of data across global offices or coordinating real-time collaboration between remote teams, CloudSync Pro provides the reliability and performance your business demands."
+      "Intell DIGIX designs and manufactures <span class='text-[#5dc1d7] font-bold'>Draw-Out Motor Control Center (MCC) Panels</span> specifically for hazardous industrial environments, with a strong focus on Oil & Gas and Chemical Processing sectors.",
+      "Our MCC panels are built in strict compliance with <strong>IS/IEC 60079-1:2007</strong>, ensuring safe and reliable operation in potentially explosive atmospheres while maintaining high operational efficiency."
     ],
     certifications: [
-      { name: 'SOC 2', icon: Shield },
-      { name: 'ISO 27001', icon: Award },
-      { name: 'GDPR', icon: Shield },
-      { name: 'HIPAA', icon: Award }
+      { name: 'IS/IEC 60079-1', icon: Shield },
+      { name: 'Hazardous Area Certified', icon: Award },
+      { name: 'Oil & Gas Ready', icon: Shield },
+      { name: 'Chemical Industry Approved', icon: Award }
     ]
   },
 
@@ -69,32 +70,34 @@ export const productData = {
     cards: [
       {
         type: 'gradient',
-        icon: Zap,
+        icon: Settings,
         title: "What It Does",
-        description: "CloudSync Pro automatically synchronizes files, databases, and applications across multiple cloud platforms including AWS, Azure, Google Cloud, and private data centers."
+        description:
+          "Draw-Out MCC panels provide centralized motor control with removable modules, allowing safe maintenance and replacement without shutting down the entire power system."
       },
       {
         type: 'bordered',
         icon: Users,
         title: "Who It's For",
-        description: "Designed for enterprises, technology companies, financial institutions, and healthcare organizations that require robust, compliant data synchronization."
+        description:
+          "Designed for Oil & Gas plants, chemical processing units, refineries, and other hazardous industrial locations."
       }
     ],
     highlights: [
-      { 
-        icon: '⚡', 
-        title: 'Real-Time Sync', 
-        desc: 'Millisecond-level synchronization across global nodes with zero data loss' 
+      {
+        icon: '🛡️',
+        title: 'Hazardous Area Safe',
+        desc: 'Certified for Zone 1 and Zone 2 explosive environments'
       },
-      { 
-        icon: '🔒', 
-        title: 'Enterprise Security', 
-        desc: 'End-to-end encryption with zero-knowledge architecture and SOC 2 compliance' 
+      {
+        icon: '🔄',
+        title: 'Draw-Out Design',
+        desc: 'Modules can be removed safely without isolating main power'
       },
-      { 
-        icon: '🚀', 
-        title: 'Smart Optimization', 
-        desc: 'AI-powered bandwidth and route optimization reduces costs by 40%' 
+      {
+        icon: '🧩',
+        title: 'Modular & Scalable',
+        desc: 'Easy expansion using standardized modules'
       }
     ]
   },
@@ -102,152 +105,113 @@ export const productData = {
   // Features Section
   features: {
     badge: { icon: Sparkles, text: "Features" },
-    title: "Everything You Need",
+    title: "Key Features",
     items: [
-      { 
-        id: 'integration',
-        category: 'Integration',
-        icon: Cloud,
-        title: 'Multi-Cloud Integration', 
-        desc: 'Seamlessly connect AWS, Azure, GCP, and private clouds in a unified synchronization network with intelligent routing.',
-        highlight: 'Connect 10+ platforms',
+      {
+        id: 'drawout',
+        category: 'Safety',
+        icon: Shield,
+        title: 'Draw-Out Modules (Buckets)',
+        desc:
+          'Each motor control module can be safely slid in and out for maintenance or replacement without shutting down the entire MCC.',
+        highlight: 'Live Maintenance Safe',
         color: 'from-blue-500 to-cyan-500',
-        platforms: ['AWS', 'Azure', 'Google Cloud', 'Private Cloud'],
-        layout: 'large' // Special layout identifier
+        layout: 'large'
       },
-      { 
-        id: 'conflict',
-        category: 'Intelligence',
-        icon: GitBranch,
-        title: 'Smart Conflict Resolution', 
-        desc: 'AI-powered algorithms automatically detect and resolve data conflicts with configurable policies and manual override options.',
-        highlight: '99.9% auto-resolved',
+      {
+        id: 'modular',
+        category: 'Design',
+        icon: Settings,
+        title: 'Patented Modular Construction',
+        desc:
+          'Built using Elsteel’s Techno Module system, allowing easy customization and future expansion.',
+        highlight: 'Elsteel Techno Module',
         color: 'from-purple-500 to-pink-500',
         layout: 'small'
       },
-      { 
-        id: 'version',
-        category: 'Control',
-        icon: RefreshCw,
-        title: 'Advanced Version Control', 
-        desc: 'Complete audit trail with rollback capabilities to any previous state. Track every change with millisecond precision.',
-        highlight: 'Unlimited history',
+      {
+        id: 'compartment',
+        category: 'Protection',
+        icon: Database,
+        title: 'Fully Compartmentalized Design',
+        desc:
+          'Each functional unit is isolated, preventing fault propagation and improving overall system safety.',
+        highlight: 'Fault Isolation',
         color: 'from-green-500 to-emerald-500',
         layout: 'small'
       },
-      { 
-        id: 'bandwidth',
-        category: 'Performance',
-        icon: Zap,
-        title: 'Bandwidth Optimization', 
-        desc: 'Delta synchronization and compression reduce data transfer by up to 95%, saving bandwidth costs and improving speed.',
-        highlight: '95% reduction',
-        color: 'from-yellow-500 to-orange-500',
-        layout: 'medium',
-        stats: [
-          { value: '95%', label: 'Reduction' },
-          { value: '<1s', label: 'Transfer Time' }
-        ]
-      },
-      { 
-        id: 'compliance',
-        category: 'Security',
+      {
+        id: 'safety',
+        category: 'Safety',
         icon: Shield,
-        title: 'Compliance Ready', 
-        desc: 'Built-in support for GDPR, HIPAA, SOC 2, ISO 27001, and other regulatory frameworks with automated reporting.',
-        highlight: '8+ certifications',
+        title: 'Integrated Safety Mechanisms',
+        desc:
+          'Automatic safety shutters, self-aligning contacts, and spring-loaded earth contacts ensure maximum operator safety.',
+        highlight: 'Enhanced Protection',
         color: 'from-red-500 to-rose-500',
-        layout: 'small',
-        badges: ['SOC 2', 'HIPAA', 'GDPR', 'ISO 27001']
+        layout: 'medium'
       },
-      { 
-        id: 'monitoring',
-        category: 'Analytics',
-        icon: BarChart3,
-        title: 'Advanced Monitoring', 
-        desc: 'Real-time dashboards, custom alerts, and detailed analytics for complete visibility into sync operations.',
-        highlight: 'Real-time insights',
-        color: 'from-indigo-500 to-blue-500',
-        layout: 'medium',
-        stats: [
-          { label: 'Uptime', value: '99.99%' },
-          { label: 'Response', value: '<100ms' },
-          { label: 'Events/sec', value: '1M+' }
-        ]
-      },
-      { 
-        id: 'recovery',
-        category: 'Reliability',
-        icon: Database,
-        title: 'Disaster Recovery', 
-        desc: 'Automated failover and geo-replication ensure business continuity with RTO < 5 minutes and RPO < 1 minute.',
-        highlight: '<5min RTO',
+      {
+        id: 'interchange',
+        category: 'Maintenance',
+        icon: RefreshCw,
+        title: 'Interchangeable Modules',
+        desc:
+          'Standardized modules allow quick replacement, reducing downtime during critical failures.',
+        highlight: 'Quick Swap',
         color: 'from-teal-500 to-cyan-500',
-        layout: 'small',
-        metric: { value: '<5min', label: 'Recovery Time' }
+        layout: 'small'
       }
     ]
   },
 
   // Benefits Section
   benefits: {
-    badge: { icon: TrendingUp, text: "Benefits" },
-    title: "Transform Your Business",
-    subtitle: "Real-world results from organizations that switched to CloudSync Pro",
+    badge: { icon: TrendingUp, text: "Advantages" },
+    title: "Why Choose Intell DIGIX",
+    subtitle: "Designed for safety, reliability, and operational continuity",
     items: [
-      { 
-        icon: TrendingUp, 
-        title: 'Increased Productivity', 
-        desc: 'Teams spend less time managing data and more time on value-creating activities. Automatic synchronization eliminates manual file transfers and reduces sync-related errors.',
-        metric: '40%',
-        metricLabel: 'Efficiency Gain',
-        highlights: ['Automated workflows', 'Zero manual transfers', '99% fewer errors'],
+      {
+        icon: RefreshCw,
+        title: 'Reduced Downtime',
+        desc:
+          'Quick module replacement without shutting down the system keeps production running.',
+        metric: '✔',
+        metricLabel: 'Continuous Operation',
+        highlights: ['Fast maintenance', 'No full shutdown', 'Higher uptime'],
         color: 'from-green-500 to-emerald-500'
       },
-      { 
-        icon: Sparkles, 
-        title: 'Cost Reduction', 
-        desc: 'Reduce infrastructure costs through intelligent data placement, deduplication, and bandwidth optimization. Pay only for what you use.',
-        metric: '40%',
-        metricLabel: 'Cost Savings',
-        highlights: ['Smart deduplication', 'Bandwidth optimization', 'Pay-per-use pricing'],
-        color: 'from-blue-500 to-cyan-500'
-      },
-      { 
-        icon: Shield, 
-        title: 'Enhanced Security', 
-        desc: 'Military-grade encryption, role-based access control, and comprehensive audit logs ensure your data remains secure and compliant with industry standards.',
-        metric: 'Zero',
-        metricLabel: 'Security Breaches',
-        highlights: ['End-to-end encryption', 'Role-based access', 'Complete audit trail'],
+      {
+        icon: Shield,
+        title: 'Enhanced Safety',
+        desc:
+          'Comprehensive safety features significantly reduce electrical and operational risks.',
+        metric: 'Zone 1/2',
+        metricLabel: 'Safe Operation',
+        highlights: ['Safety shutters', 'Grounding assurance', 'Fault isolation'],
         color: 'from-red-500 to-rose-500'
       },
-      { 
-        icon: Zap, 
-        title: 'Business Continuity', 
-        desc: 'Automated disaster recovery and geo-replication ensure your business keeps running even during outages. Our SLA guarantees peace of mind.',
-        metric: '99.99%',
-        metricLabel: 'Uptime SLA',
-        highlights: ['Auto failover', 'Geo-replication', '<5min recovery'],
-        color: 'from-yellow-500 to-orange-500'
+      {
+        icon: Database,
+        title: 'High Reliability',
+        desc:
+          'Rugged construction ensures long-term performance in harsh industrial conditions.',
+        metric: '24x7',
+        metricLabel: 'Industrial Duty',
+        highlights: ['Robust build', 'Extreme conditions', 'Long service life'],
+        color: 'from-blue-500 to-cyan-500'
       },
-      { 
-        icon: Globe, 
-        title: 'Unlimited Scalability', 
-        desc: 'Start small and scale to petabytes without infrastructure changes. CloudSync Pro grows with your business, handling increased load automatically.',
-        metric: '∞',
-        metricLabel: 'Scale Capacity',
-        highlights: ['Auto-scaling', 'No limits', 'Global edge network'],
-        color: 'from-purple-500 to-pink-500'
+      {
+        icon: Award,
+        title: 'Global Technology Partner',
+        desc:
+          'Authorized channel partner of Elsteel, Denmark, using globally proven Techno Module systems.',
+        metric: 'Global',
+        metricLabel: 'Technology',
+        highlights: ['Elsteel Denmark', 'Proven design', 'Scalable systems'],
+        color: 'from-yellow-500 to-orange-500'
       }
-    ],
-    roiCta: {
-      badge: { text: "ROI Calculator" },
-      title: "Calculate Your Potential Savings",
-      description: "See how much time and money your organization could save with CloudSync Pro",
-      buttonText: "Launch Calculator",
-      buttonShortText: "Calculate"
-    }
+    ]
   },
 
   // Industry Applications
@@ -256,53 +220,36 @@ export const productData = {
     title: "Industry Applications",
     items: [
       {
-        title: 'Financial Services',
-        icon: '💰',
-        desc: 'Synchronize trading data, customer records, and transaction histories across global branches while maintaining regulatory compliance.',
+        title: 'Oil & Gas',
+        icon: '🛢️',
+        desc:
+          'Safe and reliable motor control solutions for upstream, midstream, and downstream operations.',
         cases: [
-          'Real-time market data distribution to trading desks worldwide',
-          'Cross-border customer data synchronization with data residency compliance',
-          'Disaster recovery for critical financial systems'
+          'Refineries and petrochemical plants',
+          'Offshore and onshore facilities',
+          'Hazardous area motor control'
         ]
       },
       {
-        title: 'Healthcare',
-        icon: '🏥',
-        desc: 'Enable secure sharing of patient records, medical imaging, and research data across hospital networks while ensuring HIPAA compliance.',
+        title: 'Chemical Processing',
+        icon: '⚗️',
+        desc:
+          'Designed to withstand aggressive and explosive environments in chemical plants.',
         cases: [
-          'Electronic Health Record (EHR) synchronization across care facilities',
-          'Medical imaging distribution for radiology departments',
-          'Clinical trial data management and regulatory reporting'
+          'Process control systems',
+          'Explosion-prone zones',
+          'Continuous operation plants'
         ]
       },
       {
-        title: 'Manufacturing',
+        title: 'Heavy Industries',
         icon: '🏭',
-        desc: 'Coordinate production data, supply chain information, and IoT sensor data across manufacturing facilities worldwide.',
+        desc:
+          'Reliable MCC solutions for extreme industrial operating conditions.',
         cases: [
-          'Real-time production line data synchronization for quality control',
-          'Global inventory management and supply chain coordination',
-          'CAD/CAM file distribution for distributed engineering teams'
-        ]
-      },
-      {
-        title: 'Technology & SaaS',
-        icon: '💻',
-        desc: 'Support multi-tenant SaaS applications with automatic data replication, backup, and geo-distribution.',
-        cases: [
-          'Multi-region database synchronization for global SaaS platforms',
-          'Development environment synchronization for distributed teams',
-          'Customer data backup and disaster recovery automation'
-        ]
-      },
-      {
-        title: 'Retail & E-commerce',
-        icon: '🛒',
-        desc: 'Keep product catalogs, inventory levels, and customer data synchronized across all channels in real-time.',
-        cases: [
-          'Omnichannel inventory synchronization across stores and warehouses',
-          'Product catalog updates propagated to all sales channels instantly',
-          'Customer data unification for personalized shopping experiences'
+          'Power plants',
+          'Fertilizer units',
+          'Steel & metal processing'
         ]
       }
     ]
@@ -310,20 +257,21 @@ export const productData = {
 
   // Final CTA
   finalCta: {
-    badge: { text: "Join 10,000+ Companies" },
-    title: ["Ready to Transform Your", "Data Infrastructure?"],
-    description: "Join thousands of enterprises worldwide who trust CloudSync Pro for mission-critical synchronization.",
+    badge: { text: "Hazardous Area Experts" },
+    title: ["Need Safe & Reliable", "Draw-Out MCC Panels?"],
+    description:
+      "Partner with Intell DIGIX for certified, modular, and future-ready MCC solutions built for hazardous environments.",
     buttons: {
-      primary: "Start Free Trial",
-      secondary: "Schedule Demo"
+      primary: "Get Technical Consultation",
+      secondary: "Request Quote"
     },
-    disclaimer: "No credit card required • 14-day free trial • Cancel anytime"
+    disclaimer: "IS/IEC compliant • Hazardous area certified • Elsteel partner"
   },
 
   // Sidebar Stats
   sidebarStat: {
     icon: Sparkles,
-    value: "99.99%",
-    label: "Uptime Guarantee"
+    value: "IEC 60079",
+    label: "Safety Certified"
   }
 };

@@ -1,7 +1,6 @@
 import { 
   Zap, Shield, Sparkles, TrendingUp, Users, Globe, 
-  Award, Cloud, RefreshCw, BarChart3, GitBranch, 
-  Database, Settings 
+  Award, BarChart3, Settings, RefreshCw, Database 
 } from 'lucide-react';
 
 export const productData = {
@@ -9,22 +8,22 @@ export const productData = {
   hero: {
     badge: {
       icon: Sparkles,
-      text: "Trusted by 10,000+ Enterprises",
-      shortText: "10,000+ Enterprises"
+      text: "Trusted by Industries Nationwide",
+      shortText: "Industry Trusted"
     },
-    title: "CloudSync",
-    titleAccent: "Pro",
-    subtitle: "The most powerful cloud synchronization platform",
-    description: "Built for teams who demand excellence, security, and scale",
-    backgroundImage: "https://i.pinimg.com/1200x/1b/7e/0f/1b7e0f5b3e75a7a4b4f970705a9995cb.jpg",
+    title: "ABB",
+    titleAccent: "VFD Panel",
+    subtitle: "Smart Motor Control & Energy Optimization",
+    description: "High-performance Variable Frequency Drive panels engineered for reliability, efficiency, and long service life",
+    backgroundImage:"https://5.imimg.com/data5/WI/MX/GO/SELLER-5724470/vfd-electrical-panel.jpeg",
     stats: [
-      { value: '99.99%', label: 'Uptime' },
-      { value: '10M+', label: 'Files Synced' },
-      { value: '<1ms', label: 'Latency' }
+      { value: '30%', label: 'Energy Savings' },
+      { value: '24x7', label: 'Reliable Operation' },
+      { value: '100%', label: 'Custom Built' }
     ],
     cta: {
-      primary: "Start Free Trial",
-      secondary: "Watch Demo"
+      primary: "Request Quote",
+      secondary: "Talk to Expert"
     }
   },
 
@@ -33,32 +32,32 @@ export const productData = {
     items: [
       { type: 'home', label: 'Home' },
       { type: 'link', label: 'Products' },
-      { type: 'current', label: 'CloudSync Pro', icon: Sparkles }
+      { type: 'current', label: 'ABB VFD Panel', icon: Sparkles }
     ]
   },
 
   // Navigation Sections
   sections: [
     { id: 'about', label: 'About' },
-    { id: 'overview', label: 'Product Overview' },
+    { id: 'overview', label: 'Overview' },
     { id: 'features', label: 'Key Features' },
-    { id: 'benefits', label: 'Benefits' },
-    { id: 'applications', label: 'Industry Applications' }
+    { id: 'benefits', label: 'Why Choose Us' },
+    { id: 'applications', label: 'Applications' }
   ],
 
   // About Section
   about: {
     badge: { icon: Sparkles, text: "Introduction" },
-    title: "About CloudSync Pro",
+    title: "About ABB VFD Panels",
     description: [
-      "CloudSync Pro is a <span class='text-[#5dc1d7] font-bold'>cutting-edge cloud synchronization platform</span> designed to streamline data management across distributed teams and multi-cloud environments. Built with enterprise security and scalability at its core, our solution ensures seamless data flow while maintaining the highest standards of compliance and governance.",
-      "Whether you're managing petabytes of data across global offices or coordinating real-time collaboration between remote teams, CloudSync Pro provides the reliability and performance your business demands."
+      "ABB VFD Panels by <span class='text-[#5dc1d7] font-bold'>Intell Power and Automation Pvt. Ltd.</span> are designed to deliver precise speed control, energy efficiency, and extended motor life for industrial and commercial applications.",
+      "Manufactured using premium-grade components and engineered by experienced professionals, our VFD panels ensure smooth motor operation, reduced power consumption, and dependable performance even in demanding environments."
     ],
     certifications: [
-      { name: 'SOC 2', icon: Shield },
-      { name: 'ISO 27001', icon: Award },
-      { name: 'GDPR', icon: Shield },
-      { name: 'HIPAA', icon: Award }
+      { name: 'IEC Standards', icon: Shield },
+      { name: 'ISO Certified', icon: Award },
+      { name: 'Quality Tested', icon: Shield },
+      { name: 'Industry Proven', icon: Award }
     ]
   },
 
@@ -69,32 +68,32 @@ export const productData = {
     cards: [
       {
         type: 'gradient',
-        icon: Zap,
+        icon: Settings,
         title: "What It Does",
-        description: "CloudSync Pro automatically synchronizes files, databases, and applications across multiple cloud platforms including AWS, Azure, Google Cloud, and private data centers."
+        description: "VFD panels control motor speed by varying voltage and frequency, improving efficiency, reducing wear, and optimizing system performance."
       },
       {
         type: 'bordered',
         icon: Users,
         title: "Who It's For",
-        description: "Designed for enterprises, technology companies, financial institutions, and healthcare organizations that require robust, compliant data synchronization."
+        description: "Ideal for industries, commercial facilities, HVAC systems, pumping stations, and automation-driven operations."
       }
     ],
     highlights: [
       { 
         icon: '⚡', 
-        title: 'Real-Time Sync', 
-        desc: 'Millisecond-level synchronization across global nodes with zero data loss' 
+        title: 'Energy Efficient', 
+        desc: 'Significant reduction in power consumption and operating costs' 
       },
       { 
-        icon: '🔒', 
-        title: 'Enterprise Security', 
-        desc: 'End-to-end encryption with zero-knowledge architecture and SOC 2 compliance' 
+        icon: '🛠️', 
+        title: 'Easy Maintenance', 
+        desc: 'User-friendly design with minimal servicing requirements' 
       },
       { 
-        icon: '🚀', 
-        title: 'Smart Optimization', 
-        desc: 'AI-powered bandwidth and route optimization reduces costs by 40%' 
+        icon: '🔄', 
+        title: 'Smooth Motor Control', 
+        desc: 'Soft start and stop for extended motor life' 
       }
     ]
   },
@@ -102,89 +101,57 @@ export const productData = {
   // Features Section
   features: {
     badge: { icon: Sparkles, text: "Features" },
-    title: "Everything You Need",
+    title: "Key Features",
     items: [
       { 
-        id: 'integration',
-        category: 'Integration',
-        icon: Cloud,
-        title: 'Multi-Cloud Integration', 
-        desc: 'Seamlessly connect AWS, Azure, GCP, and private clouds in a unified synchronization network with intelligent routing.',
-        highlight: 'Connect 10+ platforms',
+        id: 'durability',
+        category: 'Performance',
+        icon: Shield,
+        title: 'High Durability', 
+        desc: 'Robust construction ensures long service life even in harsh industrial environments.',
+        highlight: 'Industrial Grade',
         color: 'from-blue-500 to-cyan-500',
-        platforms: ['AWS', 'Azure', 'Google Cloud', 'Private Cloud'],
-        layout: 'large' // Special layout identifier
+        layout: 'large'
       },
       { 
-        id: 'conflict',
-        category: 'Intelligence',
-        icon: GitBranch,
-        title: 'Smart Conflict Resolution', 
-        desc: 'AI-powered algorithms automatically detect and resolve data conflicts with configurable policies and manual override options.',
-        highlight: '99.9% auto-resolved',
-        color: 'from-purple-500 to-pink-500',
-        layout: 'small'
-      },
-      { 
-        id: 'version',
-        category: 'Control',
-        icon: RefreshCw,
-        title: 'Advanced Version Control', 
-        desc: 'Complete audit trail with rollback capabilities to any previous state. Track every change with millisecond precision.',
-        highlight: 'Unlimited history',
+        id: 'efficiency',
+        category: 'Energy',
+        icon: Zap,
+        title: 'Energy Optimization', 
+        desc: 'Designed to reduce energy consumption and improve overall system efficiency.',
+        highlight: 'Lower Power Bills',
         color: 'from-green-500 to-emerald-500',
         layout: 'small'
       },
       { 
-        id: 'bandwidth',
-        category: 'Performance',
-        icon: Zap,
-        title: 'Bandwidth Optimization', 
-        desc: 'Delta synchronization and compression reduce data transfer by up to 95%, saving bandwidth costs and improving speed.',
-        highlight: '95% reduction',
-        color: 'from-yellow-500 to-orange-500',
-        layout: 'medium',
-        stats: [
-          { value: '95%', label: 'Reduction' },
-          { value: '<1s', label: 'Transfer Time' }
-        ]
-      },
-      { 
-        id: 'compliance',
-        category: 'Security',
-        icon: Shield,
-        title: 'Compliance Ready', 
-        desc: 'Built-in support for GDPR, HIPAA, SOC 2, ISO 27001, and other regulatory frameworks with automated reporting.',
-        highlight: '8+ certifications',
-        color: 'from-red-500 to-rose-500',
-        layout: 'small',
-        badges: ['SOC 2', 'HIPAA', 'GDPR', 'ISO 27001']
+        id: 'custom',
+        category: 'Design',
+        icon: Settings,
+        title: 'Custom Built Panels', 
+        desc: 'Tailor-made VFD panels to suit specific operational and application requirements.',
+        highlight: '100% Customizable',
+        color: 'from-purple-500 to-pink-500',
+        layout: 'small'
       },
       { 
         id: 'monitoring',
-        category: 'Analytics',
+        category: 'Control',
         icon: BarChart3,
-        title: 'Advanced Monitoring', 
-        desc: 'Real-time dashboards, custom alerts, and detailed analytics for complete visibility into sync operations.',
-        highlight: 'Real-time insights',
+        title: 'Precise Motor Control', 
+        desc: 'Accurate speed and torque control for smooth and stable motor performance.',
+        highlight: 'Stable Output',
         color: 'from-indigo-500 to-blue-500',
-        layout: 'medium',
-        stats: [
-          { label: 'Uptime', value: '99.99%' },
-          { label: 'Response', value: '<100ms' },
-          { label: 'Events/sec', value: '1M+' }
-        ]
+        layout: 'medium'
       },
       { 
-        id: 'recovery',
+        id: 'reliability',
         category: 'Reliability',
         icon: Database,
-        title: 'Disaster Recovery', 
-        desc: 'Automated failover and geo-replication ensure business continuity with RTO < 5 minutes and RPO < 1 minute.',
-        highlight: '<5min RTO',
+        title: 'Reliable Operation', 
+        desc: 'Ensures uninterrupted performance in continuous and critical operations.',
+        highlight: '24x7 Duty',
         color: 'from-teal-500 to-cyan-500',
-        layout: 'small',
-        metric: { value: '<5min', label: 'Recovery Time' }
+        layout: 'small'
       }
     ]
   },
@@ -192,117 +159,81 @@ export const productData = {
   // Benefits Section
   benefits: {
     badge: { icon: TrendingUp, text: "Benefits" },
-    title: "Transform Your Business",
-    subtitle: "Real-world results from organizations that switched to CloudSync Pro",
+    title: "Why Choose Intell Power & Automation",
+    subtitle: "Engineered for performance, reliability, and value",
     items: [
       { 
-        icon: TrendingUp, 
-        title: 'Increased Productivity', 
-        desc: 'Teams spend less time managing data and more time on value-creating activities. Automatic synchronization eliminates manual file transfers and reduces sync-related errors.',
-        metric: '40%',
-        metricLabel: 'Efficiency Gain',
-        highlights: ['Automated workflows', 'Zero manual transfers', '99% fewer errors'],
+        icon: Award, 
+        title: 'Expert Manufacturing', 
+        desc: 'Manufactured under expert supervision using proven engineering practices.',
+        metric: '100%',
+        metricLabel: 'Quality Focus',
+        highlights: ['Skilled workforce', 'Premium components', 'Strict testing'],
         color: 'from-green-500 to-emerald-500'
       },
       { 
-        icon: Sparkles, 
-        title: 'Cost Reduction', 
-        desc: 'Reduce infrastructure costs through intelligent data placement, deduplication, and bandwidth optimization. Pay only for what you use.',
-        metric: '40%',
-        metricLabel: 'Cost Savings',
-        highlights: ['Smart deduplication', 'Bandwidth optimization', 'Pay-per-use pricing'],
+        icon: Zap, 
+        title: 'Energy Savings', 
+        desc: 'Optimized motor control leads to significant reduction in power consumption.',
+        metric: '30%',
+        metricLabel: 'Energy Saving',
+        highlights: ['Efficient operation', 'Reduced losses', 'Lower costs'],
         color: 'from-blue-500 to-cyan-500'
       },
       { 
         icon: Shield, 
-        title: 'Enhanced Security', 
-        desc: 'Military-grade encryption, role-based access control, and comprehensive audit logs ensure your data remains secure and compliant with industry standards.',
-        metric: 'Zero',
-        metricLabel: 'Security Breaches',
-        highlights: ['End-to-end encryption', 'Role-based access', 'Complete audit trail'],
+        title: 'Reliable Performance', 
+        desc: 'Designed for continuous operation in industrial and commercial environments.',
+        metric: '24x7',
+        metricLabel: 'Operational Reliability',
+        highlights: ['Stable output', 'Minimal downtime', 'Long life'],
         color: 'from-red-500 to-rose-500'
       },
       { 
-        icon: Zap, 
-        title: 'Business Continuity', 
-        desc: 'Automated disaster recovery and geo-replication ensure your business keeps running even during outages. Our SLA guarantees peace of mind.',
-        metric: '99.99%',
-        metricLabel: 'Uptime SLA',
-        highlights: ['Auto failover', 'Geo-replication', '<5min recovery'],
+        icon: RefreshCw, 
+        title: 'On-Time Delivery', 
+        desc: 'Strong logistics and planning ensure timely delivery without delays.',
+        metric: '✔',
+        metricLabel: 'Timely Supply',
+        highlights: ['Strong transport', 'Reliable schedules', 'Customer trust'],
         color: 'from-yellow-500 to-orange-500'
-      },
-      { 
-        icon: Globe, 
-        title: 'Unlimited Scalability', 
-        desc: 'Start small and scale to petabytes without infrastructure changes. CloudSync Pro grows with your business, handling increased load automatically.',
-        metric: '∞',
-        metricLabel: 'Scale Capacity',
-        highlights: ['Auto-scaling', 'No limits', 'Global edge network'],
-        color: 'from-purple-500 to-pink-500'
       }
-    ],
-    roiCta: {
-      badge: { text: "ROI Calculator" },
-      title: "Calculate Your Potential Savings",
-      description: "See how much time and money your organization could save with CloudSync Pro",
-      buttonText: "Launch Calculator",
-      buttonShortText: "Calculate"
-    }
+    ]
   },
 
   // Industry Applications
   applications: {
-    badge: { icon: Globe, text: "Industries" },
-    title: "Industry Applications",
+    badge: { icon: Globe, text: "Applications" },
+    title: "Application Areas",
     items: [
       {
-        title: 'Financial Services',
-        icon: '💰',
-        desc: 'Synchronize trading data, customer records, and transaction histories across global branches while maintaining regulatory compliance.',
+        title: 'HVAC Systems',
+        icon: '❄️',
+        desc: 'Efficient control for ventilation, air extraction, and smoke management systems.',
         cases: [
-          'Real-time market data distribution to trading desks worldwide',
-          'Cross-border customer data synchronization with data residency compliance',
-          'Disaster recovery for critical financial systems'
+          'Ventilation & air extraction systems',
+          'Smoke extraction fans',
+          'Wall air heating systems'
         ]
       },
       {
-        title: 'Healthcare',
-        icon: '🏥',
-        desc: 'Enable secure sharing of patient records, medical imaging, and research data across hospital networks while ensuring HIPAA compliance.',
+        title: 'Pumping Systems',
+        icon: '💧',
+        desc: 'Reliable speed control for pumps used in heating, cooling, and industrial processes.',
         cases: [
-          'Electronic Health Record (EHR) synchronization across care facilities',
-          'Medical imaging distribution for radiology departments',
-          'Clinical trial data management and regulatory reporting'
+          'Heat pumps & chiller pumps',
+          'Recirculating air heating systems',
+          'Water management applications'
         ]
       },
       {
-        title: 'Manufacturing',
+        title: 'Industrial Motors',
         icon: '🏭',
-        desc: 'Coordinate production data, supply chain information, and IoT sensor data across manufacturing facilities worldwide.',
+        desc: 'General motor control for manufacturing and processing industries.',
         cases: [
-          'Real-time production line data synchronization for quality control',
-          'Global inventory management and supply chain coordination',
-          'CAD/CAM file distribution for distributed engineering teams'
-        ]
-      },
-      {
-        title: 'Technology & SaaS',
-        icon: '💻',
-        desc: 'Support multi-tenant SaaS applications with automatic data replication, backup, and geo-distribution.',
-        cases: [
-          'Multi-region database synchronization for global SaaS platforms',
-          'Development environment synchronization for distributed teams',
-          'Customer data backup and disaster recovery automation'
-        ]
-      },
-      {
-        title: 'Retail & E-commerce',
-        icon: '🛒',
-        desc: 'Keep product catalogs, inventory levels, and customer data synchronized across all channels in real-time.',
-        cases: [
-          'Omnichannel inventory synchronization across stores and warehouses',
-          'Product catalog updates propagated to all sales channels instantly',
-          'Customer data unification for personalized shopping experiences'
+          'Induced & forced draft fans',
+          'Heating and drying cabinets',
+          'Industrial automation systems'
         ]
       }
     ]
@@ -310,20 +241,20 @@ export const productData = {
 
   // Final CTA
   finalCta: {
-    badge: { text: "Join 10,000+ Companies" },
-    title: ["Ready to Transform Your", "Data Infrastructure?"],
-    description: "Join thousands of enterprises worldwide who trust CloudSync Pro for mission-critical synchronization.",
+    badge: { text: "Power Your Operations" },
+    title: ["Looking for Reliable", "ABB VFD Panels?"],
+    description: "Contact Intell Power and Automation Pvt. Ltd. for high-performance, cost-effective VFD solutions.",
     buttons: {
-      primary: "Start Free Trial",
-      secondary: "Schedule Demo"
+      primary: "Get Quote",
+      secondary: "Contact Us"
     },
-    disclaimer: "No credit card required • 14-day free trial • Cancel anytime"
+    disclaimer: "Quality assured • Custom solutions • Industry proven"
   },
 
   // Sidebar Stats
   sidebarStat: {
     icon: Sparkles,
-    value: "99.99%",
-    label: "Uptime Guarantee"
+    value: "30%",
+    label: "Energy Savings"
   }
 };

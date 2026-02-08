@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 
 // Add Google Fonts
 const fontLink = document.createElement('link');
@@ -117,69 +117,100 @@ if (!document.querySelector('style[data-animations]')) {
   document.head.appendChild(styleSheet);
 }
 
-export default function ElectricianServices() {
+export default function CableServices() {
   const [activeTab, setActiveTab] = useState('all');
+
 
   const services = [
     {
       id: 1,
-      icon: '🏠',
-      title: 'Residential Electrical',
-      category: 'residential',
-      description: 'Complete home electrical services including wiring, panel upgrades, lighting installation, and electrical repairs.',
-      features: ['Home Rewiring', 'Panel Upgrades', 'Outlet Installation', 'Safety Inspections'],
-      price: 'From $150',
+      icon: '🔌',
+      title: 'Underground Cable Laying',
+      category: 'installation',
+      description: 'Professional underground cable installation for power distribution, telecommunications, and data networks.',
+      features: ['Trenching & Excavation', 'Direct Burial', 'Conduit Installation', 'Depth Compliance'],
+      price: 'From $12/ft',
       color: '#5dc1d7'
     },
     {
       id: 2,
-      icon: '🏢',
-      title: 'Commercial Solutions',
-      category: 'commercial',
-      description: 'Professional electrical services for businesses, offices, and commercial properties.',
-      features: ['Office Systems', 'Commercial Lighting', 'Power Distribution', 'Compliance'],
+      icon: '⚡',
+      title: 'High Voltage Conducting',
+      category: 'power',
+      description: 'Specialized high voltage cable installation and conductor services for industrial and utility applications.',
+      features: ['HV Cable Installation', 'Conductor Stringing', 'Termination Work', 'Testing & Certification'],
       price: 'Custom Quote',
       color: '#4a9fb5'
     },
     {
       id: 3,
-      icon: '⚡',
-      title: 'Emergency Repairs',
-      category: 'emergency',
-      description: '24/7 emergency electrical services to keep your property safe and powered.',
-      features: ['Power Outages', 'Emergency Fixes', 'Safety Repairs', 'Same-Day Service'],
-      price: 'Call Now',
+      icon: '🏗️',
+      title: 'Overhead Cable Installation',
+      category: 'installation',
+      description: 'Complete overhead cable laying services including pole mounting and aerial cable runs.',
+      features: ['Pole Installation', 'Cable Stringing', 'Aerial Support', 'Weatherproofing'],
+      price: 'From $8/ft',
       color: '#5dc1d7'
     },
     {
       id: 4,
-      icon: '💡',
-      title: 'Lighting Design',
-      category: 'residential',
-      description: 'Custom lighting solutions and installations to enhance your space.',
-      features: ['LED Installation', 'Outdoor Lighting', 'Smart Systems', 'Energy Efficient'],
-      price: 'From $200',
+      icon: '🌐',
+      title: 'Fiber Optic Cabling',
+      category: 'telecom',
+      description: 'High-speed fiber optic cable installation for telecommunications and data centers.',
+      features: ['Fiber Installation', 'Splicing Services', 'Testing & Certification', 'Network Design'],
+      price: 'From $6/ft',
       color: '#4a9fb5'
     },
     {
       id: 5,
-      icon: '🔌',
-      title: 'Panel Upgrades',
-      category: 'residential',
-      description: 'Electrical panel upgrades and replacements to meet modern power demands.',
-      features: ['Main Panel', 'Sub-Panels', 'Circuit Expansion', 'Code Compliance'],
-      price: 'From $800',
+      icon: '🔧',
+      title: 'Cable Tray Systems',
+      category: 'installation',
+      description: 'Design and installation of cable tray systems for organized industrial cable management.',
+      features: ['Tray Installation', 'Support Structures', 'Fire Barriers', 'Code Compliance'],
+      price: 'From $25/ft',
       color: '#5dc1d7'
     },
     {
       id: 6,
-      icon: '🔍',
-      title: 'Inspections',
-      category: 'commercial',
-      description: 'Thorough electrical inspections and safety testing.',
-      features: ['Safety Checks', 'Pre-Purchase', 'Code Compliance', 'Detailed Reports'],
-      price: 'From $250',
+      icon: '🏭',
+      title: 'Industrial Conducting',
+      category: 'power',
+      description: 'Heavy-duty cable and conductor installation for manufacturing plants and industrial facilities.',
+      features: ['Power Distribution', 'Bus Bar Systems', 'Motor Feeders', 'Safety Systems'],
+      price: 'Custom Quote',
       color: '#4a9fb5'
+    },
+    {
+      id: 7,
+      icon: '📡',
+      title: 'Telecom Cable Laying',
+      category: 'telecom',
+      description: 'Complete telecommunications cable infrastructure for voice, data, and internet services.',
+      features: ['Cat6/Cat6a Install', 'Patch Panel Setup', 'Cable Management', 'Network Testing'],
+      price: 'From $4/ft',
+      color: '#5dc1d7'
+    },
+    {
+      id: 8,
+      icon: '🛡️',
+      title: 'Cable Protection & Ducting',
+      category: 'installation',
+      description: 'Cable protection services including ducting, sheathing, and armoring for enhanced durability.',
+      features: ['HDPE Ducting', 'Cable Armoring', 'Protective Conduits', 'Corrosion Prevention'],
+      price: 'From $10/ft',
+      color: '#4a9fb5'
+    },
+    {
+      id: 9,
+      icon: '🔍',
+      title: 'Cable Fault Detection',
+      category: 'maintenance',
+      description: 'Advanced cable fault location and repair services using state-of-the-art diagnostic equipment.',
+      features: ['Fault Tracing', 'Insulation Testing', 'Continuity Checks', 'Emergency Repairs'],
+      price: 'From $300',
+      color: '#5dc1d7'
     },
   ];
 
@@ -187,6 +218,10 @@ export default function ElectricianServices() {
     ? services 
     : services.filter(s => s.category === activeTab);
 
+      useEffect(() => {
+ 
+        window.scrollTo(0, 0);
+      }, []);
   return (
     <div style={styles.container}>
       {/* Hero Section */}
@@ -194,18 +229,18 @@ export default function ElectricianServices() {
         <div style={styles.heroContent}>
           <div className="hero-grid" style={styles.heroGrid}>
             <div style={styles.heroText}>
-              <span style={styles.badge}>⚡ Professional Services</span>
+              <span style={styles.badge}>⚡ Professional Cable Services</span>
               <h1 className="hero-title" style={styles.heroTitle}>
-                Expert Electrical
+                Expert Cable Laying &
                 <br />
-                <span style={styles.heroHighlight}>Solutions</span>
+                <span style={styles.heroHighlight}>Conducting Solutions</span>
               </h1>
               <p style={styles.heroSubtitle}>
-                Trusted by 5000+ customers for residential and commercial electrical needs
+                Trusted by 3000+ clients for underground, overhead, and industrial cable installation projects
               </p>
               <div className="hero-buttons" style={styles.heroButtons}>
                 <button style={styles.primaryBtn}>Get Free Quote</button>
-                <button style={styles.secondaryBtn}>📞 (555) 123-4567</button>
+                <button style={styles.secondaryBtn}>📞 (555) 789-0123</button>
               </div>
             </div>
             <div style={styles.heroImageSection}>
@@ -213,16 +248,16 @@ export default function ElectricianServices() {
               <div style={styles.heroImageWrapper}>
                 <img 
                   className="hero-image"
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80" 
-                  alt="Electrician at work"
+                  src="/service1.jpg" 
+                  alt="Cable laying work"
                   style={styles.heroImage}
                 />
                 {/* Floating badge */}
                 <div style={styles.floatingBadge}>
                   <div style={styles.badgeIcon}>✓</div>
                   <div>
-                    <div style={styles.badgeTitle}>Licensed & Insured</div>
-                    <div style={styles.badgeSubtitle}>Certified Professionals</div>
+                    <div style={styles.badgeTitle}>Certified Specialists</div>
+                    <div style={styles.badgeSubtitle}>Licensed & Bonded</div>
                   </div>
                 </div>
               </div>
@@ -232,16 +267,16 @@ export default function ElectricianServices() {
           {/* Stats Bar */}
           <div className="stats-grid" style={styles.statsBar}>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>15+</div>
+              <div style={styles.statNumber}>20+</div>
               <div style={styles.statLabel}>Years Experience</div>
             </div>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>5000+</div>
-              <div style={styles.statLabel}>Projects Done</div>
+              <div style={styles.statNumber}>3000+</div>
+              <div style={styles.statLabel}>Miles Laid</div>
             </div>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>24/7</div>
-              <div style={styles.statLabel}>Available</div>
+              <div style={styles.statNumber}>500+</div>
+              <div style={styles.statLabel}>Projects Completed</div>
             </div>
           </div>
         </div>
@@ -259,24 +294,31 @@ export default function ElectricianServices() {
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'residential' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('residential')}
+            style={{...styles.tab, ...(activeTab === 'installation' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('installation')}
           >
-            Residential
+            Installation
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'commercial' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('commercial')}
+            style={{...styles.tab, ...(activeTab === 'power' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('power')}
           >
-            Commercial
+            Power & HV
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'emergency' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('emergency')}
+            style={{...styles.tab, ...(activeTab === 'telecom' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('telecom')}
           >
-            Emergency
+            Telecom
+          </button>
+          <button 
+            className="tab"
+            style={{...styles.tab, ...(activeTab === 'maintenance' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('maintenance')}
+          >
+            Maintenance
           </button>
         </div>
 
@@ -404,16 +446,6 @@ const styles = {
     marginBottom: '20px',
     lineHeight: '1.1',
     fontFamily: "'Playfair Display', serif",
-  },
-  '@media (max-width: 968px)': {
-    heroTitle: {
-      fontSize: '3rem',
-    },
-  },
-  '@media (max-width: 640px)': {
-    heroTitle: {
-      fontSize: '2.5rem',
-    },
   },
   heroHighlight: {
     color: '#ffffff',
@@ -641,40 +673,5 @@ const styles = {
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     fontFamily: "'Playfair Display', serif",
-  },
-  ctaSection: {
-    background: 'linear-gradient(135deg, #0a4d5c 0%, #5dc1d7 100%)',
-    padding: '80px 20px',
-    textAlign: 'center',
-  },
-  ctaContent: {
-    maxWidth: '700px',
-    margin: '0 auto',
-    color: 'white',
-  },
-  ctaTitle: {
-    fontSize: '2.5rem',
-    fontWeight: '800',
-    marginBottom: '15px',
-    fontFamily: "'Playfair Display', serif",
-  },
-  ctaText: {
-    fontSize: '1.2rem',
-    marginBottom: '30px',
-    opacity: 0.9,
-    fontFamily: "'Lora', serif",
-  },
-  ctaButton: {
-    padding: '18px 45px',
-    background: 'white',
-    color: '#0a4d5c',
-    border: 'none',
-    borderRadius: '30px',
-    fontSize: '1.1rem',
-    fontWeight: '600',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    fontFamily: "'Playfair Display', serif",
-    boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
   },
 };
