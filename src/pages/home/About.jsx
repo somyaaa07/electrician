@@ -127,7 +127,7 @@ const AboutSection = () => {
               style={{ fontFamily: "'Lora', serif" }}
             >
              
-Intell Power and Automation Pvt. Ltd. is not just a manufacturer—
+Intell-DIGIX India Pvt. Ltd. is not just a manufacturer—
             </p>
             
             {/* Decorative Line */}
@@ -139,7 +139,7 @@ Intell Power and Automation Pvt. Ltd. is not just a manufacturer—
                 className="text-gray-700 text-lg leading-relaxed"
                 style={{ fontFamily: "'Lora', serif" }}
               >
-              At Intell Power and Automation Pvt. Ltd., we offer comprehensive electro-mechanical solutions that go far beyond power distribution. Our integrated systems are engineered to enhance equipment safety, operational efficiency, and process automation for a wide range of industries
+              At Intell-DIGIX India Pvt. Ltd., we offer comprehensive electro-mechanical solutions that go far beyond power distribution. Our integrated systems are engineered to enhance equipment safety, operational efficiency, and process automation for a wide range of industries
               </p>
               
               <p 

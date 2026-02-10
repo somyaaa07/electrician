@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Add Google Fonts
 const fontLink = document.createElement('link');
@@ -117,68 +117,68 @@ if (!document.querySelector('style[data-animations]')) {
   document.head.appendChild(styleSheet);
 }
 
-export default function WarrantyServices() {
+export default function EngineeringServices() {
   const [activeTab, setActiveTab] = useState('all');
 
   const services = [
     {
       id: 1,
-      icon: '🛡️',
-      title: 'Warranty Repairs',
-      category: 'warranty',
-      description: 'Complete coverage for products under manufacturer warranty with authorized service and genuine parts.',
-      features: ['Free Diagnostics', 'Genuine Parts', 'Authorized Service', 'Quick Turnaround'],
-      price: 'No Cost',
+      icon: '🔌',
+      title: 'Cable Laying & Conduiting',
+      category: 'infrastructure',
+      description: 'Professional cable installation and conduit systems for electrical and data infrastructure with precision and safety.',
+      features: ['Underground Cabling', 'Conduit Installation', 'Cable Routing', 'Quality Testing'],
+      price: 'Custom Quote',
       color: '#5dc1d7'
     },
     {
       id: 2,
-      icon: '🔧',
-      title: 'Post-Warranty Repair',
-      category: 'post-warranty',
-      description: 'Expert repair services for products after warranty expiration at competitive rates.',
-      features: ['Quality Parts', 'Expert Technicians', 'Fair Pricing', '90-Day Guarantee'],
-      price: 'From $99',
+      icon: '🏗️',
+      title: 'Engineering, Procurement & Construction',
+      category: 'epc',
+      description: 'Complete EPC solutions from design to execution with integrated project management and delivery excellence.',
+      features: ['Full Turnkey Solutions', 'Project Management', 'Quality Assurance', 'Timely Delivery'],
+      price: 'Project Based',
       color: '#4a9fb5'
     },
     {
       id: 3,
-      icon: '⏱️',
-      title: 'Extended Warranty',
-      category: 'extended',
-      description: 'Extend your product protection beyond standard warranty with comprehensive coverage plans.',
-      features: ['Long-Term Coverage', 'Flexible Plans', 'Parts & Labor', 'Transferable'],
-      price: 'Custom Plans',
+      icon: '⚙️',
+      title: 'Installation, Programming & Commissioning',
+      category: 'installation',
+      description: 'Expert installation and commissioning services ensuring optimal system performance and integration.',
+      features: ['System Integration', 'Programming Setup', 'Performance Testing', 'Documentation'],
+      price: 'From $2,500',
       color: '#5dc1d7'
     },
     {
       id: 4,
-      icon: '🔍',
-      title: 'Warranty Inspection',
-      category: 'warranty',
-      description: 'Thorough inspection services to verify warranty coverage and product condition.',
-      features: ['Full Assessment', 'Coverage Verification', 'Detailed Report', 'Claim Assistance'],
-      price: 'From $75',
+      icon: '🛡️',
+      title: 'Warranty & Post-Warranty Services',
+      category: 'support',
+      description: 'Comprehensive warranty coverage and ongoing post-warranty support for long-term system reliability.',
+      features: ['Extended Coverage', 'Preventive Maintenance', 'Quick Response', 'Genuine Parts'],
+      price: 'Custom Plans',
       color: '#4a9fb5'
     },
     {
       id: 5,
-      icon: '⚙️',
-      title: 'Preventive Maintenance',
-      category: 'post-warranty',
-      description: 'Regular maintenance services to extend product life and prevent costly repairs.',
-      features: ['Routine Service', 'Performance Check', 'Parts Replacement', 'Annual Plans'],
-      price: 'From $150/yr',
+      icon: '🔍',
+      title: 'Safety & Energy Audit',
+      category: 'consulting',
+      description: 'Thorough safety assessments and energy audits to optimize efficiency and ensure compliance with standards.',
+      features: ['Safety Compliance', 'Energy Analysis', 'Risk Assessment', 'Efficiency Reports'],
+      price: 'From $1,500',
       color: '#5dc1d7'
     },
     {
       id: 6,
-      icon: '📋',
-      title: 'Service Contracts',
-      category: 'extended',
-      description: 'Comprehensive service agreements for ongoing support and peace of mind.',
-      features: ['Priority Service', 'Discounted Rates', 'Annual Coverage', 'Multiple Products'],
-      price: 'From $299/yr',
+      icon: '💡',
+      title: 'Consulting Services',
+      category: 'consulting',
+      description: 'Expert consulting for engineering projects, design optimization, and strategic technical planning.',
+      features: ['Design Consultation', 'Technical Advisory', 'Project Planning', 'Standards Compliance'],
+      price: 'From $200/hr',
       color: '#4a9fb5'
     },
   ];
@@ -187,10 +187,9 @@ export default function WarrantyServices() {
     ? services 
     : services.filter(s => s.category === activeTab);
 
-      useEffect(() => {
-     
-        window.scrollTo(0, 0);
-      }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div style={styles.container}>
@@ -199,17 +198,17 @@ export default function WarrantyServices() {
         <div style={styles.heroContent}>
           <div className="hero-grid" style={styles.heroGrid}>
             <div style={styles.heroText}>
-              <span style={styles.badge}>🛡️ Comprehensive Coverage</span>
+              <span style={styles.badge}>⚡ Engineering Excellence</span>
               <h1 className="hero-title" style={styles.heroTitle}>
-                Expert Warranty &
+                Engineering, Design &
                 <br />
-                <span style={styles.heroHighlight}>Repair Services</span>
+                <span style={styles.heroHighlight}>Development Solutions</span>
               </h1>
               <p style={styles.heroSubtitle}>
-                Trusted by 5000+ customers for warranty claims, repairs, and extended protection plans
+                Delivering comprehensive engineering services from concept to commissioning with precision and expertise
               </p>
               <div className="hero-buttons" style={styles.heroButtons}>
-                <button style={styles.primaryBtn}>Get Free Quote</button>
+                <button style={styles.primaryBtn}>Get Free Consultation</button>
                 <button style={styles.secondaryBtn}>📞 (555) 123-4567</button>
               </div>
             </div>
@@ -219,15 +218,15 @@ export default function WarrantyServices() {
                 <img 
                   className="hero-image"
                   src="/service5.jpg" 
-                  alt="Technician repairing device"
+                  alt="Engineering and development"
                   style={styles.heroImage}
                 />
                 {/* Floating badge */}
                 <div style={styles.floatingBadge}>
                   <div style={styles.badgeIcon}>✓</div>
                   <div>
-                    <div style={styles.badgeTitle}>Authorized Service Center</div>
-                    <div style={styles.badgeSubtitle}>Certified Technicians</div>
+                    <div style={styles.badgeTitle}>Certified Engineers</div>
+                    <div style={styles.badgeSubtitle}>ISO 9001 Certified</div>
                   </div>
                 </div>
               </div>
@@ -237,16 +236,16 @@ export default function WarrantyServices() {
           {/* Stats Bar */}
           <div className="stats-grid" style={styles.statsBar}>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>15+</div>
+              <div style={styles.statNumber}>20+</div>
               <div style={styles.statLabel}>Years Experience</div>
             </div>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>5000+</div>
-              <div style={styles.statLabel}>Claims Processed</div>
+              <div style={styles.statNumber}>500+</div>
+              <div style={styles.statLabel}>Projects Completed</div>
             </div>
             <div style={styles.statItem}>
-              <div style={styles.statNumber}>98%</div>
-              <div style={styles.statLabel}>Success Rate</div>
+              <div style={styles.statNumber}>100%</div>
+              <div style={styles.statLabel}>Client Satisfaction</div>
             </div>
           </div>
         </div>
@@ -264,24 +263,31 @@ export default function WarrantyServices() {
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'warranty' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('warranty')}
+            style={{...styles.tab, ...(activeTab === 'infrastructure' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('infrastructure')}
           >
-            Warranty
+            Infrastructure
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'post-warranty' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('post-warranty')}
+            style={{...styles.tab, ...(activeTab === 'epc' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('epc')}
           >
-            Post-Warranty
+            EPC
           </button>
           <button 
             className="tab"
-            style={{...styles.tab, ...(activeTab === 'extended' ? styles.activeTab : {})}}
-            onClick={() => setActiveTab('extended')}
+            style={{...styles.tab, ...(activeTab === 'installation' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('installation')}
           >
-            Extended Plans
+            Installation
+          </button>
+          <button 
+            className="tab"
+            style={{...styles.tab, ...(activeTab === 'consulting' ? styles.activeTab : {})}}
+            onClick={() => setActiveTab('consulting')}
+          >
+            Consulting
           </button>
         </div>
 
@@ -666,7 +672,7 @@ const styles = {
   ctaText: {
     fontSize: '1.2rem',
     marginBottom: '30px',
-    opacity:' 0.9',
+    opacity: '0.9',
     fontFamily: "'Lora', serif",
   },
   ctaButton: {
