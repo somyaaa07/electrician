@@ -122,7 +122,7 @@ export default function Footer() {
             <div className="flex items-center justify-center sm:justify-start gap-3 mb-4 group">
               <div className="relative">
                 <img 
-                  src="/logo1.png" 
+                  src="/logo12.png" 
                   alt="Spark Electric Logo"
                   className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-32 lg:w-32 object-contain"
                 />

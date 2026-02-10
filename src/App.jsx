@@ -29,13 +29,8 @@ import Products6 from './pages/products/PLC-Panel-Servo-Drive/page.jsx'
 import Products7 from './pages/products/UPS-Panel/page.jsx'
 import Products8 from './pages/products/VCB-Panel/page.jsx'
 import Products9 from './pages/products/VFD-Panel/page.jsx'
-// import Services from './pages/services/Service.jsx'
-import CableLaying from './pages/services/cable-laying-conduiting/Page.jsx'
-import EngineeringDesign from './pages/services/engineering-design-and-development/Page.jsx'
-import Installation from './pages/services/installation-porgrming/Page.jsx'
-import EngineeringProcurement from './pages/services/engineering-procurement-construction/Page.jsx'
-import SafetyENergy from './pages/services/safety-energy-audit/Page.jsx'
-import WarrantyPost from './pages/services/warranty-post-warranty/Page.jsx'
+import Services from './pages/services/Service.jsx'
+
 function App() {
  
 
@@ -113,28 +108,9 @@ function App() {
 
 
 
-          <Route path='/services/engineering-design-development' element={
-            <EngineeringDesign/>
-          }/>
-
-            <Route path='/services/cable-laying-conduiting' element={
-          <CableLaying/>
-          }/>
-
-             <Route path='/services/epc' element={
-            <EngineeringProcurement/>
-          }/>
-
-             <Route path='/services/installation-programming-commissioning' element={
-          <Installation/>
-          }/>
-
-                     <Route path='/services/warranty-post-warranty' element={
-            <WarrantyPost/>
-          }/>
-<Route path='/services/safety-energy-audit' element={
-          <SafetyENergy/>
-          }/>
+       <Route path='/services' element={
+        <Services/>
+       }/>
 
 
 

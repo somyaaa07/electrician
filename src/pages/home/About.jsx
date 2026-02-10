@@ -95,7 +95,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Side - Image */}
-          <div className="relative">
+          <div className="relative order-2 lg:order-1">
             <div className="relative overflow-hidden ">
               {/* Placeholder Image - Replace with your actual image */}
               <img 
@@ -112,7 +112,7 @@ const AboutSection = () => {
           </div>
           
           {/* Right Side - Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 order-1 lg:order-2" >
             {/* Heading */}
             <h2 
               className="text-gray-900 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
