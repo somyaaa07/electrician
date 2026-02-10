@@ -52,7 +52,7 @@ export const productData = {
     badge: { icon: Sparkles, text: "Introduction" },
     title: "About Integrated eHouse Solutions",
     description: [
-      "Intell-DIGIX delivers <span class='text-[#5dc1d7] font-bold'>integrated E-House (Electrical House) solutions</span> designed to house and protect critical electrical infrastructure in a compact, factory-built environment.",
+      "Intell-DIGIX delivers <span class='text-[#009999] font-bold'>integrated E-House (Electrical House) solutions</span> designed to house and protect critical electrical infrastructure in a compact, factory-built environment.",
       "Our modular substations are engineered, manufactured, tested, and commissioned to meet project-specific requirements—ensuring reduced site work, faster deployment, and long-term operational reliability."
     ],
     certifications: [

@@ -54,21 +54,21 @@ const WhatWeDo = () => {
               What We Do
             </h2>
             <p className="text-gray-700 text-lg md:text-xl max-w-6xl mx-auto leading-relaxed mb-8" style={{ fontFamily: "'Lora', serif" }}>
-              At <span className="font-semibold text-[#5dc1d7]">Intell Power and Automation Pvt. Ltd.</span>, we offer comprehensive electro-mechanical solutions that go far beyond power distribution. Our integrated systems are engineered to enhance equipment safety, operational efficiency, and process automation for a wide range of industries.
+              At <span className="font-semibold text-[#009999]">Intell Power and Automation Pvt. Ltd.</span>, we offer comprehensive electro-mechanical solutions that go far beyond power distribution. Our integrated systems are engineered to enhance equipment safety, operational efficiency, and process automation for a wide range of industries.
             </p>
             
             {/* Key Features */}
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <div className="flex items-center gap-2 bg-[#5dc1d7]/10 px-6 py-3 rounded-full">
-                <Shield className="w-5 h-5 text-[#5dc1d7]" />
+              <div className="flex items-center gap-2 bg-[#009999]/10 px-6 py-3 rounded-full">
+                <Shield className="w-5 h-5 text-[#009999]" />
                 <span className="text-gray-700 font-medium">Equipment Safety</span>
               </div>
-              <div className="flex items-center gap-2 bg-[#5dc1d7]/10 px-6 py-3 rounded-full">
-                <TrendingUp className="w-5 h-5 text-[#5dc1d7]" />
+              <div className="flex items-center gap-2 bg-[#009999]/10 px-6 py-3 rounded-full">
+                <TrendingUp className="w-5 h-5 text-[#009999]" />
                 <span className="text-gray-700 font-medium">Operational Efficiency</span>
               </div>
-              <div className="flex items-center gap-2 bg-[#5dc1d7]/10 px-6 py-3 rounded-full">
-                <Cpu className="w-5 h-5 text-[#5dc1d7]" />
+              <div className="flex items-center gap-2 bg-[#009999]/10 px-6 py-3 rounded-full">
+                <Cpu className="w-5 h-5 text-[#009999]" />
                 <span className="text-gray-700 font-medium">Process Automation</span>
               </div>
             </div>
@@ -102,17 +102,17 @@ const WhatWeDo = () => {
                     className="absolute w-full h-full backface-hidden rounded-2xl bg-gray-50/90 backdrop-blur-lg shadow-2xl border border-gray-200 p-8 flex flex-col items-center justify-center text-center transition-all duration-300"
                     style={{ backfaceVisibility: 'hidden' }}
                   >
-                    <div className="text-[#5dc1d7]/30 text-7xl font-bold absolute top-4 right-6">
+                    <div className="text-[#009999]/30 text-7xl font-bold absolute top-4 right-6">
                       {industry.number}
                     </div>
-                    <div className="text-[#5dc1d7] mb-4">
+                    <div className="text-[#009999] mb-4">
                       {industry.icon}
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
                       {industry.title}
                     </h3>
                     <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: "'Lora', serif" }}>Hover to learn more</p>
-                    <div className="w-12 h-1 bg-[#5dc1d7] rounded-full"></div>
+                    <div className="w-12 h-1 bg-[#009999] rounded-full"></div>
                   </div>
 
                   {/* Back of Card */}
@@ -123,7 +123,7 @@ const WhatWeDo = () => {
                       transform: 'rotateX(180deg)'
                     }}
                   >
-                    <div className="text-[#5dc1d7] mb-4">
+                    <div className="text-[#009999] mb-4">
                       {industry.icon}
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -135,7 +135,7 @@ const WhatWeDo = () => {
                     <div className="space-y-2">
                       {industry.highlights.map((highlight, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#5dc1d7] mt-1.5 flex-shrink-0"></div>
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#009999] mt-1.5 flex-shrink-0"></div>
                           <span className="text-xs text-gray-600" style={{ fontFamily: "'Lora', serif" }}>{highlight}</span>
                         </div>
                       ))}
@@ -147,19 +147,7 @@ const WhatWeDo = () => {
           </div>
 
           {/* Bottom CTA Section */}
-          <div className="mt-16 text-center">
-            <div className="inline-block bg-[#5dc1d7]/10 rounded-2xl p-8 max-w-3xl">
-              <h4 className="text-2xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Ready to Transform Your Operations?
-              </h4>
-              <p className="text-gray-700 mb-6" style={{ fontFamily: "'Lora', serif" }}>
-                Let us engineer a solution tailored to your industry's unique challenges and requirements.
-              </p>
-              <button className="bg-[#5dc1d7] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1a9690] transition-colors duration-300 shadow-lg">
-                Get Started Today
-              </button>
-            </div>
-          </div>
+        
         </div>
       </div>
 

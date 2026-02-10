@@ -52,7 +52,7 @@ export const productData = {
     badge: { icon: Sparkles, text: "Introduction" },
     title: "Eaton UPS with Lithium-Ion Battery Systems",
     description: [
-      "Intell DIGIX power management solutions are designed to protect against the most common and harmful power problems present in any environment. Our Eaton UPS systems safeguard both <span class='text-[#5dc1d7] font-bold'>critical data and hardware</span> from outages, surges, lightning strikes, and power instability.",
+      "Intell DIGIX power management solutions are designed to protect against the most common and harmful power problems present in any environment. Our Eaton UPS systems safeguard both <span class='text-[#009999] font-bold'>critical data and hardware</span> from outages, surges, lightning strikes, and power instability.",
       "With Eaton’s advanced technology and Intell DIGIX integration expertise, clients benefit from reliable backup power, intelligent monitoring, and future-ready infrastructure compatibility."
     ],
     certifications: [

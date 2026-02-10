@@ -53,7 +53,7 @@ export const productData = {
     badge: { icon: Sparkles, text: "Introduction" },
     title: "About Intelldigix VCB Panels",
     description: [
-      "At Intelldigix, we specialize in <span class='text-[#5dc1d7] font-bold'>Vacuum Circuit Breaker (VCB) Panels</span> designed for safe, efficient, and reliable medium-voltage power distribution across modern electrical infrastructures.",
+      "At Intelldigix, we specialize in <span class='text-[#009999] font-bold'>Vacuum Circuit Breaker (VCB) Panels</span> designed for safe, efficient, and reliable medium-voltage power distribution across modern electrical infrastructures.",
       "From design and customization to installation and commissioning, our expert team ensures precision-engineered panels that reduce failures, improve safety, and support long-term operational stability."
     ],
     certifications: [

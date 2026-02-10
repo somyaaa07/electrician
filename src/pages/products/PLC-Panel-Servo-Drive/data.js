@@ -52,7 +52,7 @@ export const productData = {
     badge: { icon: Sparkles, text: "Introduction" },
     title: "PLC Panel Solutions for Smart Industrial Automation",
     description: [
-      "In today’s industrial world, automation isn’t optional—it’s essential. <span class='text-[#5dc1d7] font-bold'>Intell-DIGIX PLC Panels</span> are engineered to deliver accurate logic execution, seamless integration, and complete control of industrial processes.",
+      "In today’s industrial world, automation isn’t optional—it’s essential. <span class='text-[#009999] font-bold'>Intell-DIGIX PLC Panels</span> are engineered to deliver accurate logic execution, seamless integration, and complete control of industrial processes.",
       "Our PLC panels receive real-time signals from sensors, process them through programmed logic, and precisely control motors, valves, conveyors, and actuators — ensuring consistency, safety, and operational efficiency."
     ],
     certifications: [

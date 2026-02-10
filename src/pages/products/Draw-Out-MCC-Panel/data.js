@@ -52,7 +52,7 @@ export const productData = {
     badge: { icon: Sparkles, text: "Introduction" },
     title: "About Draw-Out MCC Panels",
     description: [
-      "Intell DIGIX designs and manufactures <span class='text-[#5dc1d7] font-bold'>Draw-Out Motor Control Center (MCC) Panels</span> specifically for hazardous industrial environments, with a strong focus on Oil & Gas and Chemical Processing sectors.",
+      "Intell DIGIX designs and manufactures <span class='text-[#009999] font-bold'>Draw-Out Motor Control Center (MCC) Panels</span> specifically for hazardous industrial environments, with a strong focus on Oil & Gas and Chemical Processing sectors.",
       "Our MCC panels are built in strict compliance with <strong>IS/IEC 60079-1:2007</strong>, ensuring safe and reliable operation in potentially explosive atmospheres while maintaining high operational efficiency."
     ],
     certifications: [

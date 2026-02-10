@@ -36,16 +36,16 @@ export default function BlogList() {
           }`}
         >
           {/* Compact Glassmorphism Card - Left Side */}
-          <div className="bg-white/20 backdrop-blur-md border border-white/40 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-7 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl shadow-2xl sm:mt-10 xl:mt-5 md:mt-7 lg:mt-6 mt-8">
+          <div className="bg-white/40 backdrop-blur-lg border border-white/40 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-7 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl shadow-2xl sm:mt-10 xl:mt-5 md:mt-7 lg:mt-6 mt-8">
             
             {/* Icon */}
             <div className="inline-flex items-center justify-center w-10 h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/50 backdrop-blur-sm rounded-full mb-3 sm:mb-4 md:mb-5 border border-white/30">
-              <IoBookOutline className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" style={{ color: '#5dc1d7' }} />
+              <IoBookOutline className="w-5 h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" style={{ color: '#009999' }} />
             </div>
 
             {/* Heading */}
             <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-2 xs:mb-3 sm:mb-4 font-serif leading-tight text-slate-200">
-              Our <span style={{ color: '#5dc1d7' }}>Blog</span>
+              Our <span style={{ color: '#009999' }}>Blog</span>
             </h1>
 
             {/* Description */}
@@ -84,7 +84,7 @@ export default function BlogList() {
                   <User className="w-4 h-4 mr-1" />
                   <span>{blog.author || "Admin"}</span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-black mb-2 text-slate-900 group-hover:text-[#5dc1d7] transition-all duration-300"
+                <h3 className="text-xl sm:text-2xl font-black mb-2 text-slate-900 group-hover:text-[#009999] transition-all duration-300"
                     style={{ fontFamily: "serif" }}>
                   {blog.title}
                 </h3>
@@ -93,7 +93,7 @@ export default function BlogList() {
                 </p>
                 <button
                   onClick={() => navigate(`/blog/${blog.id}`)}
-                  className="inline-flex items-center text-[#5dc1d7] font-semibold hover:text-[#1a9994] transition bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
+                  className="inline-flex items-center text-[#009999] font-semibold hover:text-[#1a9994] transition bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
                 >
                   Read More
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

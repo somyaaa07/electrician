@@ -49,7 +49,7 @@ export const productData = {
     badge: { icon: Sparkles, text: "Introduction" },
     title: "About APHC APF Panel",
     description: [
-      "Intell DIGIX delivers innovative power quality and energy efficiency solutions through advanced Active Harmonic Filters including <span class='text-[#5dc1d7] font-bold'>3-Level and Multi-Level Active Harmonic Filter systems</span>.",
+      "Intell DIGIX delivers innovative power quality and energy efficiency solutions through advanced Active Harmonic Filters including <span class='text-[#009999] font-bold'>3-Level and Multi-Level Active Harmonic Filter systems</span>.",
       "Our intelligent current conditioning solutions reduce harmonic distortion, eliminate power losses, prevent electrical failures, and ensure industries draw only useful power from the grid."
     ],
     certifications: [

@@ -50,7 +50,7 @@ export const productData = {
     badge: { icon: Sparkles, text: "Introduction" },
     title: "About ABB VFD Panels",
     description: [
-      "ABB VFD Panels by <span class='text-[#5dc1d7] font-bold'>Intell-DIGIX India Pvt. Ltd.</span> are designed to deliver precise speed control, energy efficiency, and extended motor life for industrial and commercial applications.",
+      "ABB VFD Panels by <span class='text-[#009999] font-bold'>Intell-DIGIX India Pvt. Ltd.</span> are designed to deliver precise speed control, energy efficiency, and extended motor life for industrial and commercial applications.",
       "Manufactured using premium-grade components and engineered by experienced professionals, our VFD panels ensure smooth motor operation, reduced power consumption, and dependable performance even in demanding environments."
     ],
     certifications: [

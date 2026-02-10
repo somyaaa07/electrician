@@ -129,7 +129,7 @@ export default function EngineeringServices() {
       description: 'Professional cable installation and conduit systems for electrical and data infrastructure with precision and safety.',
       features: ['Underground Cabling', 'Conduit Installation', 'Cable Routing', 'Quality Testing'],
       price: 'Custom Quote',
-      color: '#5dc1d7'
+      color: '#009999'
     },
     {
       id: 2,
@@ -139,7 +139,7 @@ export default function EngineeringServices() {
       description: 'Complete EPC solutions from design to execution with integrated project management and delivery excellence.',
       features: ['Full Turnkey Solutions', 'Project Management', 'Quality Assurance', 'Timely Delivery'],
       price: 'Project Based',
-      color: '#4a9fb5'
+      color: '#009999'
     },
     {
       id: 3,
@@ -149,7 +149,7 @@ export default function EngineeringServices() {
       description: 'Expert installation and commissioning services ensuring optimal system performance and integration.',
       features: ['System Integration', 'Programming Setup', 'Performance Testing', 'Documentation'],
       price: 'From $2,500',
-      color: '#5dc1d7'
+      color: '#009999'
     },
     {
       id: 4,
@@ -159,7 +159,7 @@ export default function EngineeringServices() {
       description: 'Comprehensive warranty coverage and ongoing post-warranty support for long-term system reliability.',
       features: ['Extended Coverage', 'Preventive Maintenance', 'Quick Response', 'Genuine Parts'],
       price: 'Custom Plans',
-      color: '#4a9fb5'
+      color: '#009999'
     },
     {
       id: 5,
@@ -169,7 +169,7 @@ export default function EngineeringServices() {
       description: 'Thorough safety assessments and energy audits to optimize efficiency and ensure compliance with standards.',
       features: ['Safety Compliance', 'Energy Analysis', 'Risk Assessment', 'Efficiency Reports'],
       price: 'From $1,500',
-      color: '#5dc1d7'
+      color: '#009999'
     },
     {
       id: 6,
@@ -179,7 +179,7 @@ export default function EngineeringServices() {
       description: 'Expert consulting for engineering projects, design optimization, and strategic technical planning.',
       features: ['Design Consultation', 'Technical Advisory', 'Project Planning', 'Standards Compliance'],
       price: 'From $200/hr',
-      color: '#4a9fb5'
+      color: '#009999'
     },
   ];
 
@@ -305,15 +305,7 @@ export default function EngineeringServices() {
               }}
             >
               <div style={styles.cardHeader}>
-                <div 
-                  className="icon-bounce"
-                  style={{
-                    ...styles.cardIcon,
-                    background: `linear-gradient(135deg, ${service.color}, ${adjustColor(service.color, -30)})`,
-                  }}
-                >
-                  {service.icon}
-                </div>
+             
                 <div style={styles.priceTag}>{service.price}</div>
               </div>
 
@@ -381,7 +373,7 @@ const styles = {
     background: '#ffffff',
   },
   hero: {
-    background: 'linear-gradient(135deg, #0a4d5c 0%, #5dc1d7 100%)',
+    background: 'linear-gradient(135deg, #0a4d5c 0%, #009999 100%)',
     padding: '100px 20px',
     position: 'relative',
     overflow: 'hidden',
@@ -500,7 +492,7 @@ const styles = {
   badgeIcon: {
     width: '40px',
     height: '40px',
-    background: 'linear-gradient(135deg, #5dc1d7, #4a9fb5)',
+    background: 'linear-gradient(135deg, #009999, #009999)',
     borderRadius: '50%',
     display: 'flex',
     alignItems: 'center',
@@ -572,9 +564,9 @@ const styles = {
     fontFamily: "'Playfair Display', serif",
   },
   activeTab: {
-    background: 'linear-gradient(135deg, #5dc1d7, #4a9fb5)',
+    background: 'linear-gradient(135deg, #009999, #009999)',
     color: 'white',
-    border: '2px solid #5dc1d7',
+    border: '2px solid #009999',
   },
   servicesGrid: {
     display: 'grid',
@@ -654,7 +646,7 @@ const styles = {
     fontFamily: "'Playfair Display', serif",
   },
   ctaSection: {
-    background: 'linear-gradient(135deg, #0a4d5c 0%, #5dc1d7 100%)',
+    background: 'linear-gradient(135deg, #0a4d5c 0%, #009999 100%)',
     padding: '80px 20px',
     textAlign: 'center',
   },

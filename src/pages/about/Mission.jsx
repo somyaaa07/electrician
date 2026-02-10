@@ -59,7 +59,7 @@ const StrengthsMissionVision = () => {
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
               style={{
-                backgroundColor: activeTab === key ? '#5dc1d7' : undefined,
+                backgroundColor: activeTab === key ? '#009999' : undefined,
                 fontFamily: "'Lora', serif"
               }}
             >
@@ -80,9 +80,9 @@ const StrengthsMissionVision = () => {
             >
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-12 shadow-xl border border-gray-100">
                 {/* Section Header */}
-                <div className="flex items-center gap-4 mb-8 pb-6 border-b-2" style={{ borderColor: '#5dc1d7' }}>
-                  <div className="p-4 rounded-2xl" style={{ backgroundColor: '#5dc1d720' }}>
-                    <div style={{ color: '#5dc1d7' }}>
+                <div className="flex items-center gap-4 mb-8 pb-6 border-b-2" style={{ borderColor: '#009999' }}>
+                  <div className="p-4 rounded-2xl" style={{ backgroundColor: '#00999920' }}>
+                    <div style={{ color: '#009999' }}>
                       {sections[key].icon}
                     </div>
                   </div>
@@ -105,9 +105,9 @@ const StrengthsMissionVision = () => {
         {/* Bottom Decorative Element */}
         <div className="mt-16 flex justify-center">
           <div className="flex items-center gap-2">
-            <div className="w-12 h-1 rounded-full" style={{ backgroundColor: '#5dc1d7' }}></div>
-            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#5dc1d7' }}></div>
-            <div className="w-12 h-1 rounded-full" style={{ backgroundColor: '#5dc1d7' }}></div>
+            <div className="w-12 h-1 rounded-full" style={{ backgroundColor: '#009999' }}></div>
+            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#009999' }}></div>
+            <div className="w-12 h-1 rounded-full" style={{ backgroundColor: '#009999' }}></div>
           </div>
         </div>
       </div>

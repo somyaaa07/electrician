@@ -90,12 +90,7 @@ export default function ElectricianStats() {
 
   return (
     <div className="relative bg-white py-20 px-6 overflow-hidden">
-      <canvas 
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ opacity: 0.4 }}
-      />
-      
+   
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -110,9 +105,9 @@ export default function ElectricianStats() {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="text-center p-8 rounded-lg bg-gray-50/90 backdrop-blur-sm border border-gray-200 hover:bg-gray-100/90 hover:border-[#5dc1d7] transition-all duration-300 shadow-md hover:shadow-lg"
+              className="text-center p-8 rounded-lg bg-gray-50/90 backdrop-blur-sm border border-gray-200 hover:bg-gray-100/90 hover:border-[#009999] transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              <div className="text-5xl md:text-6xl font-bold text-[#5dc1d7] mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
+              <div className="text-5xl md:text-6xl font-bold text-[#009999] mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
                 {stat.number}
               </div>
               <div className="text-lg text-gray-800" style={{ fontFamily: 'Lora, serif' }}>

@@ -52,7 +52,7 @@ export const productData = {
     badge: { icon: Sparkles, text: "Introduction" },
     title: "MCC Panel Solutions by Intell-DIGIX",
     description: [
-      "At <span class='text-[#5dc1d7] font-bold'>Intell-DIGIX</span>, we design and manufacture advanced Motor Control Centre (MCC) Panels that provide centralized control, protection, and monitoring of multiple electric motors from a single location.",
+      "At <span class='text-[#009999] font-bold'>Intell-DIGIX</span>, we design and manufacture advanced Motor Control Centre (MCC) Panels that provide centralized control, protection, and monitoring of multiple electric motors from a single location.",
       "Our MCC panels are custom-engineered for industrial plants, utilities, pumping stations, and manufacturing facilities where safe motor startup, overload protection, and future expansion are critical."
     ],
     certifications: [

@@ -132,12 +132,7 @@ export default function VisualDiaryGallery() {
 
   return (
     <div className="relative w-full min-h-screen bg-white py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
-      {/* Animated Background Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ zIndex: 0, opacity: 0.4 }}
-      />
+   
 
       {/* Google Fonts Import */}
       <style>{`
@@ -209,7 +204,7 @@ export default function VisualDiaryGallery() {
       <div className="flex justify-center items-center gap-4 sm:gap-6 md:gap-8 mt-5 sm:mt-10 md:mt-10 lg:mt-10 relative z-10">
         <button
           onClick={handlePrev}
-          className="group bg-[#5dc1d7] hover:bg-[#1a9b94] text-white p-3 sm:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 border-2 border-[#5dc1d7]"
+          className="group bg-[#009999] hover:bg-[#1a9b94] text-white p-3 sm:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 border-2 border-[#009999]"
           aria-label="Previous image"
         >
           <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
@@ -222,7 +217,7 @@ export default function VisualDiaryGallery() {
               onClick={() => setCurrentIndex(idx)}
               className={`transition-all duration-300 rounded-full ${
                 idx === currentIndex
-                  ? 'w-8 sm:w-10 md:w-12 h-2 sm:h-2.5 md:h-3 bg-[#5dc1d7]'
+                  ? 'w-8 sm:w-10 md:w-12 h-2 sm:h-2.5 md:h-3 bg-[#009999]'
                   : 'w-2 sm:w-2.5 md:w-3 h-2 sm:h-2.5 md:h-3 bg-gray-400 hover:bg-gray-500'
               }`}
               aria-label={`Go to image ${idx + 1}`}
@@ -232,7 +227,7 @@ export default function VisualDiaryGallery() {
 
         <button
           onClick={handleNext}
-          className="group bg-[#5dc1d7] hover:bg-[#1a9b94] text-white p-3 sm:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 border-2 border-[#5dc1d7]"
+          className="group bg-[#009999] hover:bg-[#1a9b94] text-white p-3 sm:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 border-2 border-[#009999]"
           aria-label="Next image"
         >
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />

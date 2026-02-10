@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ElectricianBanner() {
   const [formData, setFormData] = useState({
@@ -133,7 +134,8 @@ export default function ElectricianBanner() {
 
             {/* CTA Button - Larger text for mobile/tablet */}
             <div className="flex justify-center lg:justify-start">
-              <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-[#5dc1d7] rounded-full text-white font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#090040]">
+              <Link to="/contact">
+              <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-[#009999] rounded-full text-white font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#090040]">
                 <div className="absolute inset-0 shimmer"></div>
                 <span style={{ fontFamily: 'Lora, serif' }} className="relative z-10 flex items-center gap-2 sm:gap-3 text-base sm:text-lg md:text-lg">
                   Get A Free Quote
@@ -142,6 +144,7 @@ export default function ElectricianBanner() {
                   </svg>
                 </span>
               </button>
+              </Link>
             </div>
 
             {/* Trust Indicators - Larger for mobile/tablet */}

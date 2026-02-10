@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-
+import { Link } from 'react-router-dom';
 const AboutSection = () => {
   const canvasRef = useRef(null);
 
@@ -54,7 +54,7 @@ const AboutSection = () => {
           
           if (distance < 150) {
             ctx.beginPath();
-            // Sea green color: rgb(32, 178, 170) or #5dc1d7
+            // Sea green color: rgb(32, 178, 170) or #009999
             ctx.strokeStyle = `rgba(32, 178, 170, ${0.6 * (1 - distance / 150)})`;
             ctx.lineWidth = 1.5;
             ctx.moveTo(node.x, node.y);
@@ -84,12 +84,7 @@ const AboutSection = () => {
   return (
     <section className="relative bg-white min-h-screen flex items-center justify-center py-20 px-6 overflow-hidden">
       {/* Animated Technical Background */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ opacity: 0.4 }}
-      />
-      
+  
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -131,7 +126,7 @@ Intell-DIGIX India Pvt. Ltd. is not just a manufacturer—
             </p>
             
             {/* Decorative Line */}
-            <div className="w-24 h-1 bg-[#5dc1d7] rounded-full"></div>
+            <div className="w-24 h-1 bg-[#009999] rounded-full"></div>
             
             {/* Description */}
             <div className="space-y-6">
@@ -152,12 +147,14 @@ Intell-DIGIX India Pvt. Ltd. is not just a manufacturer—
             
             {/* Optional CTA Button */}
             <div className="pt-4">
+              <Link to ="/about">
               <button 
-                className="px-8 py-3 bg-[#5dc1d7] hover:bg-[#1a9b94] text-white border border-[#5dc1d7] rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                className="px-8 py-3 bg-[#009999] hover:bg-[#1a9b94] text-white border border-[#009999] rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
                 style={{ fontFamily: "'Lora', serif" }}
               >
                 Learn More
               </button>
+              </Link>
             </div>
           </div>
           

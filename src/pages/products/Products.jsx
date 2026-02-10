@@ -170,7 +170,7 @@ export default function ProductPage({ data }) {
         }
         
         .card-gradient {
-          background: linear-gradient(135deg, #5dc1d7 0%, #45b3c9 50%, #2a9db5 100%);
+          background: linear-gradient(135deg, #009999 0%, #009999 50%, #009999 100%);
         }
         
         @keyframes bounce {
@@ -220,7 +220,7 @@ export default function ProductPage({ data }) {
           </p>
           
           <div className="flex flex-col justify-center items-center sm:flex-row gap-4 sm:gap-5 animate-fade-in mb-12 sm:mb-16 w-full max-w-md sm:max-w-none px-4" style={{ animationDelay: '0.4s' }}>
-            <button className="group px-8 sm:px-10 py-4 sm:py-5 bg-white text-[#5dc1d7] font-bold text-base sm:text-lg rounded-2xl hover:bg-gray-50 transition-all shadow-2xl hover:shadow-3xl hover:scale-105 flex items-center justify-center gap-2">
+            <button className="group px-8 sm:px-10 py-4 sm:py-5 bg-white text-[#009999] font-bold text-base sm:text-lg rounded-2xl hover:bg-gray-50 transition-all shadow-2xl hover:shadow-3xl hover:scale-105 flex items-center justify-center gap-2">
               {data.hero.cta.primary}
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -253,8 +253,8 @@ export default function ProductPage({ data }) {
       <div className="top-0 z-50 glass border-b border-gray-200/80 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-5">
           <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto scrollbar-hide">
-            <button className="group flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-gray-100 to-gray-50 hover:from-[#5dc1d7]/10 hover:to-[#45b3c9]/10 border border-gray-200 hover:border-[#5dc1d7]/30 transition-all hover:scale-105 shadow-sm hover:shadow-md flex-shrink-0">
-              <Home className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-[#5dc1d7] transition-colors" />
+            <button className="group flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-gray-100 to-gray-50 hover:from-[#009999]/10 hover:to-[#45b3c9]/10 border border-gray-200 hover:border-[#009999]/30 transition-all hover:scale-105 shadow-sm hover:shadow-md flex-shrink-0">
+              <Home className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600 group-hover:text-[#009999] transition-colors" />
             </button>
             
             {data.breadcrumb.items.map((item, index) => (
@@ -262,13 +262,13 @@ export default function ProductPage({ data }) {
                 {index > 0 && <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-gray-300 flex-shrink-0" />}
                 
                 {item.type === 'current' ? (
-                  <div className="flex items-center gap-2 sm:gap-2.5 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl card-gradient shadow-md border border-[#5dc1d7]/30 flex-shrink-0">
+                  <div className="flex items-center gap-2 sm:gap-2.5 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl card-gradient shadow-md border border-[#009999]/30 flex-shrink-0">
                     {item.icon && <item.icon className="w-3 h-3 sm:w-4 sm:h-4 text-white" />}
                     <span className="text-xs sm:text-sm font-bold text-white whitespace-nowrap">{item.label}</span>
                   </div>
                 ) : item.type !== 'home' && (
-                  <button className="group px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-gradient-to-br from-gray-100 to-gray-50 hover:from-[#5dc1d7]/10 hover:to-[#45b3c9]/10 border border-gray-200 hover:border-[#5dc1d7]/30 transition-all hover:scale-105 shadow-sm hover:shadow-md flex-shrink-0">
-                    <span className="text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-[#5dc1d7] transition-colors">{item.label}</span>
+                  <button className="group px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-gradient-to-br from-gray-100 to-gray-50 hover:from-[#009999]/10 hover:to-[#45b3c9]/10 border border-gray-200 hover:border-[#009999]/30 transition-all hover:scale-105 shadow-sm hover:shadow-md flex-shrink-0">
+                    <span className="text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-[#009999] transition-colors">{item.label}</span>
                   </button>
                 )}
               </React.Fragment>
@@ -292,8 +292,8 @@ export default function ProductPage({ data }) {
               </button>
 
               <nav className={`${isMobileMenuOpen ? 'block' : 'hidden'} lg:block bg-white rounded-3xl shadow-xl border border-gray-100 p-4 sm:p-6 hover-lift`}>
-                <h2 className="text-xs font-black text-[#5dc1d7] uppercase tracking-wider mb-4 sm:mb-5 flex items-center gap-2">
-                  <span className="w-1 h-4 bg-[#5dc1d7] rounded-full"></span>
+                <h2 className="text-xs font-black text-[#009999] uppercase tracking-wider mb-4 sm:mb-5 flex items-center gap-2">
+                  <span className="w-1 h-4 bg-[#009999] rounded-full"></span>
                   Quick Navigation
                 </h2>
                 <ul className="space-y-2">
@@ -304,7 +304,7 @@ export default function ProductPage({ data }) {
                         className={`w-full text-left px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl transition-all font-semibold text-sm flex items-center gap-3 ${
                           activeSection === section.id
                             ? 'card-gradient text-white shadow-lg scale-105'
-                            : 'text-gray-700 hover:bg-gradient-to-r hover:from-[#5dc1d7]/10 hover:to-[#45b3c9]/10 hover:text-[#5dc1d7]'
+                            : 'text-gray-700 hover:bg-gradient-to-r hover:from-[#009999]/10 hover:to-[#45b3c9]/10 hover:text-[#009999]'
                         }`}
                       >
                         {activeSection === section.id && <Check className="w-4 h-4" />}
@@ -314,9 +314,9 @@ export default function ProductPage({ data }) {
                   ))}
                 </ul>
                 
-                <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-gradient-to-br from-[#5dc1d7]/10 via-[#45b3c9]/10 to-[#2a9db5]/10 rounded-2xl border-2 border-[#5dc1d7]/30">
+                <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-gradient-to-br from-[#009999]/10 via-[#45b3c9]/10 to-[#2a9db5]/10 rounded-2xl border-2 border-[#009999]/30">
                   <div className="text-center">
-                    <SidebarIcon className="w-7 h-7 sm:w-8 sm:h-8 text-[#5dc1d7] mx-auto mb-2" />
+                    <SidebarIcon className="w-7 h-7 sm:w-8 sm:h-8 text-[#009999] mx-auto mb-2" />
                     <div className="text-3xl sm:text-4xl font-black text-gradient mb-2">{data.sidebarStat.value}</div>
                     <div className="text-xs font-bold text-gray-600 uppercase tracking-wide">{data.sidebarStat.label}</div>
                   </div>
@@ -358,7 +358,7 @@ function AboutSection({ data, isVisible }) {
   return (
     <section id="about" className={`mb-16 sm:mb-20 lg:mb-24 scroll-mt-24 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
       <div className="mb-8 sm:mb-12">
-        <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[#5dc1d7]/20 to-[#45b3c9]/20 text-[#5dc1d7] rounded-full text-xs font-black uppercase tracking-wider mb-4 sm:mb-6 border border-[#5dc1d7]/30">
+        <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[#009999]/20 to-[#009999]/20 text-[#009999] rounded-full text-xs font-black uppercase tracking-wider mb-4 sm:mb-6 border border-[#009999]/30">
           <BadgeIcon className="w-3 h-3 sm:w-4 sm:h-4" />
           {data.badge.text}
         </span>
@@ -366,8 +366,8 @@ function AboutSection({ data, isVisible }) {
           {data.title}
         </h2>
         <div className="flex items-center gap-2 sm:gap-3 mb-4">
-          <div className="w-20 sm:w-32 h-2 bg-gradient-to-r from-[#5dc1d7] to-[#45b3c9] rounded-full"></div>
-          <div className="w-3 h-3 bg-[#5dc1d7] rounded-full"></div>
+          <div className="w-20 sm:w-32 h-2 bg-gradient-to-r from-[#009999] to-[#009999] rounded-full"></div>
+          <div className="w-3 h-3 bg-[#009999] rounded-full"></div>
         </div>
       </div>
       
@@ -383,10 +383,10 @@ function AboutSection({ data, isVisible }) {
       
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
         {data.certifications.map((badge) => {
-          const Icon = badge.icon;
+          // const Icon = badge.icon;
           return (
-            <div key={badge.name} className="p-4 sm:p-5 bg-white border-2 border-gray-200 rounded-2xl text-center hover:border-[#5dc1d7] transition-all hover:shadow-xl hover:-translate-y-1 group">
-              <Icon className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-[#5dc1d7] group-hover:scale-110 transition-transform" />
+            <div key={badge.name} className="p-4 sm:p-5 bg-white border-2 border-gray-200 rounded-2xl text-center hover:border-[#009999] transition-all hover:shadow-xl hover:-translate-y-1 group">
+              {/* <Icon className="w-6 h-6 sm:w-8 sm:h-8 mx-auto mb-2 sm:mb-3 text-[#009999] group-hover:scale-110 transition-transform" /> */}
               <span className="font-bold text-xs sm:text-sm text-gray-900 block">{badge.name}</span>
               <div className="mt-1 sm:mt-2 text-xs text-gray-500 font-medium">Certified</div>
             </div>
@@ -404,7 +404,7 @@ function OverviewSection({ data, isVisible }) {
   return (
     <section id="overview" className={`mb-16 sm:mb-20 lg:mb-24 scroll-mt-24 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
       <div className="mb-8 sm:mb-12">
-        <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[#5dc1d7]/20 to-[#45b3c9]/20 text-[#5dc1d7] rounded-full text-xs font-black uppercase tracking-wider mb-4 sm:mb-6 border border-[#5dc1d7]/30">
+        <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[#009999]/20 to-[#45b3c9]/20 text-[#009999] rounded-full text-xs font-black uppercase tracking-wider mb-4 sm:mb-6 border border-[#009999]/30">
           <BadgeIcon className="w-3 h-3 sm:w-4 sm:h-4" />
           {data.badge.text}
         </span>
@@ -412,14 +412,14 @@ function OverviewSection({ data, isVisible }) {
           {data.title}
         </h2>
         <div className="flex items-center gap-2 sm:gap-3 mb-4">
-          <div className="w-20 sm:w-32 h-2 bg-gradient-to-r from-[#5dc1d7] to-[#45b3c9] rounded-full"></div>
-          <div className="w-3 h-3 bg-[#5dc1d7] rounded-full"></div>
+          <div className="w-20 sm:w-32 h-2 bg-gradient-to-r from-[#009999] to-[#45b3c9] rounded-full"></div>
+          <div className="w-3 h-3 bg-[#009999] rounded-full"></div>
         </div>
       </div>
       
       <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
         {data.cards.map((card, i) => {
-          const CardIcon = card.icon;
+          // const CardIcon = card.icon;
           return (
             <div 
               key={i}
@@ -430,9 +430,9 @@ function OverviewSection({ data, isVisible }) {
               } hover-lift`}
             >
               {card.type === 'gradient' && <div className="absolute inset-0 shimmer"></div>}
-              <CardIcon className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-4 sm:mb-5 ${
-                card.type === 'gradient' ? 'text-white relative z-10' : 'text-[#5dc1d7]'
-              }`} />
+              {/* <CardIcon className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mb-4 sm:mb-5 ${
+                card.type === 'gradient' ? 'text-white relative z-10' : 'text-[#009999]'
+              }`} /> */}
               <h3 className={`text-2xl sm:text-3xl font-display font-bold mb-3 sm:mb-4 ${
                 card.type === 'gradient' ? 'text-white relative z-10' : 'text-gray-900'
               }`}>
@@ -450,11 +450,9 @@ function OverviewSection({ data, isVisible }) {
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
         {data.highlights.map((item) => (
-          <div key={item.title} className="p-6 sm:p-8 bg-white rounded-2xl border-2 border-gray-200 hover:border-[#5dc1d7] transition-all hover:shadow-2xl hover-lift group">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 card-gradient rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:scale-110 transition-transform shadow-lg">
-              <span className="text-2xl sm:text-3xl">{item.icon}</span>
-            </div>
-            <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-[#5dc1d7] transition-colors">{item.title}</h4>
+          <div key={item.title} className="p-6 sm:p-8 bg-white rounded-2xl border-2 border-gray-200 hover:border-[#009999] transition-all hover:shadow-2xl hover-lift group">
+
+            <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-[#009999] transition-colors">{item.title}</h4>
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{item.desc}</p>
           </div>
         ))}
@@ -470,7 +468,7 @@ function FeaturesSection({ data, isVisible }) {
   return (
     <section id="features" className={`mb-16 sm:mb-20 lg:mb-24 scroll-mt-24 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
       <div className="mb-12 sm:mb-16">
-        <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[#5dc1d7]/20 to-[#45b3c9]/20 text-[#5dc1d7] rounded-full text-xs font-black uppercase tracking-wider mb-4 sm:mb-6 border border-[#5dc1d7]/30">
+        <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[#009999]/20 to-[#45b3c9]/20 text-[#009999] rounded-full text-xs font-black uppercase tracking-wider mb-4 sm:mb-6 border border-[#009999]/30">
           <BadgeIcon className="w-3 h-3 sm:w-4 sm:h-4" />
           {data.badge.text}
         </span>
@@ -478,8 +476,8 @@ function FeaturesSection({ data, isVisible }) {
           {data.title}
         </h2>
         <div className="flex items-center gap-2 sm:gap-3 mb-4">
-          <div className="w-20 sm:w-32 h-2 bg-gradient-to-r from-[#5dc1d7] to-[#45b3c9] rounded-full"></div>
-          <div className="w-3 h-3 bg-[#5dc1d7] rounded-full"></div>
+          <div className="w-20 sm:w-32 h-2 bg-gradient-to-r from-[#009999] to-[#45b3c9] rounded-full"></div>
+          <div className="w-3 h-3 bg-[#009999] rounded-full"></div>
         </div>
       </div>
 
@@ -489,13 +487,13 @@ function FeaturesSection({ data, isVisible }) {
           const FeatureIcon = feature.icon;
           return (
             <div key={feature.id} className={`group bg-white rounded-3xl p-6 sm:p-8 border-2 border-gray-200 hover:border-[${feature.color.split(' ')[0].replace('from-', '')}] hover:shadow-xl transition-all`}>
-              <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
+              <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-[#009999] rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
                 <FeatureIcon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">{feature.title}</h3>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">{feature.desc}</p>
               <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-50 rounded-full">
-                <div className={`w-2 h-2 bg-gradient-to-r ${feature.color} rounded-full animate-pulse`}></div>
+                <div className={`w-2 h-2 bg-[#009999] rounded-full animate-pulse`}></div>
                 <span className="text-xs sm:text-sm font-bold text-gray-700">{feature.highlight}</span>
               </div>
             </div>
@@ -513,7 +511,7 @@ function BenefitsSection({ data, isVisible }) {
   return (
     <section id="benefits" className={`mb-16 sm:mb-20 lg:mb-24 scroll-mt-24 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
       <div className="mb-8 sm:mb-12">
-        <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[#5dc1d7]/20 to-[#45b3c9]/20 text-[#5dc1d7] rounded-full text-xs font-black uppercase tracking-wider mb-4 sm:mb-6 border border-[#5dc1d7]/30">
+        <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[#009999]/20 to-[#45b3c9]/20 text-[#009999] rounded-full text-xs font-black uppercase tracking-wider mb-4 sm:mb-6 border border-[#009999]/30">
           <BadgeIcon className="w-3 h-3 sm:w-4 sm:h-4" />
           {data.badge.text}
         </span>
@@ -521,8 +519,8 @@ function BenefitsSection({ data, isVisible }) {
           {data.title}
         </h2>
         <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
-          <div className="w-20 sm:w-32 h-2 bg-gradient-to-r from-[#5dc1d7] to-[#45b3c9] rounded-full"></div>
-          <div className="w-3 h-3 bg-[#5dc1d7] rounded-full"></div>
+          <div className="w-20 sm:w-32 h-2 bg-gradient-to-r from-[#009999] to-[#45b3c9] rounded-full"></div>
+          <div className="w-3 h-3 bg-[#009999] rounded-full"></div>
         </div>
         <p className="text-lg sm:text-xl text-gray-600 max-w-3xl font-subheading">
           {data.subtitle}
@@ -535,11 +533,11 @@ function BenefitsSection({ data, isVisible }) {
           return (
             <div 
               key={benefit.title} 
-              className="group bg-white rounded-2xl sm:rounded-3xl border-2 border-gray-200 hover:border-[#5dc1d7] transition-all hover:shadow-2xl overflow-hidden"
+              className="group bg-white rounded-2xl sm:rounded-3xl border-2 border-gray-200 hover:border-[#009999] transition-all hover:shadow-2xl overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="grid md:grid-cols-3 gap-0">
-                <div className={`p-6 sm:p-8 bg-gradient-to-br ${benefit.color} text-white relative overflow-hidden`}>
+                <div className={`p-6 sm:p-8 bg-[#009999] text-white relative overflow-hidden`}>
                   <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-white/10 rounded-full -mr-12 sm:-mr-16 -mt-12 sm:-mt-16"></div>
                   <div className="absolute bottom-0 left-0 w-18 h-18 sm:w-24 sm:h-24 bg-white/10 rounded-full -ml-9 sm:-ml-12 -mb-9 sm:-mb-12"></div>
                   
@@ -564,7 +562,7 @@ function BenefitsSection({ data, isVisible }) {
                           key={i}
                           className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200"
                         >
-                          <Check className="w-4 h-4 text-[#5dc1d7] flex-shrink-0" />
+                          <Check className="w-4 h-4 text-[#009999] flex-shrink-0" />
                           <span className="text-xs sm:text-sm font-semibold text-gray-700">{highlight}</span>
                         </div>
                       ))}
@@ -572,7 +570,7 @@ function BenefitsSection({ data, isVisible }) {
                   </div>
 
                   <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200">
-                    <button className="text-[#5dc1d7] hover:text-[#2a9db5] font-bold flex items-center gap-2 group-hover:gap-3 transition-all text-sm sm:text-base">
+                    <button className="text-[#009999] hover:text-[#009999] font-bold flex items-center gap-2 group-hover:gap-3 transition-all text-sm sm:text-base">
                       View case studies
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
@@ -594,7 +592,7 @@ function ApplicationsSection({ data, isVisible }) {
   return (
     <section id="applications" className={`mb-16 sm:mb-20 lg:mb-24 scroll-mt-24 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
       <div className="mb-8 sm:mb-12">
-        <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[#5dc1d7]/20 to-[#45b3c9]/20 text-[#5dc1d7] rounded-full text-xs font-black uppercase tracking-wider mb-4 sm:mb-6 border border-[#5dc1d7]/30">
+        <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-[#009999] to-[#009999] text-white rounded-full text-xs font-black uppercase tracking-wider mb-4 sm:mb-6 border border-[#009999]/30">
           <BadgeIcon className="w-3 h-3 sm:w-4 sm:h-4" />
           {data.badge.text}
         </span>
@@ -602,14 +600,14 @@ function ApplicationsSection({ data, isVisible }) {
           {data.title}
         </h2>
         <div className="flex items-center gap-2 sm:gap-3 mb-4">
-          <div className="w-20 sm:w-32 h-2 bg-gradient-to-r from-[#5dc1d7] to-[#45b3c9] rounded-full"></div>
-          <div className="w-3 h-3 bg-[#5dc1d7] rounded-full"></div>
+          <div className="w-20 sm:w-32 h-2 bg-gradient-to-r from-[#009999] to-[#009999] rounded-full"></div>
+          <div className="w-3 h-3 bg-[#009999] rounded-full"></div>
         </div>
       </div>
       
       <div className="space-y-6 sm:space-y-8">
         {data.items.map((industry, index) => (
-          <div key={industry.title} className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-gray-200 hover:border-[#5dc1d7] transition-all hover:shadow-2xl hover-lift group">
+          <div key={industry.title} className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-gray-200 hover:border-[#009999] transition-all hover:shadow-2xl hover-lift group">
             <div className="p-6 sm:p-8 card-gradient relative overflow-hidden">
               <div className="absolute inset-0 shimmer"></div>
               <div className="relative z-10 flex items-center gap-3 sm:gap-4">
@@ -625,7 +623,7 @@ function ApplicationsSection({ data, isVisible }) {
               </p>
               <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 sm:p-6 rounded-2xl border border-gray-200">
                 <h4 className="font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
-                  <div className="w-1.5 h-5 sm:h-6 bg-[#5dc1d7] rounded-full"></div>
+                  <div className="w-1.5 h-5 sm:h-6 bg-[#009999] rounded-full"></div>
                   Use Cases:
                 </h4>
                 <ul className="space-y-2 sm:space-y-3">
@@ -671,7 +669,7 @@ function FinalCTA({ data }) {
           {data.description}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center mb-6 sm:mb-8 px-4">
-          <button className="group px-10 sm:px-12 py-4 sm:py-5 bg-white text-[#5dc1d7] font-bold text-base sm:text-lg rounded-2xl hover:bg-gray-50 transition-all shadow-2xl hover:scale-105 flex items-center justify-center gap-2">
+          <button className="group px-10 sm:px-12 py-4 sm:py-5 bg-white text-[#009999] font-bold text-base sm:text-lg rounded-2xl hover:bg-gray-50 transition-all shadow-2xl hover:scale-105 flex items-center justify-center gap-2">
             {data.buttons.primary}
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </button>

@@ -53,7 +53,7 @@ export const productData = {
     badge: { icon: Sparkles, text: "Introduction" },
     title: "ABB Medium Voltage AC Drives",
     description: [
-      "ABB Medium Voltage AC Drives (3.3 kV / 6.6 kV / 11 kV) are designed for high-power industrial applications requiring <span class='text-[#5dc1d7] font-bold'>maximum efficiency, reliability, and precise motor control</span>.",
+      "ABB Medium Voltage AC Drives (3.3 kV / 6.6 kV / 11 kV) are designed for high-power industrial applications requiring <span class='text-[#009999] font-bold'>maximum efficiency, reliability, and precise motor control</span>.",
       "Intell-DIGIX India Pvt. Ltd., a leading supplier and system integrator, delivers end-to-end MV VSD solutions backed by ABB’s ACS8080 platform and Intell Ability™ digital services."
     ],
     certifications: [

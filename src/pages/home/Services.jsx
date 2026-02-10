@@ -90,12 +90,7 @@ const ProcessSteps = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-white">
-      {/* Animated Background Canvas */}
-      <canvas 
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ opacity: 0.4 }}
-      />
+  
 
       {/* Main Content */}
       <div className="relative z-10 py-20 px-4">
@@ -107,13 +102,13 @@ const ProcessSteps = () => {
               <div className="inline-block relative">
                 {/* Animated Border Effect */}
                 <div className="absolute w-12 h-12 -left-2 -top-2 animate-spin-slow">
-                  <div className="absolute top-0 left-0 w-full h-2 bg-[#5dc1d7] origin-left scale-x-0 animate-bar-top"></div>
-                  <div className="absolute top-0 right-0 w-2 h-full bg-[#5dc1d7] origin-top scale-y-0 animate-bar-right"></div>
-                  <div className="absolute bottom-0 right-0 w-full h-2 bg-[#5dc1d7] origin-right scale-x-0 animate-bar-bottom"></div>
-                  <div className="absolute bottom-0 left-0 w-2 h-full bg-[#5dc1d7] origin-bottom scale-y-0 animate-bar-left"></div>
+                  <div className="absolute top-0 left-0 w-full h-2 bg-[#009999] origin-left scale-x-0 animate-bar-top"></div>
+                  <div className="absolute top-0 right-0 w-2 h-full bg-[#009999] origin-top scale-y-0 animate-bar-right"></div>
+                  <div className="absolute bottom-0 right-0 w-full h-2 bg-[#009999] origin-right scale-x-0 animate-bar-bottom"></div>
+                  <div className="absolute bottom-0 left-0 w-2 h-full bg-[#009999] origin-bottom scale-y-0 animate-bar-left"></div>
                 </div>
                 
-                <h6 className="text-[#5dc1d7] uppercase tracking-wider text-sm font-semibold mb-4 pt-8" style={{ fontFamily: 'Lora, serif' }}>
+                <h6 className="text-[#009999] uppercase tracking-wider text-sm font-semibold mb-4 pt-8" style={{ fontFamily: 'Lora, serif' }}>
                   How It Work
                 </h6>
               </div>
@@ -161,16 +156,16 @@ const ProcessSteps = () => {
                   <div className="relative inline-block mb-6">
               
                     {/* Icon Circle */}
-                    <div className="relative w-32 h-32 rounded-full border-4 border-[#5dc1d7]/30 bg-gray-100 flex items-center justify-center group-hover:scale-110 group-hover:border-[#5dc1d7] transition-all duration-300">
+                    <div className="relative w-32 h-32 rounded-full border-4 border-[#009999]/30 bg-gray-100 flex items-center justify-center group-hover:scale-110 group-hover:border-[#009999] transition-all duration-300">
                       <div className="relative">
-                        <Lightbulb className="w-10 h-10 text-[#5dc1d7]" />
+                        <Lightbulb className="w-10 h-10 text-[#009999]" />
                         {/* Decorative circles */}
                        
                       </div>
                     </div>
                     
                     {/* Step Number */}
-                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-[#5dc1d7] shadow-lg flex items-center justify-center text-white font-bold text-base">
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-[#009999] shadow-lg flex items-center justify-center text-white font-bold text-base">
                       01
                     </div>
                   </div>
@@ -189,16 +184,16 @@ const ProcessSteps = () => {
                  
                     
                     {/* Icon Circle */}
-                    <div className="relative w-32 h-32 rounded-full border-4 border-[#5dc1d7]/30 bg-gray-100 flex items-center justify-center group-hover:scale-110 group-hover:border-[#5dc1d7] transition-all duration-300">
+                    <div className="relative w-32 h-32 rounded-full border-4 border-[#009999]/30 bg-gray-100 flex items-center justify-center group-hover:scale-110 group-hover:border-[#009999] transition-all duration-300">
                       <div className="relative">
-                        <Rocket className="w-10 h-10 text-[#5dc1d7]" />
+                        <Rocket className="w-10 h-10 text-[#009999]" />
                         {/* Decorative circles */}
                        
                       </div>
                     </div>
                     
                     {/* Step Number */}
-                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-[#5dc1d7] shadow-lg flex items-center justify-center text-white font-bold text-base">
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-[#009999] shadow-lg flex items-center justify-center text-white font-bold text-base">
                       02
                     </div>
                   </div>
@@ -215,16 +210,16 @@ const ProcessSteps = () => {
                 <div className="text-center group">
                   <div className="relative inline-block mb-6">
                     {/* Icon Circle */}
-                    <div className="relative w-32 h-32 rounded-full border-4 border-[#5dc1d7]/30 bg-gray-100 flex items-center justify-center group-hover:scale-110 group-hover:border-[#5dc1d7] transition-all duration-300">
+                    <div className="relative w-32 h-32 rounded-full border-4 border-[#009999]/30 bg-gray-100 flex items-center justify-center group-hover:scale-110 group-hover:border-[#009999] transition-all duration-300">
                       <div className="relative">
-                        <Zap className="w-10 h-10 text-[#5dc1d7]" />
+                        <Zap className="w-10 h-10 text-[#009999]" />
                         {/* Decorative circles */}
                        
                       </div>
                     </div>
                     
                     {/* Step Number */}
-                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-[#5dc1d7] shadow-lg flex items-center justify-center text-white font-bold text-base">
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-[#009999] shadow-lg flex items-center justify-center text-white font-bold text-base">
                       03
                     </div>
                   </div>
@@ -241,16 +236,16 @@ const ProcessSteps = () => {
                 <div className="text-center group">
                   <div className="relative inline-block mb-6">
                     {/* Icon Circle */}
-                    <div className="relative w-32 h-32 rounded-full border-4 border-[#5dc1d7]/30 bg-gray-100 flex items-center justify-center group-hover:scale-110 group-hover:border-[#5dc1d7] transition-all duration-300">
+                    <div className="relative w-32 h-32 rounded-full border-4 border-[#009999]/30 bg-gray-100 flex items-center justify-center group-hover:scale-110 group-hover:border-[#009999] transition-all duration-300">
                       <div className="relative">
-                        <CheckSquare className="w-10 h-10 text-[#5dc1d7]" />
+                        <CheckSquare className="w-10 h-10 text-[#009999]" />
                         {/* Decorative circles */}
                        
                       </div>
                     </div>
                     
                     {/* Step Number */}
-                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-[#5dc1d7] shadow-lg flex items-center justify-center text-white font-bold text-base">
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-[#009999] shadow-lg flex items-center justify-center text-white font-bold text-base">
                       04
                     </div>
                   </div>

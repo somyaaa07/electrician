@@ -251,9 +251,9 @@ function Navbar() {
                         handleClick(index, item.href);
                       }
                     }}
-                    className={`font-medium tracking-wide transition-all duration-200 hover:text-[#5dc1d7] relative inline-block pb-2 whitespace-nowrap
+                    className={`font-medium tracking-wide transition-all duration-200 hover:text-[#009999] relative inline-block pb-2 whitespace-nowrap
                       text-sm lg:text-base xl:text-lg 2xl:text-xl
-                      ${activeIndex === index ? 'opacity-100 text-[#5dc1d7] font-semibold' : 'opacity-70 text-gray-800'}
+                      ${activeIndex === index ? 'opacity-100 text-[#009999] font-semibold' : 'opacity-70 text-gray-800'}
                     `}
                     style={{
                       fontFamily: '"Outfit", sans-serif'
@@ -307,7 +307,7 @@ function Navbar() {
                               <Link
                                 to={subItem.href}
                                 onClick={(e) => handleDropdownClick(index, subItem.href, e)}
-                                className="block font-medium tracking-wide transition-all duration-150 hover:bg-white/60 hover:text-[#5dc1d7] hover:pl-7 relative overflow-hidden group
+                                className="block font-medium tracking-wide transition-all duration-150 hover:bg-white/60 hover:text-[#009999] hover:pl-7 relative overflow-hidden group
                                   px-4 lg:px-5 xl:px-6
                                   py-2.5 lg:py-3
                                   text-xs lg:text-sm xl:text-base
@@ -317,7 +317,7 @@ function Navbar() {
                                 }}
                               >
                                 <span className="relative z-10">{subItem.name}</span>
-                                <span className="absolute left-0 top-0 h-full w-1 bg-[#5dc1d7] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-150"></span>
+                                <span className="absolute left-0 top-0 h-full w-1 bg-[#009999] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-150"></span>
                               </Link>
                             </li>
                           ))}
@@ -345,19 +345,19 @@ function Navbar() {
               <div className="flex flex-col justify-between
                 w-5 h-4 sm:w-6 sm:h-5">
                 <span
-                  className={`block bg-[#5dc1d7] transition-all duration-300
+                  className={`block bg-[#009999] transition-all duration-300
                     h-0.5
                     ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5 sm:translate-y-2' : ''
                   }`}
                 ></span>
                 <span
-                  className={`block bg-[#5dc1d7] transition-all duration-300
+                  className={`block bg-[#009999] transition-all duration-300
                     h-0.5
                     ${isMobileMenuOpen ? 'opacity-0' : ''
                   }`}
                 ></span>
                 <span
-                  className={`block bg-[#5dc1d7] transition-all duration-300
+                  className={`block bg-[#009999] transition-all duration-300
                     h-0.5
                     ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5 sm:-translate-y-2' : ''
                   }`}
@@ -375,7 +375,7 @@ function Navbar() {
               h-2.5 w-2.5 lg:h-3 lg:w-3 xl:h-3 xl:w-3"
             style={{
               left: `${ballPosition.left}px`,
-              backgroundColor: '#5dc1d7',
+              backgroundColor: '#009999',
               transform: isDragging ? 'translateY(2px) scale(1.2)' : 'translateY(2px)',
               boxShadow: '0 0 20px rgba(32, 178, 170, 0.6), 0 0 40px rgba(32, 178, 170, 0.3), 0 2px 8px rgba(32, 178, 170, 0.4)',
               transition: isDragging ? 'none' : 'left 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.2s ease',
@@ -404,7 +404,7 @@ function Navbar() {
               backdropFilter: 'blur(25px) saturate(200%)',
               WebkitBackdropFilter: 'blur(25px) saturate(200%)',
               scrollbarWidth: 'thin',
-              scrollbarColor: '#5dc1d7 rgba(255, 255, 255, 0.3)'
+              scrollbarColor: '#009999 rgba(255, 255, 255, 0.3)'
             }}
           >
             <ul className="flex flex-col gap-0.5 sm:gap-1">
@@ -427,7 +427,7 @@ function Navbar() {
                           px-3 sm:px-4 md:px-5
                           py-2 sm:py-2.5 md:py-3
                           text-sm sm:text-base md:text-lg
-                          ${activeIndex === index ? 'bg-white/80 text-[#5dc1d7] font-semibold shadow-md' : 'opacity-70 text-gray-800'}
+                          ${activeIndex === index ? 'bg-white/80 text-[#009999] font-semibold shadow-md' : 'opacity-70 text-gray-800'}
                         `}
                         style={{
                           fontFamily: '"Outfit", sans-serif'
@@ -438,7 +438,7 @@ function Navbar() {
                       {item.dropdown && (
                         <button
                           onClick={() => toggleMobileDropdown(index)}
-                          className="text-gray-800 hover:text-[#5dc1d7] transition-colors
+                          className="text-gray-800 hover:text-[#009999] transition-colors
                             px-2 sm:px-3
                             py-2 sm:py-2.5 md:py-3"
                           aria-label={`Toggle ${item.name} dropdown`}
@@ -474,7 +474,7 @@ function Navbar() {
                           max-h-80 overflow-y-auto pr-1"
                           style={{
                             scrollbarWidth: 'thin',
-                            scrollbarColor: '#5dc1d7 rgba(255, 255, 255, 0.3)'
+                            scrollbarColor: '#009999 rgba(255, 255, 255, 0.3)'
                           }}
                         >
                           {item.dropdown.map((subItem) => (
@@ -482,7 +482,7 @@ function Navbar() {
                               <Link
                                 to={subItem.href}
                                 onClick={(e) => handleDropdownClick(index, subItem.href, e)}
-                                className="block rounded-lg sm:rounded-xl font-medium tracking-wide transition-all duration-150 hover:bg-white/60 hover:text-[#5dc1d7] relative overflow-hidden group
+                                className="block rounded-lg sm:rounded-xl font-medium tracking-wide transition-all duration-150 hover:bg-white/60 hover:text-[#009999] relative overflow-hidden group
                                   px-3 sm:px-4
                                   py-2 sm:py-2.5
                                   text-xs sm:text-sm md:text-base
@@ -493,7 +493,7 @@ function Navbar() {
                                 }}
                               >
                                 <span className="relative z-10">{subItem.name}</span>
-                                <span className="absolute left-0 top-0 h-full w-0.5 sm:w-1 bg-[#5dc1d7] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-150 rounded-l-lg sm:rounded-l-xl"></span>
+                                <span className="absolute left-0 top-0 h-full w-0.5 sm:w-1 bg-[#009999] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-150 rounded-l-lg sm:rounded-l-xl"></span>
                               </Link>
                             </li>
                           ))}
@@ -525,7 +525,7 @@ function Navbar() {
         }
         
         .mobile-menu-scroll::-webkit-scrollbar-thumb {
-          background: #5dc1d7;
+          background: #009999;
           border-radius: 10px;
         }
         

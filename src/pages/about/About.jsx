@@ -70,9 +70,9 @@ export default function AboutSection() {
           }`}
         >
           <div className="px-4 sm:px-6 md:px-8 lg:px-12">
-            <div className="bg-white/10 backdrop-blur-md border border-white/40 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-7 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl shadow-2xl sm:mt-10 xl:mt-3 md:mt-5 lg:mt-6 mt-8">
+            <div className="bg-white/40 backdrop-blur-lg border border-white/40 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-7 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl shadow-2xl sm:mt-10 xl:mt-3 md:mt-5 lg:mt-6 mt-8">
               <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-2 xs:mb-3 sm:mb-4 font-serif leading-tight text-white">
-                About <span className="text-[#5dc1d7]">Us</span>
+                About <span className="text-[#009999]">Us</span>
               </h1>
               <p className="text-xs xs:text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed font-light">
                 Your trusted partner for professional electrical services
@@ -103,8 +103,8 @@ export default function AboutSection() {
           {/* Right - Content */}
           <div className="space-y-6">
             <div>
-              <div className="inline-block px-4 py-2 bg-[#5dc1d7]/10 rounded-full mb-4">
-                <span className="text-[#5dc1d7] font-semibold text-sm">WHO WE ARE</span>
+              <div className="inline-block px-4 py-2 bg-[#009999]/10 rounded-full mb-4">
+                <span className="text-[#009999] font-semibold text-sm">WHO WE ARE</span>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight font-serif">
              Smart Panels. Smarter Partnership.
@@ -121,7 +121,7 @@ Intell Digix Automation Pvt. Ltd., founded in 2012 by Mr. Sandeep Bishnoi, is a 
             <div className="space-y-3">
               {values.slice(0, 4).map((value, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-[#5dc1d7] flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-6 h-6 text-[#009999] flex-shrink-0 mt-0.5" />
                   <p className="text-gray-700">{value}</p>
                 </div>
               ))}
@@ -136,7 +136,7 @@ Intell Digix Automation Pvt. Ltd., founded in 2012 by Mr. Sandeep Bishnoi, is a 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24 ">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-serif">
-            Why Choose <span className="text-[#5dc1d7]">Our Services</span>
+            Why Choose <span className="text-[#009999]">Our Services</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
             We combine expertise, quality, and customer service to deliver outstanding electrical solutions
@@ -147,10 +147,10 @@ Intell Digix Automation Pvt. Ltd., founded in 2012 by Mr. Sandeep Bishnoi, is a 
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:border-[#5dc1d7] group shadow-gray-500 shadow-lg"
+              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:border-[#009999] group shadow-gray-500 shadow-lg"
             >
-              <div className="w-14 h-14 bg-[#5dc1d7]/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#5dc1d7] transition-colors duration-300">
-                <div className="text-[#5dc1d7] group-hover:text-white transition-colors duration-300">
+              <div className="w-14 h-14 bg-[#009999]/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-[#009999] transition-colors duration-300">
+                <div className="text-[#009999] group-hover:text-white transition-colors duration-300">
                   {feature.icon}
                 </div>
               </div>
@@ -171,7 +171,7 @@ Intell Digix Automation Pvt. Ltd., founded in 2012 by Mr. Sandeep Bishnoi, is a 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-serif">
-                Our Core <span className="text-[#5dc1d7]">Values</span>
+                Our Core <span className="text-[#009999]">Values</span>
               </h2>
               <p className="text-gray-600 text-base sm:text-lg mb-8 leading-relaxed">
               our services are designed to empower your infrastructure with precision engineering and future-ready technology.
@@ -182,7 +182,7 @@ Intell Digix Automation Pvt. Ltd., founded in 2012 by Mr. Sandeep Bishnoi, is a 
                     key={index}
                     className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-sm border border-gray-100"
                   >
-                    <CheckCircle className="w-5 h-5 text-[#5dc1d7] flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-[#009999] flex-shrink-0 mt-0.5" />
                     <p className="text-gray-700 text-sm">{value}</p>
                   </div>
                 ))}
@@ -195,7 +195,7 @@ Intell Digix Automation Pvt. Ltd., founded in 2012 by Mr. Sandeep Bishnoi, is a 
                 alt="Our Work"
                 className="rounded-2xl shadow-2xl w-full h-[400px] sm:h-[500px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#5dc1d7]/20 to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#009999]/20 to-transparent rounded-2xl"></div>
             </div>
           </div>
         </div>
